@@ -31,14 +31,14 @@ def main(global_config, **settings):
     Base.metadata.bind = engine
 
     if settings.get('db.populate', 'False') == 'True':
-        from vignewton.models.main import populate
         from vignewton.models.main import make_test_data
         Base.metadata.create_all(engine)
         #initialize_sql(engine)
-        populate(admin_username)
         #make_test_data(DBSession)
         from vignewton.models.usergroup import populate_groups
         populate_groups()
+        from vignewton.models.usergroup import populate
+        populate(admin_username)
         from vignewton.models.sitecontent import populate_sitetext
         populate_sitetext()
         
@@ -59,9 +59,11 @@ def main(global_config, **settings):
     session_factory = session_factory_from_settings(settings)
     config.set_session_factory(session_factory)
 
+    config.include('pyramid_fanstatic')
+
     configure_base_layout(config)
     configure_admin(config)
-    configure_wiki(config, '/msl_wiki')
+    configure_wiki(config, '/vig_wiki')
     config.add_static_view('static',
                            'vignewton:static', cache_max_age=3600)
     ##################################

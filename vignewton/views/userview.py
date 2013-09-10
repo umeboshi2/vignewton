@@ -59,8 +59,10 @@ class ChangePasswordSchema(colander.Schema):
         description="Please confirm the new password.")
 
 
-_view_choices = ['agendaDay', 'agendaWeek', 'month']
-ViewChoices = dict(enumerate(_view_choices))
+#_view_choices = ['agendaDay', 'agendaWeek', 'month']
+#ViewChoices = dict(enumerate(_view_choices))
+_view_choices = [(0, 'agendaDay'), (1, 'agendaWeek'), (2, 'month')]
+ViewChoices = dict(_view_choices)
 ViewChoiceLookup = dict([(v, k) for k,v in ViewChoices.items()])
 
 

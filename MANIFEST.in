@@ -1,2 +1,5 @@
-include *.txt *.ini *.cfg *.rst
-recursive-include vignewton *.ico *.png *.css *.gif *.jpg *.pt *.txt *.mak *.mako *.js *.html *.xml
+recursive-include vignewton/templates *.mako *.pt
+recursive-include vignewton/static *
+#recursive-include vignewton/resources *
+include setup.py
+

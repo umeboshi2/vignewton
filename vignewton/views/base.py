@@ -6,7 +6,7 @@ from vignewton.resources import StaticResources
 from vignewton.models.usergroup import User
 
 def prepare_layout(layout):
-    layout.title = 'Miss Lemon'
+    layout.title = 'Vig Newton'
     layout.header = layout.title
     layout.subheader = ''
     layout.content = ''
@@ -20,12 +20,6 @@ def make_main_menu(request):
     bar = TopBar(request.matched_route.name)
     bar.entries['Home'] = request.route_url('home')
     if 'user' in request.session:
-        url = request.route_url('msl_phonecalls', context='add', id='somebody')
-        bar.entries['Take Call'] = url
-
-        url = request.route_url('msl_tickets', context='add', id='somebody')
-        bar.entries['Open Ticket'] = url
-
         user = request.session['user']
         if 'admin' in user.groups:
             try:
@@ -51,27 +45,6 @@ def make_ctx_menu(request):
         user = request.session['user']
         url = request.route_url('view_wiki')
         menu.append_new_entry('Wiki', url)
-        
-        url = request.route_url('consult_contacts', context='list', id='all')
-        menu.append_new_entry('Contacts', url)
-
-        url = request.route_url('consult_clients', context='list', id='all')
-        menu.append_new_entry('Clients', url)
-
-        url = request.route_url('consult_calendar', context='list', id='all')
-        menu.append_new_entry('Calendar', url)
-
-        url = request.route_url('msl_tickets', context='main', id='all')
-        menu.append_new_entry('Tickets', url)
-
-        url = request.route_url('msl_phonecalls', context='main', id='all')
-        menu.append_new_entry('Phone Calls', url)
-
-        url = request.route_url('msl_docs', context='main', id='all')
-        menu.append_new_entry('Documents', url)
-
-        url = request.route_url('msl_cases', context='main', id='all')
-        menu.append_new_entry('Cases', url)
         
     return menu
     
