@@ -1,5 +1,5 @@
 <div id="data-area">
-  <% evurl = request.route_url('main', context='view', id='events') %>
+  <% evurl = request.route_url('maincal_json', context='view', id='events') %>
   <input id="event-source-url" type="hidden" value="${evurl}" />
 </div>
 <div id="loading">

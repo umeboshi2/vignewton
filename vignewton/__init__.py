@@ -41,7 +41,16 @@ def main(global_config, **settings):
         populate(admin_username)
         from vignewton.models.sitecontent import populate_sitetext
         populate_sitetext()
-        
+
+        if os.path.isfile('nfl.ics'):
+            from sqlalchemy.exc import IntegrityError
+            from vignewton.managers.nflgames import NFLGameManager
+            m = NFLGameManager(DBSession)
+            try:
+                m.populate_games(file('nfl.ics').read())
+            except IntegrityError:
+                pass
+            
         
     # setup authn and authz
     secret = settings['%s.authn.secret' % appname]
@@ -79,6 +88,12 @@ def main(global_config, **settings):
                     layout='base',
                     renderer=basetemplate,
                     route_name='main')
+    route_name = 'maincal_json'
+    config.add_route(route_name, '/%s/{context}/{id}' % route_name)
+    config.add_view('vignewton.views.main.MainCalJSONViewer',
+                    route_name=route_name,
+                    renderer='json',
+                    layout='base',)
     ##################################
     # Login Views
     ##################################

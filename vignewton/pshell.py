@@ -16,5 +16,13 @@ def setup(env):
         with file(filename, 'w') as output:
             r = urllib2.urlopen(url)
             output.write(r.read())
-    env['stream'] = file(filename).read()
+    cfile = file(filename)
+    stream = file(filename).read()
+    import icalendar
+    cal = icalendar.Calendar.from_ical(stream)
+    events = (e for e in cal.walk() if e.name == 'VEVENT')
+    env['cal'] = cal
+    env['events'] = events
+    
+             
     

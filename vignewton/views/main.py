@@ -13,12 +13,15 @@ import deform
 
 from trumpet.views.menus import BaseMenu
 
+from vignewton.managers.nflgames import NFLGameManager
+
 from vignewton.views.base import BaseViewer
 from vignewton.views.base import make_main_menu, make_ctx_menu
 
 class MainCalJSONViewer(BaseViewer):
     def __init__(self, request):
         super(MainCalJSONViewer, self).__init__(request)
+        self.nfl_games = NFLGameManager(self.request.db)
         self.get_everthing()
 
     def _get_start_end_userid(self, user_id=True):
@@ -27,11 +30,23 @@ class MainCalJSONViewer(BaseViewer):
         if user_id:
             user_id = self.request.session['user'].id
         return start, end, user_id
-        
 
+    def _get_start_end(self):
+        start = self.request.GET['start']
+        end = self.request.GET['end']
+        return start, end
+        
+    def serialize_game_for_calendar(self, game):
+        data = dict(title=game.summary, start=game.start.isoformat(),
+                    end=game.end.isoformat())
+        return data
+    
     
     def get_everthing(self):
-        self.response = []
+        start, end = self._get_start_end()
+        serialize = self.serialize_game_for_calendar
+        nfl_games = self.nfl_games.get_games(start, end, timestamps=True)
+        self.response = [serialize(g) for g in nfl_games]
         
         
     
@@ -73,9 +88,8 @@ class MainViewer(BaseViewer):
         content = "Main Page"
         self.layout.content = content
         self.layout.subheader = 'Vig Newton'
-        #self.layout.resources.maincalendar.need()
-        #self.layout.resources.main_calendar_view.need()
-        #self.layout.resources.cornsilk.need()
+        self.layout.resources.main_calendar_view.need()
+        self.layout.resources.cornsilk.need()
         
         template = 'vignewton:templates/mainview-calendar.mako'
         env = {}

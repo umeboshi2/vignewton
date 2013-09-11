@@ -25,7 +25,7 @@ class NFLGame(Base):
     summary = Column(Unicode(200))
     start = Column(DateTime)
     end = Column(DateTime)
-    class = Column(Unicode(50))
+    game_class = Column(Unicode(50))
     description = Column(UnicodeText)
     location = Column(Unicode(100))
     status = Column(Unicode(100))
@@ -38,6 +38,8 @@ class LoginHistory(Base):
     
 
 populate = vignewton.models.usergroup.populate
+
+
 
 
 def make_test_data(session):
