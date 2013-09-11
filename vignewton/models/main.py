@@ -2,7 +2,7 @@ import transaction
 
 from sqlalchemy import Column
 from sqlalchemy import Integer
-from sqlalchemy import Unicode
+from sqlalchemy import Unicode, UnicodeText
 from sqlalchemy import DateTime
 from sqlalchemy import ForeignKey
 
@@ -17,6 +17,19 @@ from vignewton.models.base import Base, DBSession
 import vignewton.models.usergroup
 import vignewton.models.sitecontent
 
+
+class NFLGame(Base):
+    __tablename__ = 'vig_nfl_games'
+    id = Column(Integer, primary_key=True)
+    uid = Column(Unicode(100), unique=True)
+    summary = Column(Unicode(200))
+    start = Column(DateTime)
+    end = Column(DateTime)
+    class = Column(Unicode(50))
+    description = Column(UnicodeText)
+    location = Column(Unicode(100))
+    status = Column(Unicode(100))
+    
 
 class LoginHistory(Base):
     __tablename__ = 'login_history'
