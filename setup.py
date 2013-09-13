@@ -7,6 +7,7 @@ from setuptools import setup, find_packages
 #CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
 requires = [
+    'beautifulsoup4',
     'trumpet>=0.1.1dev', # pull from github
     ]
 
