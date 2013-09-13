@@ -22,52 +22,57 @@ NFL_CONFERENCE = Enum('AFC', 'NFC', name='vig_nfl_conference')
 NFL_REGION = Enum('North', 'South', 'East', 'West', name='vig_nfl_region')
 
 
-class NFLTeam(Base):
-    __tablename__ = 'vig_nfl_teams'
-    id = Column(Integer, primary_key=True)
-    name = Column(Unicode(50), unique=True)
-    city = Column(Unicode(50))
-    conference = Column('conference', NFL_CONFERENCE)
-    region = Column('region', NFL_REGION)
+team_map = dict(
+    arz='Cardinals',
+    atl='Falcons',
+    bal='Ravens',
+    buf='Bills',
+    car='Panthers',
+    chi='Bears',
+    cin='Bengals',
+    cle='Browns',
+    dal='Cowboys',
+    den='Broncos',
+    det='Lions',
+    grb='Packers',
+    hou='Texans',
+    ind='Colts',
+    jax='Jaguars',
+    kcc='Chiefs',
+    mia='Dolphins',
+    min='Vikings',
+    nep='Patriots',
+    nos='Saints',
+    nyg='Giants',
+    nyj='Jets',
+    oak='Raiders',
+    phl='Eagles',
+    pgh='Steelers',
+    sdc='Chargers',
+    sff='49ers',
+    sea='Seahawks',
+    stl='Rams',
+    tbb='Buccaneers',
+    ten='Titans',
+    was='Redskins',)
+
     
+class NFLShortTeam(Base):
+    __tablename__ = 'vig_nfl_team_map'
+    id = Column(Unicode(3), primary_key=True)
+    name = Column(Unicode(25), unique=True)
     
-
-class NFLGame(Base):
-    __tablename__ = 'vig_nfl_games'
-    id = Column(Integer, primary_key=True)
-    home_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    away_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    uid = Column(Unicode(100), unique=True)
-    summary = Column(Unicode(200))
-    start = Column(DateTime)
-    end = Column(DateTime)
-    game_class = Column(Unicode(50))
-    description = Column(UnicodeText)
-    location = Column(Unicode(100))
-    status = Column(Unicode(100))
-
-NFLGame.away = relationship(NFLTeam,
-                            foreign_keys=[NFLGame.away_id])
-NFLGame.home = relationship(NFLTeam,
-                            foreign_keys=[NFLGame.home_id])
-
-class UserBalance(Base):
-    __tablename__ = 'vig_nfl_games'
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
 
 
-#class NFLBet(Base):
-#    pass
-
-class LoginHistory(Base):
-    __tablename__ = 'login_history'
-    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
-    when = Column(DateTime, primary_key=True)
+def populate_team_map(session):
+    with transaction.manager:
+        for nick, team in team_map.items():
+            shteam = NFLShortTeam(nick, team)
+            session.add(shteam)
     
-
-populate = vignewton.models.usergroup.populate
-
-
-
 
 def make_test_data(session):
     from vignewton.security import encrypt_password

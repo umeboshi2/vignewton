@@ -6,12 +6,54 @@ from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy import desc
 from sqlalchemy import func
 
-from vignewton.models.main import NFLGame
+from vignewton.models.nflteamdata import team_map
+from vignewton.models.main import NFLGame, NFLTeam
 from vignewton.managers.util import convert_range_to_datetime
+from vignewton.managers.util import parse_nfl_schedule_ical_uid
 
+class NFLTeamManager(object):
+    def __init__(self, session):
+        self.session = session
+        
+    def query(self):
+        q = self.session.query(NFLTeam)
+        return q
+
+    def get(self, id):
+        return self.query().get(id)
+
+    def getbynick(self, nick):
+        name = team_map[nick]
+        q = self.query()
+        q = q.filter(NFLTeam.name == name)
+        return q.one()
+
+    def all(self):
+        return self.query().all()
+    
+
+    def add_team(self, teamdata):
+        with transaction.manager:
+            team = NFLTeam()
+            for field, value in teamdata.items():
+                setattr(team, field, value)
+            self.session.add(team)
+        return self.session.merge(team)
+
+    def populate_teams(self, teams):
+        with transaction.manager:
+            for teamdata in teams:
+                team = NFLTeam()
+                for field, value in teamdata.items():
+                    setattr(team, field, value)
+                self.session.add(team)
+
+    
+    
 class NFLGameManager(object):
     def __init__(self, session):
         self.session = session
+        self.teams = NFLTeamManager(self.session)
         
     def query(self):
         q = self.session.query(NFLGame)
@@ -23,6 +65,9 @@ class NFLGameManager(object):
     def insert_new_game(self, event):
         with transaction.manager:
             g = NFLGame()
+            away, home = parse_nfl_schedule_ical_uid(unicode(event['uid']))
+            g.away_id = self.teams.getbynick(away).id
+            g.home_id = self.teams.getbynick(home).id
             for field in ['summary', 'uid', 'description', 'location']:
                 setattr(g, field, unicode(event[field]))
             for field in ['start', 'end']:
@@ -52,3 +97,4 @@ class NFLGameManager(object):
         for event in events:
             self.insert_new_game(event)
             
+    

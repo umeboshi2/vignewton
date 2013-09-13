@@ -31,7 +31,9 @@ def main(global_config, **settings):
     Base.metadata.bind = engine
 
     if settings.get('db.populate', 'False') == 'True':
+        from sqlalchemy.exc import IntegrityError
         from vignewton.models.main import make_test_data
+        from vignewton.models.nflteamdata import NFLShortTeam
         Base.metadata.create_all(engine)
         #initialize_sql(engine)
         #make_test_data(DBSession)
@@ -42,8 +44,24 @@ def main(global_config, **settings):
         from vignewton.models.sitecontent import populate_sitetext
         populate_sitetext()
 
-        if os.path.isfile('nfl.ics'):
+        from vignewton.models.nflteamdata import populate_team_map
+        try:
+            populate_team_map(DBSession)
+        except IntegrityError:
+            pass
+        
+        if os.path.isfile('nfl-teams.csv'):
             from sqlalchemy.exc import IntegrityError
+            from vignewton.managers.nflgames import NFLTeamManager
+            from vignewton.managers.util import get_nfl_teams
+            m = NFLTeamManager(DBSession)
+            teams = get_nfl_teams('nfl-teams.csv')
+            try:
+                m.populate_teams(teams)
+            except IntegrityError:
+                pass
+        
+        if os.path.isfile('nfl.ics'):
             from vignewton.managers.nflgames import NFLGameManager
             m = NFLGameManager(DBSession)
             try:
