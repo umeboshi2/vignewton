@@ -51,6 +51,12 @@ NFLGame.away = relationship(NFLTeam,
 NFLGame.home = relationship(NFLTeam,
                             foreign_keys=[NFLGame.home_id])
 
+NFLTeam.away_games = relationship(NFLGame,
+                                  foreign_keys=[NFLGame.away_id])
+NFLTeam.home_games = relationship(NFLGame,
+                                  foreign_keys=[NFLGame.home_id])
+
+
 class UserBalance(Base):
     __tablename__ = 'vig_nfl_games'
 

@@ -5,6 +5,7 @@ import transaction
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy import desc
 from sqlalchemy import func
+from sqlalchemy import or_
 
 from vignewton.models.nflteamdata import team_map
 from vignewton.models.main import NFLGame, NFLTeam
@@ -47,9 +48,17 @@ class NFLTeamManager(object):
                 for field, value in teamdata.items():
                     setattr(team, field, value)
                 self.session.add(team)
-
     
+    def get_all_games(self, team_id):
+        with transaction.manager:
+            q = self.session.query(NFLGame)
+            q = q.filter(or_(NFLGame.home_id == team_id,
+                             NFLGame.away_id == team_id))
+            q = q.order_by(NFLGame.start)
+            games = q.all()
+        return games
     
+                    
 class NFLGameManager(object):
     def __init__(self, session):
         self.session = session

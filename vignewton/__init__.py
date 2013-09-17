@@ -112,6 +112,13 @@ def main(global_config, **settings):
                     route_name=route_name,
                     renderer='json',
                     layout='base',)
+
+    route_name = 'vig_nflteams'
+    config.add_route(route_name, '/vignflteams/{context}/{id}')
+    config.add_view('vignewton.views.teams.NFLTeamViewer',
+                    layout='base',
+                    renderer=basetemplate,
+                    route_name=route_name)
     ##################################
     # Login Views
     ##################################

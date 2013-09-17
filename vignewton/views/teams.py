@@ -59,10 +59,11 @@ class NFLTeamViewer(BaseViewer):
 
         self.teams = NFLTeamManager(self.request.db)
         
-        
+        self.context = self.request.matchdict['context']
         # make dispatch table
         self._cntxt_meth = dict(
             main=self.main_view,
+            viewteam=self.view_team,
             )
 
         if self.context in self._cntxt_meth:
@@ -79,4 +80,16 @@ class NFLTeamViewer(BaseViewer):
         env = dict(teams=teams)
         content = self.render(template, env)
         self.layout.content = content
+
+    def view_team(self):
+        id = self.request.matchdict['id']
+        team = self.teams.get(id)
+        games = self.teams.get_all_games(team.id)
+        now = datetime.now()
+        template = 'vignewton:templates/view-nfl-team.mako'
+        env = dict(team=team, games=games, now=now)
+        content = self.render(template, env)
+        self.layout.content = content
+        
+        
         
