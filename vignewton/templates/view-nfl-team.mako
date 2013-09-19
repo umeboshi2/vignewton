@@ -7,7 +7,7 @@
     Former ${team.name} Games
     %for game in games:
     <div class="view-list-entry">
-      <% url = request.route_url('vig_nflteams', context='viewteam', id=team.id) %>
+      <% url = request.route_url('vig_nflgames', context='viewgame', id=game.id) %>
       %if game.start < now:
 		       <a href="${url}">${game.summary}</a>(${game.start.isoformat()})
       %endif

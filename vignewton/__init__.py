@@ -119,6 +119,14 @@ def main(global_config, **settings):
                     layout='base',
                     renderer=basetemplate,
                     route_name=route_name)
+
+    route_name = 'vig_nflgames'
+    config.add_route(route_name, '/vignflgames/{context}/{id}')
+    config.add_view('vignewton.views.games.NFLGameViewer',
+                    layout='base',
+                    renderer=basetemplate,
+                    route_name=route_name)
+    
     ##################################
     # Login Views
     ##################################

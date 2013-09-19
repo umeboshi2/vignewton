@@ -14,11 +14,12 @@ import deform
 from trumpet.views.menus import BaseMenu
 
 from vignewton.managers.nflgames import NFLGameManager
+from vignewton.managers.nflgames import NFLTeamManager
 
 from vignewton.views.base import BaseViewer
 from vignewton.views.base import make_main_menu, make_ctx_menu
 
-class MainCalJSONViewer(BaseViewer):
+class GameCalJSONViewer(BaseViewer):
     def __init__(self, request):
         super(MainCalJSONViewer, self).__init__(request)
         self.nfl_games = NFLGameManager(self.request.db)
@@ -37,10 +38,8 @@ class MainCalJSONViewer(BaseViewer):
         return start, end
         
     def serialize_game_for_calendar(self, game):
-        url = self.request.route_url('vig_nflgames', context='viewgame',
-                                     id=game.id)
         data = dict(title=game.summary, start=game.start.isoformat(),
-                    end=game.end.isoformat(), url=url)
+                    end=game.end.isoformat())
         return data
     
     
@@ -52,28 +51,20 @@ class MainCalJSONViewer(BaseViewer):
         
         
     
-class MainViewer(BaseViewer):
+class NFLGameViewer(BaseViewer):
     def __init__(self, request):
-        super(MainViewer, self).__init__(request)
-        self.route = self.request.matched_route.name
+        super(NFLGameViewer, self).__init__(request)
         self.layout.main_menu = make_main_menu(self.request).render()
         self.layout.ctx_menu = make_ctx_menu(self.request).output()
 
-        # begin dispatch
-        if self.route == 'home':
-            self.main_view()
-            return
-        if self.route == 'main':
-            self.context = self.request.matchdict['context']
+        self.teams = NFLTeamManager(self.request.db)
+        self.games = NFLGameManager(self.request.db)
         
-
+        self.context = self.request.matchdict['context']
         # make dispatch table
         self._cntxt_meth = dict(
             main=self.main_view,
-            viewevent=self.view_event,
-            viewvenue=self.view_venue,
-            viewdayevents=self.view_events_for_day,
-            exportevent=self.export_event,
+            viewgame=self.view_game,
             )
 
         if self.context in self._cntxt_meth:
@@ -84,37 +75,23 @@ class MainViewer(BaseViewer):
 
             
     def main_view(self):
-        #template = 'goout:templates/main-page.mako'
-        #env = dict(dates=dates, dc=dc, dformat=dformat)
-        #content = render(template, env, request=self.request)
-        content = "Main Page"
-        self.layout.content = content
-        self.layout.subheader = 'Vig Newton'
-        self.layout.resources.main_calendar_view.need()
-        self.layout.resources.cornsilk.need()
-        
-        template = 'vignewton:templates/mainview-calendar.mako'
-        env = {}
+        self.layout.subheader = 'NFL Teams' 
+        teams = self.teams.all()
+        template = 'vignewton:templates/main-nfl-teams-view.mako'
+        env = dict(teams=teams)
         content = self.render(template, env)
         self.layout.content = content
+
+    def view_game(self):
+        id = self.request.matchdict['id']
+        game = self.games.get(id)
+        self.layout.content = '<pre>%s</pre>' % game.description
+        #now = datetime.now()
+        #template = 'vignewton:templates/view-nfl-team.mako'
+        #env = dict(team=team, games=games, now=now)
+        #content = self.render(template, env)
+        #self.layout.content = content
+        x = id
         
-    def view_event(self):
-        pass
-    
         
-    def export_event(self):
-        pass
-    
         
-    
-    def view_venue(self):
-        pass
-
-    def view_events_for_day(self):
-        pass
-    
-
-
-        
-
-
