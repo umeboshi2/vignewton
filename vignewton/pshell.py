@@ -1,6 +1,7 @@
 import urllib2
 import csv
 import vobject
+import os
 
 def make_nfl_team_data(csv_line):
     team, division = csv_line
@@ -8,16 +9,9 @@ def make_nfl_team_data(csv_line):
     city = ' '.join(team.split()[:-1])
     conference, region = division.split()
     return dict(name=name, city=city, conference=conference, region=region)
-    
 
-def setup(env):
-    db = env['request'].db
-    env['db'] = db
-    url = env['registry'].settings['vignewton.nfl.schedule.url']
-    env['url'] = url
-    env['csv'] = csv
-    env['urllib2'] = urllib2
-    env['vobject'] = vobject
+
+def more_setup(env):
     import os
     filename = 'nfl.ics'
     if not os.path.exists(filename):
@@ -38,4 +32,38 @@ def setup(env):
             r = urllib2.urlopen(url)
             output.write(r.read())
         
+    
+    
+
+def setup(env):
+    request = env['request']
+    db = request.db
+    env['db'] = db
+    settings = env['registry'].settings
+    
+    url = settings['vignewton.nfl.schedule.url']
+    env['url'] = url
+    env['csv'] = csv
+    env['urllib2'] = urllib2
+    env['vobject'] = vobject
+    #more_setup(env)
+    odds_url = settings['vignewton.nfl.odds.url']
+    filename = 'odds.html'
+    if not os.path.exists(filename):
+        with file(filename, 'w') as output:
+            r = urllib2.urlopen(odds_url)
+            output.writelines(r)
+    text = file(filename).read()
+    from vignewton.managers.util import parse_odds_html
+    games = parse_odds_html(text)
+    env['games'] = games
+    from vignewton.managers.nflgames import NFLGameManager
+    #from vignewton.models.main import NFLGame
+    gm = NFLGameManager(db)
+    env['gm'] = gm
+    dbgames = [gm.get_game_from_odds(g) for g in games]
+    env['dbgames'] = dbgames
+    
+    
+    
     

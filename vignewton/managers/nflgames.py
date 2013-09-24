@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 
 import transaction
 from sqlalchemy.orm.exc import NoResultFound
+from sqlalchemy.orm.exc import MultipleResultsFound
+
 from sqlalchemy import desc
 from sqlalchemy import func
 from sqlalchemy import or_
@@ -23,6 +25,11 @@ class NFLTeamManager(object):
     def get(self, id):
         return self.query().get(id)
 
+    def get_by_name(self, name):
+        q = self.query()
+        q = q.filter_by(name=name)
+        return q.one()
+    
     def getbynick(self, nick):
         name = team_map[nick]
         q = self.query()
@@ -105,5 +112,20 @@ class NFLGameManager(object):
         events = (e for e in cal.walk() if e.name == 'VEVENT')
         for event in events:
             self.insert_new_game(event)
+
+    def get_game_from_odds(self, gamedata):
+        q = self.query()
+        q = q.filter(NFLGame.start == gamedata['game'])
+        try:
+            return q.one()
+        except MultipleResultsFound:
+            favored_team = gamedata['favored']
+            team = self.teams.get_by_name(favored_team)
+            q = q.filter(or_(NFLGame.home_id == team.id,
+                             NFLGame.away_id == team.id))
+            return q.one()
+        
+            
+    
             
     

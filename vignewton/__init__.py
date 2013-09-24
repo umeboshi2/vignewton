@@ -67,7 +67,9 @@ def main(global_config, **settings):
             try:
                 m.populate_games(file('nfl.ics').read())
             except IntegrityError:
-                pass
+                import transaction
+                transaction.abort()
+        #DBSession.commit()
             
         
     # setup authn and authz
