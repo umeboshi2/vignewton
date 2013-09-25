@@ -6,7 +6,9 @@ from sqlalchemy import Unicode, UnicodeText
 from sqlalchemy import DateTime
 from sqlalchemy import ForeignKey
 from sqlalchemy import Enum
-
+from sqlalchemy import PickleType
+from sqlalchemy import Numeric
+from sqlalchemy import Boolean
 
 from sqlalchemy.orm import relationship
 from sqlalchemy.exc import IntegrityError
@@ -21,6 +23,10 @@ import vignewton.models.sitecontent
 NFL_CONFERENCE = Enum('AFC', 'NFC', name='vig_nfl_conference')
 NFL_REGION = Enum('North', 'South', 'East', 'West', name='vig_nfl_region')
 
+UNDER_OVER = Enum('under', 'over', name='vig_under_over_enum')
+
+BET_TYPE = Enum('underover', 'line')
+
 
 class NFLTeam(Base):
     __tablename__ = 'vig_nfl_teams'
@@ -29,6 +35,10 @@ class NFLTeam(Base):
     city = Column(Unicode(50))
     conference = Column('conference', NFL_CONFERENCE)
     region = Column('region', NFL_REGION)
+
+    def __repr__(self):
+        s = '<NFLTeam: %s %s>' % (self.city, self.name)
+        return s
     
     
 
@@ -46,6 +56,35 @@ class NFLGame(Base):
     location = Column(Unicode(100))
     status = Column(Unicode(100))
 
+    def __repr__(self):
+        s = '<NFLGame: %s %s>' % (self.summary, self.start.isoformat())
+        return s
+    
+
+class NFLOddsData(Base):
+    __tablename__ = 'vig_nfl_odds_data'
+    id = Column(Integer, primary_key=True)
+    retrieved = Column(DateTime, unique=True)
+    content = Column(PickleType)
+
+class NFLGameOdds(Base):
+    __tablename__ = 'vig_nfl_game_odds'
+    game_id = Column(Integer,
+                     ForeignKey('vig_nfl_games.id'), primary_key=True)
+    retrieved = Column(DateTime, unique=True)
+    favored_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    underdog_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    underover = Column(Unicode(30))
+    spread = Column(Unicode(30))
+    
+    
+NFLGameOdds.game = relationship(NFLGame)
+NFLGameOdds.favored = relationship(NFLTeam,
+                                   foreign_keys=[NFLGameOdds.favored_id])
+NFLGameOdds.underdog = relationship(NFLTeam,
+                                   foreign_keys=[NFLGameOdds.underdog_id])
+
+    
 NFLGame.away = relationship(NFLTeam,
                             foreign_keys=[NFLGame.away_id])
 NFLGame.home = relationship(NFLTeam,
@@ -57,9 +96,37 @@ NFLTeam.home_games = relationship(NFLGame,
                                   foreign_keys=[NFLGame.home_id])
 
 
-class UserBalance(Base):
-    __tablename__ = 'vig_nfl_games'
 
+class UserBet(Base):
+    __tablename__ = 'vig_user_bets'
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    created = Column(DateTime)
+    amount = Column(Numeric(16,2))
+    bet_type = Column('bet_type', BET_TYPE)
+    underover = Column('underover', UNDER_OVER)
+    team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    
+
+class BetHistory(Base):
+    __tablename__ = 'vig_bets_history'
+    id = Column(Integer, primary_key=True)
+    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'))
+
+    
+class BetStatus(Base):
+    __tablename__ = 'vig_bets_board'
+    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'), primary_key=True)
+    created = Column(DateTime)
+    win = Column(Boolean)
+    payable = Column(Boolean)
+    
+
+class UserBalance(Base):
+    __tablename__ = 'vig_user_balance'
+    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
+    balance = Column(Numeric(16,2))
+    
 
 #class NFLBet(Base):
 #    pass
