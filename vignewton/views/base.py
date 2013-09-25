@@ -48,7 +48,9 @@ def make_ctx_menu(request):
 
         url = request.route_url('vig_nflteams', context='main', id='all')
         menu.append_new_entry('NFL Teams', url)
-        
+
+        url = request.route_url('vig_betgames', context='main', id='all')
+        menu.append_new_entry('Bettable Games', url)
     return menu
     
 class BaseViewer(TrumpetViewer):

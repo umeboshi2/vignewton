@@ -63,7 +63,10 @@ def setup(env):
     env['gm'] = gm
     dbgames = [gm.get_game_from_odds(g) for g in games]
     env['dbgames'] = dbgames
-    
+    from vignewton.managers.odds import NFLOddsManager
+    om = NFLOddsManager(db)
+    env['om'] = om
+    om.oddscache.set_url(odds_url)
     
     
     

@@ -128,9 +128,26 @@ class UserBalance(Base):
     balance = Column(Numeric(16,2))
     
 
-#class NFLBet(Base):
-#    pass
 
+class Account(Base):
+    __tablename__ = 'vig_accounts'
+    id = Column(Integer, primary_key=True)
+    name = Column(Unicode(100), unique=True)
+    
+class Transfer(Base):
+    __tablename__ = 'vig_accounting_transfers'
+    id = Column(Integer, primary_key=True)
+    name = Column(Unicode(100), unique=True)
+
+
+class LedgerEntry(Base):
+    __tablename__ = 'vig_accounting_ledger'
+    id = Column(Integer, primary_key=True)
+    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
+    transfer_id = Column(Integer, ForeignKey('vig_accounting_transfers.id'))
+    amount = Column(Numeric(16,2))
+    
+    
 class LoginHistory(Base):
     __tablename__ = 'login_history'
     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
