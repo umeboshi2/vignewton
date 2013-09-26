@@ -75,4 +75,8 @@ def setup(env):
     env['b'] = bs4.BeautifulSoup(text, 'lxml')
     from bs4.diagnose import diagnose
     env['diag'] = diagnose
+    from vignewton.managers.oddsparser import NewOddsParser
+    op = NewOddsParser()
+    env['op'] = op
+    op.set_html(text)
     
