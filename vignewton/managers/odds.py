@@ -15,7 +15,6 @@ from vignewton.models.main import NFLOddsData, NFLGameOdds
 from vignewton.models.main import NFLGame
 
 from vignewton.managers.nflgames import NFLGameManager, NFLTeamManager
-from vignewton.managers.oddsparser import NFLOddsParser
 from vignewton.managers.oddsparser import parse_odds_html
 
 ten_minutes = timedelta(minutes=10)

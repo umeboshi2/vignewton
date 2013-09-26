@@ -133,6 +133,12 @@ class Account(Base):
     __tablename__ = 'vig_accounts'
     id = Column(Integer, primary_key=True)
     name = Column(Unicode(100), unique=True)
+
+class AccountBalance(Base):
+    __tablename__ = 'vig_account_balances'
+    account_id = Column(Integer,
+                        ForeignKey('vig_accounts.id'), primary_key=True)
+    balance = Column(Numeric(16,2))
     
 class Transfer(Base):
     __tablename__ = 'vig_accounting_transfers'

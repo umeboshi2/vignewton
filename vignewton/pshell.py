@@ -33,6 +33,23 @@ def more_setup(env):
             output.write(r.read())
         
     
+def even_more_setup(env):
+    from vignewton.managers.util import parse_odds_html
+    games = parse_odds_html(text)
+    env['games'] = games
+    from vignewton.managers.nflgames import NFLGameManager
+    #from vignewton.models.main import NFLGame
+    gm = NFLGameManager(db)
+    env['gm'] = gm
+    dbgames = [gm.get_game_from_odds(g) for g in games]
+    env['dbgames'] = dbgames
+    from vignewton.managers.odds import NFLOddsManager
+    om = NFLOddsManager(db)
+    env['om'] = om
+    om.oddscache.set_url(odds_url)
+    
+    
+    
     
 
 def setup(env):
@@ -54,19 +71,8 @@ def setup(env):
             r = urllib2.urlopen(odds_url)
             output.writelines(r)
     text = file(filename).read()
-    from vignewton.managers.util import parse_odds_html
-    games = parse_odds_html(text)
-    env['games'] = games
-    from vignewton.managers.nflgames import NFLGameManager
-    #from vignewton.models.main import NFLGame
-    gm = NFLGameManager(db)
-    env['gm'] = gm
-    dbgames = [gm.get_game_from_odds(g) for g in games]
-    env['dbgames'] = dbgames
-    from vignewton.managers.odds import NFLOddsManager
-    om = NFLOddsManager(db)
-    env['om'] = om
-    om.oddscache.set_url(odds_url)
-    
-    
+    import bs4
+    env['b'] = bs4.BeautifulSoup(text, 'lxml')
+    from bs4.diagnose import diagnose
+    env['diag'] = diagnose
     

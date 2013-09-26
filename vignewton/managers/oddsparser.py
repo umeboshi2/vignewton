@@ -65,9 +65,17 @@ def parse_game_time(datestring, timestring):
     
 
 
+class BDNFLOddsParser(object):
+    def __init__(self):
+        self.games = list()
+        self.current_game = None
+        self.events = list()
 
+    
 
-class NFLOddsParser(object):
+    
+
+class DSNFLOddsParser(object):
     def __init__(self):
         self.lines = list()
         self.games = list()
@@ -184,6 +192,28 @@ class NFLOddsParser(object):
     
 
 
+class NewOddsParser(object):
+    def __init__(self):
+        self.text = None
+        self.soup = None
+
+    def set_html(self, html):
+        self.text = html
+        self.soup = bs.BeautifulSoup(self.text, 'lxml')
+
+    def get_event_schedule(self):
+        slist = self.soup.select('#event-schedule')
+        if len(slist) != 1:
+            raise RuntimeError, "Too many schedules"
+        return slist.pop()
+
+    def get_days(self, event_schedule):
+        return event_schedule.select('.schedule-date')
+
+    
+                     
+        
+            
 def parse_odds_html(odds_html):
     b = bs4.BeautifulSoup(odds_html)
     scripts = b.find_all('script')
