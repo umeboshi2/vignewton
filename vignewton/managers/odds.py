@@ -17,15 +17,20 @@ from vignewton.models.main import NFLGame
 from vignewton.managers.nflgames import NFLGameManager, NFLTeamManager
 from vignewton.managers.oddsparser import parse_odds_html
 
+from vignewton.managers.oddsparser import NewOddsParser
+
+
 ten_minutes = timedelta(minutes=10)
 odds_ttl = ten_minutes
 
 class NFLOddsCache(object):
     def __init__(self, session):
         self.session = session
-
+        self.parser = NewOddsParser()
+        
     def set_url(self, url):
         self.url = url
+        self.parser = NewOddsParser()
 
     def query(self):
         q = self.session.query(NFLOddsData)
@@ -41,7 +46,9 @@ class NFLOddsCache(object):
 
     def _add(self):
         r = requests.get(self.url)
-        games = parse_odds_html(r.text)
+        self.parser.set_html(r.text)
+        self.parser.parse()
+        games = self.parser.games
         now = datetime.now()
         with transaction.manager:
             data = NFLOddsData()
@@ -61,11 +68,6 @@ class NFLOddsCache(object):
     
         
     
-        
-    
-
-    
-
 class NFLOddsManager(object):
     def __init__(self, session):
         self.session = session
@@ -84,11 +86,31 @@ class NFLOddsManager(object):
         q.filter_by(game_id=game_id)
         return q.one()
 
+    def _determine_favored(self, game):
+        away = game['away']
+        home = game['home']
+        if game['away_line'] == '-':
+            favored_id = self.games.fnlookup[home]
+            underdog_id = self.games.fnlookup[home]
+            spread = '0'
+        else:
+            plusminus = game['away_line'][0]
+            if plusminus == '-':
+                favored_id = self.games.fnlookup[away]
+                underdog_id = self.games.fnlookup[home]
+                if game['home_line'][0] == '-':
+                    raise RuntimeError, "bad values for game %s" % game
+            else:
+                favored_id = self.games.fnlookup[home]
+                underdog_id = self.games.fnlookup[away]
+                if game['home_line'][0] == '+':
+                    raise RuntimeError, "bad values for game %s" % game
+            spread = game['away_line'][1:]
+        return favored_id, underdog_id, spread
+    
     def add_game_odds(self, game_id, game):
-        favored_id = self.teams.get_by_name(game['favored']).id
-        underdog_id = self.teams.get_by_name(game['underdog']).id
-        underover = game['favored_odds']
-        spread = game['underdog_odds']
+        favored_id, underdog_id, spread = self._determine_favored(game)
+        underover = game['total']
         now = datetime.now()
         with transaction.manager:
             odds = NFLGameOdds()
@@ -102,8 +124,8 @@ class NFLOddsManager(object):
         return self.session.merge(odds)
 
     def update_game_odds(self, game_id, game, odds):
-        underover = game['favored_odds']
-        spread = game['underdog_odds']
+        underover = game['total']
+        spread = game['away_line'][1:]
         now = datetime.now()
         with transaction.manager:
             odds.retrieved = now

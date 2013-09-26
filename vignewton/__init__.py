@@ -43,7 +43,8 @@ def main(global_config, **settings):
         populate(admin_username)
         from vignewton.models.sitecontent import populate_sitetext
         populate_sitetext()
-
+        import transaction
+        
         from vignewton.models.nflteamdata import populate_team_map
         try:
             populate_team_map(DBSession)
@@ -59,7 +60,7 @@ def main(global_config, **settings):
             try:
                 m.populate_teams(teams)
             except IntegrityError:
-                pass
+                transaction.abort()
         
         if os.path.isfile('nfl.ics'):
             from vignewton.managers.nflgames import NFLGameManager

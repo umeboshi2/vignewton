@@ -65,11 +65,23 @@ class NFLTeamManager(object):
             games = q.all()
         return games
     
-                    
+    def make_fullname_lookup(self):
+        lookup = dict()
+        for team in self.all():
+            key = '%s %s' % (team.city, team.name)
+            key = key.replace('NY', 'New York')
+            lookup[key] = team.id
+        return lookup
+    
+    
 class NFLGameManager(object):
     def __init__(self, session):
         self.session = session
         self.teams = NFLTeamManager(self.session)
+        self.make_fullname_lookup()
+        
+    def make_fullname_lookup(self):
+        self.fnlookup = self.teams.make_fullname_lookup()
         
     def query(self):
         q = self.session.query(NFLGame)
@@ -114,6 +126,14 @@ class NFLGameManager(object):
             self.insert_new_game(event)
 
     def get_game_from_odds(self, gamedata):
+        q = self.query()
+        q = q.filter(NFLGame.start == gamedata['gametime'])
+        away_id = self.fnlookup[gamedata['away']]
+        q = q.filter(NFLGame.away_id == away_id)
+        return q.one()
+        
+    
+    def get_game_from_oddsOrig(self, gamedata):
         q = self.query()
         q = q.filter(NFLGame.start == gamedata['game'])
         try:

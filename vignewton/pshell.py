@@ -79,4 +79,11 @@ def setup(env):
     op = NewOddsParser()
     env['op'] = op
     op.set_html(text)
+    from vignewton.managers.nflgames import NFLTeamManager
+    tm = NFLTeamManager(db)
+    env['tm'] = tm
+    from vignewton.managers.odds import NFLOddsManager
+    om = NFLOddsManager(db)
+    env['om'] = om
+    om.oddscache.set_url(odds_url)
     
