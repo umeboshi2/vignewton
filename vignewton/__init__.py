@@ -70,8 +70,10 @@ def main(global_config, **settings):
             except IntegrityError:
                 import transaction
                 transaction.abort()
-        #DBSession.commit()
-            
+        from vignewton.models.main import populate_accounting_tables
+        populate_accounting_tables(DBSession)
+        
+        
         
     # setup authn and authz
     secret = settings['%s.authn.secret' % appname]

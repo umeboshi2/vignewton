@@ -14,6 +14,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.exc import IntegrityError
 
 from vignewton.models.base import Base, DBSession
+from vignewton.models.usergroup import User
 
 # these models depend on the Base object above
 
@@ -139,7 +140,18 @@ class AccountBalance(Base):
     account_id = Column(Integer,
                         ForeignKey('vig_accounts.id'), primary_key=True)
     balance = Column(Numeric(16,2))
-    
+AccountBalance.account = relationship(Account, backref='balance')
+
+class UserAccount(Base):
+    __tablename__ = 'vig_user_accounts'
+    account_id = Column(Integer,
+                        ForeignKey('vig_accounts.id'), primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
+UserAccount.user = relationship(User)
+UserAccount.account = relationship(Account)
+
+
+
 class Transfer(Base):
     __tablename__ = 'vig_accounting_transfers'
     id = Column(Integer, primary_key=True)
@@ -162,7 +174,18 @@ class LoginHistory(Base):
 
 populate = vignewton.models.usergroup.populate
 
-
+def populate_accounting_tables(session):
+    db = session
+    try:
+        from vignewton.managers.accounting import AccountingManager
+        am = AccountingManager(db)
+        am.add_account('Cash')
+        xfers = ['income', 'outgo', 'transfer']
+        for x in xfers:
+            am.add_transfer(x)
+    except IntegrityError:
+        transaction.abort()
+        
 
 
 def make_test_data(session):

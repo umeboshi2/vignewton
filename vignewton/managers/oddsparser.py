@@ -16,14 +16,6 @@ two_hours = timedelta(hours=2)
 game_time_format = '%I:%M %p'
 
 
-def parse_game_time(datestring, timestring):
-    now = datetime.now()
-    dtstring = '%sT%s' % (datestring, timestring)
-    gametime = now.strptime(dtstring, game_dtformat) + two_hours
-    return gametime
-
-    
-
 class NewOddsParser(object):
     def __init__(self):
         self.text = None

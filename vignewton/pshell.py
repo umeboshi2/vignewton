@@ -86,4 +86,7 @@ def setup(env):
     om = NFLOddsManager(db)
     env['om'] = om
     om.oddscache.set_url(odds_url)
+    from vignewton.managers.accounting import AccountingManager
+    am = AccountingManager(db)
+    env['am'] = am
     
