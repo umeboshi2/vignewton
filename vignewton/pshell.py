@@ -89,4 +89,6 @@ def setup(env):
     from vignewton.managers.accounting import AccountingManager
     am = AccountingManager(db)
     env['am'] = am
+    env['games'] = om.oddscache.get_latest()[0].content
+    env['bg'] = env['games'][-3]
     

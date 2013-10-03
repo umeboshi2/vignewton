@@ -86,6 +86,21 @@ class NFLOddsManager(object):
         q.filter_by(game_id=game_id)
         return q.one()
 
+    def _fix_number(self, numstr):
+        numstr = numstr.encode('utf-8')
+        numstr = numstr.strip()
+        add_one_half = False
+        if numstr.endswith('\xc2\xbd'):
+            add_one_half = True
+            numstr = numstr[:-2]
+        if not numstr or numstr == '-':
+            number = 0
+        else:
+            number = int(numstr)
+        if add_one_half:
+            number = number + 0.5
+        return number
+    
     def _determine_favored(self, game):
         away = game['away']
         home = game['home']
@@ -105,12 +120,14 @@ class NFLOddsManager(object):
                 underdog_id = self.games.fnlookup[away]
                 if game['home_line'][0] == '+':
                     raise RuntimeError, "bad values for game %s" % game
-            spread = game['away_line'][1:]
+            spread = game['away_line'][1:].split('(')[0]
+            spread = self._fix_number(spread)
         return favored_id, underdog_id, spread
     
     def add_game_odds(self, game_id, game):
         favored_id, underdog_id, spread = self._determine_favored(game)
-        underover = game['total']
+        total = game['total']
+        total = self._fix_number(total)
         now = datetime.now()
         with transaction.manager:
             odds = NFLGameOdds()
@@ -118,18 +135,19 @@ class NFLOddsManager(object):
             odds.retrieved = now
             odds.favored_id = favored_id
             odds.underdog_id = underdog_id
-            odds.underover = underover
+            odds.total = total
             odds.spread = spread
             self.session.add(odds)
         return self.session.merge(odds)
 
     def update_game_odds(self, game_id, game, odds):
-        underover = game['total']
-        spread = game['away_line'][1:]
+        total = self._fix_number(game['total'])
+        spread = game['away_line'][1:].split('(')[0]
+        spread = self._fix_number(spread)
         now = datetime.now()
         with transaction.manager:
             odds.retrieved = now
-            odds.underover = underover
+            odds.total = total
             odds.spread = spread
             odds = self.session.merge(odds)
         return odds

@@ -14,6 +14,9 @@ from vignewton.models.main import NFLGame, NFLTeam
 from vignewton.managers.util import convert_range_to_datetime
 from vignewton.managers.util import parse_nfl_schedule_ical_uid
 
+five_minutes = timedelta(minutes=5)
+
+
 class NFLTeamManager(object):
     def __init__(self, session):
         self.session = session
@@ -127,25 +130,18 @@ class NFLGameManager(object):
 
     def get_game_from_odds(self, gamedata):
         q = self.query()
-        q = q.filter(NFLGame.start == gamedata['gametime'])
+        gt = gamedata['gametime']
         away_id = self.fnlookup[gamedata['away']]
         q = q.filter(NFLGame.away_id == away_id)
-        return q.one()
-        
-    
-    def get_game_from_oddsOrig(self, gamedata):
-        q = self.query()
-        q = q.filter(NFLGame.start == gamedata['game'])
+        # try by date first
+        q = q.filter(func.DATE(NFLGame.start) == gt.date())
         try:
             return q.one()
         except MultipleResultsFound:
-            favored_team = gamedata['favored']
-            team = self.teams.get_by_name(favored_team)
-            q = q.filter(or_(NFLGame.home_id == team.id,
-                             NFLGame.away_id == team.id))
+            early = gt - five_minutes
+            late = gt + five_minutes
+            q = q.filter(NFLGame.start >= early)
+            q = q.filter(NFLGame.start <= late)
             return q.one()
         
-            
-    
-            
     

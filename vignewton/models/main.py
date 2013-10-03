@@ -75,8 +75,9 @@ class NFLGameOdds(Base):
     retrieved = Column(DateTime, unique=True)
     favored_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
     underdog_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    underover = Column(Unicode(30))
-    spread = Column(Unicode(30))
+    total = Column(Numeric(16,2))
+    spread = Column(Numeric(16,2))
+    
     
     
 NFLGameOdds.game = relationship(NFLGame)
@@ -107,6 +108,10 @@ class UserBet(Base):
     bet_type = Column('bet_type', BET_TYPE)
     underover = Column('underover', UNDER_OVER)
     team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    total = Column(Numeric(16,2))
+    spread = Column(Numeric(16,2))
+    favored_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    underdog_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
     
 
 class BetHistory(Base):

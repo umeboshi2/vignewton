@@ -10,7 +10,7 @@
       <% underdog = '%s %s' % (odds.underdog.city, odds.underdog.name) %>
       <% summary = odds.game.summary %>
       ${summary}<br>
-      ${favored} over ${underdog} by ${odds.spread} totalling ${odds.underover}<br>
+      ${favored} over ${underdog} by ${odds.spread} totalling ${odds.total}<br>
     </div>
     %endfor
   </div>
