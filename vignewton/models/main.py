@@ -123,13 +123,6 @@ class BetStatus(Base):
     payable = Column(Boolean)
     
 
-class UserBalance(Base):
-    __tablename__ = 'vig_user_balance'
-    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
-    balance = Column(Numeric(16,2))
-    
-
-
 class Account(Base):
     __tablename__ = 'vig_accounts'
     id = Column(Integer, primary_key=True)
@@ -140,7 +133,9 @@ class AccountBalance(Base):
     account_id = Column(Integer,
                         ForeignKey('vig_accounts.id'), primary_key=True)
     balance = Column(Numeric(16,2))
-AccountBalance.account = relationship(Account, backref='balance')
+AccountBalance.account = relationship(Account)
+
+Account.balance = relationship(AccountBalance, uselist=False)
 
 class UserAccount(Base):
     __tablename__ = 'vig_user_accounts'
@@ -149,6 +144,26 @@ class UserAccount(Base):
     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
 UserAccount.user = relationship(User)
 UserAccount.account = relationship(Account)
+
+class BetFinal(Base):
+    __tablename__ = 'vig_bet_finals'
+    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'), primary_key=True)
+    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
+    amount = Column(Numeric(16,2))
+    juice = Column(Numeric(16,2))
+    created = Column(DateTime)
+
+class CashTransfer(Base):
+    __tablename__ = 'vig_cash_account_ledger'
+    id = Column(Integer, primary_key=True)
+    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
+    amount = Column(Numeric(16,2))
+    # cash_balance is pretransfer
+    cash_balance = Column(Numeric(16,2))
+    created = Column(DateTime)
+    
+    
+
 
 
 
@@ -180,9 +195,6 @@ def populate_accounting_tables(session):
         from vignewton.managers.accounting import AccountingManager
         am = AccountingManager(db)
         am.add_account('Cash')
-        xfers = ['income', 'outgo', 'transfer']
-        for x in xfers:
-            am.add_transfer(x)
     except IntegrityError:
         transaction.abort()
         

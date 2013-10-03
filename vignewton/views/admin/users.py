@@ -23,6 +23,7 @@ from trumpet.managers.admin.users import UserManager
 from trumpet.security import encrypt_password
 
 from vignewton.views.base import AdminViewer, make_main_menu
+from vignewton.managers.accounting import AccountingManager
 
 import colander
 import deform
@@ -85,6 +86,7 @@ class UserManagementViewer(AdminViewer):
         super(UserManagementViewer, self).__init__(request)
         prepare_main_data(self.request)
         self.users = UserManager(self.request.db)
+        self.accounts = AccountingManager(self.request.db)
         self._dispatch_table = dict(
             list=self.list_users,
             add=self.add_user,
@@ -122,6 +124,7 @@ class UserManagementViewer(AdminViewer):
             confirm = data['confirm']
             if password == confirm:
                 user = self.users.add_user(name, password)
+                self.accounts.add_user_account(user)
                 content = '<p>User %s added.</p>' % user.username
                 self.layout.content = content
             else:
