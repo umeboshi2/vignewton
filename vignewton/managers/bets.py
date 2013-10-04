@@ -16,10 +16,13 @@ from vignewton.models.main import NFLGame
 from vignewton.models.main import UserAccount, UserBet
 from vignewton.models.main import BetHistory
 
+from vignewton.managers.base import InsufficientFundsError
 from vignewton.managers.nflgames import NFLGameManager, NFLTeamManager
 from vignewton.managers.odds import NFLOddsManager
 from vignewton.managers.accounting import AccountingManager
 
+class BetNotInTensError(Exception):
+    pass
 
 class BetsManager(object):
     def __init__(self, session):
@@ -65,8 +68,18 @@ class BetsManager(object):
         return self.session.merge(bet)
             
     def _check_amount(self, user_id, amount):
+        if amount % 10 != 0:
+            raise BetNotInTensError, "Bad amount %d" % amount
         acct = self.accounts.get(user_id)
-        balance = acct.balance
+        balance = acct.balance.balance
+        juice_insurance = amount / 10
+        total = amount + juice_insurance
+        if total > balance:
+            msg = "Total needed %d, current balance %d" % (total, balance)
+            raise InsufficientFundsError, msg
+        
+        
+        
         
 
     # pick is either an NFLTeam object, 'over', or 'under'
