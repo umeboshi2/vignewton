@@ -14,6 +14,7 @@ from sqlalchemy import or_
 from vignewton.models.main import NFLOddsData, NFLGameOdds
 from vignewton.models.main import NFLGame
 
+from vignewton.managers.base import BasicCache
 from vignewton.managers.nflgames import NFLGameManager, NFLTeamManager
 from vignewton.managers.oddsparser import parse_odds_html
 
@@ -23,50 +24,28 @@ from vignewton.managers.oddsparser import NewOddsParser
 ten_minutes = timedelta(minutes=10)
 odds_ttl = ten_minutes
 
-class NFLOddsCache(object):
+class NFLOddsCache(BasicCache):
     def __init__(self, session):
-        self.session = session
-        self.parser = NewOddsParser()
+        super(NFLOddsCache, self).__init__(session, NFLOddsData)
+        self.ttl = odds_ttl
         
     def set_url(self, url):
         self.url = url
         self.parser = NewOddsParser()
-
-    def query(self):
-        q = self.session.query(NFLOddsData)
-        return q
-
-    def get(self, id):
-        return self.query().get(id)
-
-    def _get_latest(self):
-        q = self.query()
-        q = q.order_by(NFLOddsData.retrieved.desc())
-        return q.first()
-
-    def _add(self):
-        r = requests.get(self.url)
-        self.parser.set_html(r.text)
-        self.parser.parse()
-        games = self.parser.games
-        now = datetime.now()
-        with transaction.manager:
-            data = NFLOddsData()
-            data.retrieved = now
-            data.content = games
-            self.session.add(data)
-        return self.session.merge(data)
     
     def get_latest(self):
         updated = False
-        now = datetime.now()
-        latest = self._get_latest()
-        if latest is None or now - latest.retrieved >= odds_ttl:
-            latest = self._add()
+        if self.expired():
+            r = requests.get(self.url)
+            self.parser.set_html(r.text)
+            self.parser.parse()
+            games = self.parser.games
+            latest = self.add(games)
             updated = True
+        else:
+            latest = self.get_latest_content()
         return latest, updated
-    
-        
+
     
 class NFLOddsManager(object):
     def __init__(self, session):

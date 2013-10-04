@@ -71,10 +71,6 @@ def setup(env):
             r = urllib2.urlopen(odds_url)
             output.writelines(r)
     text = file(filename).read()
-    import bs4
-    env['b'] = bs4.BeautifulSoup(text, 'lxml')
-    from bs4.diagnose import diagnose
-    env['diag'] = diagnose
     from vignewton.managers.oddsparser import NewOddsParser
     op = NewOddsParser()
     env['op'] = op

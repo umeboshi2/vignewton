@@ -28,7 +28,12 @@ UNDER_OVER = Enum('under', 'over', name='vig_under_over_enum')
 
 BET_TYPE = Enum('underover', 'line')
 
-
+class NFLScheduleData(Base):
+    __tablename__ = 'vig_nfl_schedule_data'
+    id = Column(Integer, primary_key=True)
+    retrieved = Column(DateTime, unique=True)
+    content = Column(PickleType)
+    
 class NFLTeam(Base):
     __tablename__ = 'vig_nfl_teams'
     id = Column(Integer, primary_key=True)
@@ -61,7 +66,14 @@ class NFLGame(Base):
         s = '<NFLGame: %s %s>' % (self.summary, self.start.isoformat())
         return s
     
-
+class NFLGameScore(Base):
+    __tablename__ = 'vig_nfl_game_scores'
+    game_id = Column(Integer,
+                     ForeignKey('vig_nfl_games.id'), primary_key=True)
+    home_score = Column(Integer)
+    away_score = Column(Integer)
+    comment = Column(UnicodeText)
+    
 class NFLOddsData(Base):
     __tablename__ = 'vig_nfl_odds_data'
     id = Column(Integer, primary_key=True)

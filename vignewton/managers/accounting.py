@@ -17,7 +17,6 @@ from vignewton.models.main import UserAccount
 
 from vignewton.models.main import BetFinal, CashTransfer
 
-from vignewton.managers.bets import BetsManager
 
 class InsufficientFundsError(Exception):
     pass
@@ -25,6 +24,8 @@ class InsufficientFundsError(Exception):
 class AmountTooHighError(Exception):
     pass
 
+class NoBetsManagerError(Exception):
+    pass
 
 # When a user deposits money, both the balance of
 # the cash box and the account balance increase by
@@ -56,7 +57,13 @@ class AccountingManager(object):
             self.cash = self._get_cash_account()
         except NoResultFound:
             self.cash = None
+        # FIXME - make code to set this from database
         self.cash_minimum = 500
+        self.bets = None
+    
+
+    def initialize_bets_manager(self):
+        from vignewton.managers.bets import BetsManager
         self.bets = BetsManager(self.session)
         
     def _get_cash_account(self):
@@ -89,6 +96,11 @@ class AccountingManager(object):
             self.session.add(ua)
         return self.session.merge(ua)
 
+    def get(self, user_id):
+        q = self.session.query(UserAccount)
+        q = q.filter_by(user_id=user_id)
+        return q.one().account
+    
     def get_balance(self, account_id):
         q = self.session.query(AccountBalance)
         return q.get(account_id)
@@ -166,5 +178,9 @@ class AccountingManager(object):
         return q.all()
     
     def pay_bet(self, bet_id):
-        pass
+        if self.bets is None:
+            raise NoBetsManagerError, "No bets manager"
+        bet = self.bets.get(bet_id)
+        
+        
     
