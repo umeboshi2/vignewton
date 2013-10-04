@@ -37,7 +37,6 @@ def even_more_setup(env):
     from vignewton.managers.util import parse_odds_html
     games = parse_odds_html(text)
     env['games'] = games
-    from vignewton.managers.nflgames import NFLGameManager
     #from vignewton.models.main import NFLGame
     gm = NFLGameManager(db)
     env['gm'] = gm
@@ -85,6 +84,10 @@ def setup(env):
     from vignewton.managers.accounting import AccountingManager
     am = AccountingManager(db)
     env['am'] = am
-    env['games'] = om.oddscache.get_latest()[0].content
-    env['bg'] = env['games'][-3]
-    
+    #env['games'] = om.oddscache.get_latest()[0].content
+    #env['bg'] = env['games'][-3]
+    from vignewton.managers.nflgames import NFLGameManager
+    gm = NFLGameManager(db)
+    env['gm'] = gm
+    gm.set_schedule_url(url)
+

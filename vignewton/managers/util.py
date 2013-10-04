@@ -70,4 +70,42 @@ def parse_nfl_schedule_ical_uid(uid):
     home = uid[10:13].lower()
     return away, home
 
-    
+def parse_nfl_schedule_ical_summary(summary):
+    scores = False
+    if ' at ' in summary:
+        #print "SUMMARY", summary
+        try:
+            # we put the spaces around at to keep from
+            # crashing in Cincinnati
+            away, home = summary.split(' at ')
+        except ValueError:
+            import pdb
+            pdb.set_trace()
+    else:
+        return scores, None, None
+    away_score = away.split()[-1]
+    if not away_score.isdigit():
+        return scores, None, None
+    home_score = home.split()[-1]
+    if not home_score.isdigit():
+        return scores, None, None
+    scores = True
+    return scores, int(away_score), int(home_score)
+
+
+def parse_ical_nflgame(event):
+    uid = unicode(event['uid'])
+    away, home = parse_nfl_schedule_ical_uid(uid)
+    data = dict(away=away, home=home, uid=uid)
+    for f in ['summary', 'description', 'location']:
+        data[f] = unicode(event[f])
+    for f in ['start', 'end']:
+        key = 'dt%s' % f
+        data[f] = event[key].dt
+    data['class'] = event['class']
+    data['scores'] = parse_nfl_schedule_ical_summary(data['summary'])
+    return data
+
+def parse_ical_nflschedule(content):
+    cal = icalendar.Calendar.from_ical(content)
+    return (e for e in cal.walk() if e.name == 'VEVENT')

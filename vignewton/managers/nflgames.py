@@ -9,27 +9,23 @@ from sqlalchemy import desc
 from sqlalchemy import func
 from sqlalchemy import or_
 
+import requests
+import icalendar
+
+
 from vignewton.models.nflteamdata import team_map
 from vignewton.models.main import NFLGame, NFLTeam
 from vignewton.models.main import NFLGameScore, NFLScheduleData
 from vignewton.managers.base import BasicCache
 from vignewton.managers.util import convert_range_to_datetime
 from vignewton.managers.util import parse_nfl_schedule_ical_uid
+from vignewton.managers.util import parse_nfl_schedule_ical_summary
+from vignewton.managers.util import parse_ical_nflgame
+from vignewton.managers.util import parse_ical_nflschedule
+
 from vignewton.managers.util import get_nfl_schedule
 
 five_minutes = timedelta(minutes=5)
-
-def parse_ical_nflgame(event):
-    uid = unicode(event['uid'])
-    away, home = parse_nfl_schedule_ical_uid(uid)
-    data = dict(away=away, home=home, uid=uid)
-    for f in ['summary', 'description', 'location']:
-        data[f] = unicode(event[f])
-    for f in ['start', 'end']:
-        key = 'dt%s' % f
-        data[f] = event[key].dt
-    data['class'] = event['class']
-    return data
 
 
 class NFLScheduleCache(BasicCache):
@@ -125,7 +121,6 @@ class NFLGameManager(object):
 
     def get_schedule(self):
         schedule, updated = self.schedules.latest_schedule()
-        import icalendar
         cal = icalendar.Calendar.from_ical(bytes)
         events = (e for e in cal.walk() if e.name == 'VEVENT')
         for event in events:
@@ -140,11 +135,39 @@ class NFLGameManager(object):
     def get(self, id):
         return self.query().get(id)
 
-    def update_game(self, event):
+    def update_game(self, game, event):
         data = parse_ical_nflgame(event)
-        game = self.get_game_from_ical_event(event, data=data)
-        
-        
+        away_id = self.teams.getbynick(data['away']).id
+        home_id = self.teams.getbynick(data['home']).id
+        updated = False
+        with transaction.manager:
+            if game.away_id != away_id:
+                game.away_id = away_id
+                updated = True
+            if game.home_id != home_id:
+                game.home_id = home_id
+                updated = True
+            fields = ['summary', 'uid', 'description', 'location',
+                      'start', 'end']
+            for f in fields:
+                if getattr(game, f) != data[f]:
+                    setattr(game, f, data[f])
+                    updated = True
+            if game.game_class != data['class']:
+                game.game_class = data['class']
+                updated = True
+            scores, away_score, home_score = data['scores']
+            if scores:
+                gs = self.session.query(NFLGameScore).get(game.id)
+                if gs is None:
+                    updated = True
+                    gs = NFLGameScore()
+                    gs.game_id = game.id
+                    gs.away_score = away_score
+                    gs.home_score = home_score
+                    self.session.add(gs)
+            game = self.session.merge(game)
+        return game, updated
     
     def insert_new_game(self, event):
         data = parse_ical_nflgame(event)
@@ -159,9 +182,33 @@ class NFLGameManager(object):
                 setattr(g, f, data[f])
             g.game_class = data['class']
             self.session.add(g)
+            scores, away_score, home_score = data['scores']
+            if scores:
+                g = self.session.merge(g)
+                gs = NFLGameScore()
+                gs.game_id = g.id
+                gs.away_score = away_score
+                gs.home_score = home_score
+                self.session.add(gs)
         return self.session.merge(g)
         
-
+    def update_games(self):
+        schedule, sched_updated = self.schedules.latest_schedule()
+        events = parse_ical_nflschedule(schedule.content)
+        updated = False
+        for event in events:
+            new_game = False
+            try:
+                game = self.get_game_from_ical_event(event)
+            except NoResultFound:
+                new_game = True
+                game = self.insert_new_game(event)
+            if not new_game:
+                game, game_updated = self.update_game(game, event)
+                if game_updated:
+                    updated = True
+        return updated
+    
     def _range_filter(self, query, start, end):
         query = query.filter(NFLGame.start >= start)
         query = query.filter(NFLGame.start <= end)
@@ -175,9 +222,7 @@ class NFLGameManager(object):
         return q.all()
 
     def populate_games(self, bytes):
-        import icalendar
-        cal = icalendar.Calendar.from_ical(bytes)
-        events = (e for e in cal.walk() if e.name == 'VEVENT')
+        events = parse_ical_nflschedule(bytes)
         for event in events:
             self.insert_new_game(event)
 

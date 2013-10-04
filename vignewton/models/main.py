@@ -70,8 +70,8 @@ class NFLGameScore(Base):
     __tablename__ = 'vig_nfl_game_scores'
     game_id = Column(Integer,
                      ForeignKey('vig_nfl_games.id'), primary_key=True)
-    home_score = Column(Integer)
     away_score = Column(Integer)
+    home_score = Column(Integer)
     comment = Column(UnicodeText)
     
 class NFLOddsData(Base):
@@ -179,6 +179,24 @@ class CashTransfer(Base):
     cash_balance = Column(Numeric(16,2))
     created = Column(DateTime)
     
+
+class BaseTransfer(Base):
+    __tablename__ = 'vig_base_account_ledger'
+    id = Column(Integer, primary_key=True)
+    created = Column(DateTime)
+    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
+    amount = Column(Numeric(16,2))
+
+class DeclarativeTransfer(Base):
+    __tablename__ = 'vig_declarative_ledger'
+    id = Column(Integer, primary_key=True)
+    created = Column(DateTime)
+    my_account_id = Column(Integer, ForeignKey('vig_accounts.id'))
+    my_amount = Column(Numeric(16,2))
+    my_balance = Column(Numeric(16,2))
+    their_account_id = Column(Integer, ForeignKey('vig_accounts.id'))
+    their_amount = Column(Numeric(16,2))
+    their_balance = Column(Numeric(16,2))
     
 
 
@@ -211,7 +229,8 @@ def populate_accounting_tables(session):
     try:
         from vignewton.managers.accounting import AccountingManager
         am = AccountingManager(db)
-        am.add_account('Cash')
+        for acct in ['Cash', 'Wagers', 'JuiceInsurance', 'InTheWild']:
+            am.add_account('%s_Account' % acct)
     except IntegrityError:
         transaction.abort()
         

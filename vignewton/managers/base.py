@@ -10,6 +10,18 @@ from sqlalchemy import func
 from sqlalchemy import or_
 
 
+
+class InsufficientFundsError(Exception):
+    pass
+
+class AmountTooHighError(Exception):
+    pass
+
+class NoBetsManagerError(Exception):
+    pass
+
+
+
 five_minutes = timedelta(minutes=5)
 
 class BasicCache(object):
@@ -40,10 +52,15 @@ class BasicCache(object):
     def add(self, content):
         with transaction.manager:
             now = datetime.now()
-            data = self.dbmodel()
-            data.retrieved = now
-            data.content = content
-            self.session.add(data)
-        return self.session.merge(data)
+            latest = self.get_latest_content()
+            if latest is not None and latest.content == content:
+                latest.retrieved = now
+                latest = self.session.merge(latest)
+            else:
+                latest = self.dbmodel()
+                latest.retrieved = now
+                latest.content = content
+                self.session.add(latest)
+        return self.session.merge(latest)
     
     
