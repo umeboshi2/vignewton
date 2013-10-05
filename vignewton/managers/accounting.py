@@ -81,6 +81,11 @@ class AccountingManager(object):
         self.db_final = BetFinal
         self.db_account_bal = AccountBalance
         self.db_bal = self.db_account_bal
+            
+        self.bets = None
+        self._refresh_standard_accounts()
+        
+    def _refresh_standard_accounts(self):
         try:
             self.cash = self._get_cash_account()
         except NoResultFound:
@@ -97,10 +102,7 @@ class AccountingManager(object):
             self.inthewild = self._get_wild_account()
         except NoResultFound:
             self.inthewild = None
-            
-        self.bets = None
-    
-
+        
     def initialize_bets_manager(self):
         from vignewton.managers.bets import BetsManager
         self.bets = BetsManager(self.session)
@@ -184,6 +186,7 @@ class AccountingManager(object):
             cash = self.session.merge(cash)
             wild = self.session.merge(wild)
         dt = self.session.merge(dt)
+        self._refresh_standard_accounts()
         return dt, cash, wild
 
     def deposit_to_account(self, account_id, amount):
@@ -210,6 +213,7 @@ class AccountingManager(object):
             acct = self.session.merge(acct)
             wild = self.session.merge(wild)
         dt = self.session.merge(dt)
+        self._refresh_standard_accounts()
         return dt, acct, wild
 
     def pay_account(self, account_id, amount):
@@ -241,6 +245,7 @@ class AccountingManager(object):
             acct = self.session.merge(acct)
             wild = self.session.merge(wild)
         dt = self.session.merge(dt)
+        self._refresh_standard_accounts()
         return dt, acct, wild
 
 
@@ -260,7 +265,7 @@ class AccountingManager(object):
         if total > acct.balance:
             j = juice_insurance
             a = amount
-            b = balance.balance
+            b = acct.balance
             msg = "Amount %d, insurance, %d, balance %d" % (a, j, b)
             raise InsufficientFundsError, msg
         if amount > cash.balance:
@@ -311,6 +316,7 @@ class AccountingManager(object):
                 self.session.add(dbobj)
             for dbobj in [wagers, acct, cash, juice]:
                 self.session.merge(dbobj)
+        self._refresh_standard_accounts()
         return wagers, juice, cash, acct
     
     
@@ -359,17 +365,16 @@ class AccountingManager(object):
             dtj = declare_xfer(juiced_to, from_juice, acct, juice, now)
             dbobjects += [dt, dtj]
             # adjust balances
-            acct.balance += amount
-            wagers.balance -= amount
+            acct.balance += payout
+            wagers.balance -= payout
             acct.balance += juice_insurance
             juice.balance -= juice_insurance
-            acct.balance += amount
-            cash.balance -= amount
             # update database
             for dbobj in dbobjects:
                 self.session.add(dbobj)
             for dbobj in [acct, wagers, juice]:
                 self.session.merge(dbobj)
+        self._refresh_standard_accounts()
         return acct, wagers, juice
     
     
@@ -411,6 +416,7 @@ class AccountingManager(object):
                 self.session.add(dbobj)
                 for dbobj in [cash, wagers, juice]:
                     self.session.merge(dbobj)
+        self._refresh_standard_accounts()
         return cash, wagers, juice
 
     # This moves money from the
@@ -419,6 +425,7 @@ class AccountingManager(object):
     # also removes an appropriate
     # amount of money from the juice
     # back to the user account.
+    # This is the opposite of place_bet.
     def push_bet(self, account_id, amount):
         if self.bets is None:
             raise NoBetsManagerError, "No bets manager"
@@ -430,6 +437,7 @@ class AccountingManager(object):
         total = amount + juice_insurance
         with transaction.manager:
             now = datetime.now()
+            wagers_loss = amount + amount
             # transfer from wagers to account
             to_acct, from_wagers = make_double_entries(account_id,
                                                        self.wagers.id,
@@ -448,14 +456,21 @@ class AccountingManager(object):
             dbobjects = [to_acct, from_wagers, to_cash, cfrom_wagers,
                          jto_acct, from_juice]
             # declarative transfers
-            dt = declarative(to_acct, from_wagers, acct, wagers, now)
-            dtc = declarative(to_cash, cfrom_wagers, cash, wagers, now)
-            dtj = declarative(jto_acct, from_juice, acct, juice, now)
+            dt = declare_xfer(to_acct, from_wagers, acct, wagers, now)
+            dtc = declare_xfer(to_cash, cfrom_wagers, cash, wagers, now)
+            dtj = declare_xfer(jto_acct, from_juice, acct, juice, now)
             dbobjects += [dt, dtc, dtj]
+            # adjust balances
+            acct.balance += amount
+            cash.balance += amount
+            wagers.balance -= wagers_loss
+            acct.balance += juice_insurance
+            juice.balance -= juice_insurance
             for dbobj in dbobjects:
                 self.session.add(dbobj)
             for dbobj in [acct, cash, wagers, juice]:
                 self.session.merge(dbobj)
+        self._refresh_standard_accounts()
         return acct, cash, wagers, juice
     
             

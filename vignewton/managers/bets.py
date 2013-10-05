@@ -48,7 +48,20 @@ class BetsManager(object):
                       'spread']:
             setattr(bet, field, getattr(odds, field))
 
+    def _check_amount(self, user_id, amount):
+        if amount % 10 != 0:
+            raise BetNotInTensError, "Bad amount %d" % amount
+        acct = self.accounts.get(user_id)
+        balance = acct.balance.balance
+        juice_insurance = amount / 10
+        total = amount + juice_insurance
+        if total > balance:
+            msg = "Total needed %d, current balance %d" % (total, balance)
+            raise InsufficientFundsError, msg
+        return True
+
     def _make_bet(self, bettype, user_id, game_id, amount, pick):
+        self._check_amount(user_id, amount)
         with transaction.manager:
             odds = self._get_odds(game_id)
             now = datetime.now()
@@ -66,21 +79,6 @@ class BetsManager(object):
             self._copy_current_odds(bet, odds)
             self.session.add(bet)
         return self.session.merge(bet)
-            
-    def _check_amount(self, user_id, amount):
-        if amount % 10 != 0:
-            raise BetNotInTensError, "Bad amount %d" % amount
-        acct = self.accounts.get(user_id)
-        balance = acct.balance.balance
-        juice_insurance = amount / 10
-        total = amount + juice_insurance
-        if total > balance:
-            msg = "Total needed %d, current balance %d" % (total, balance)
-            raise InsufficientFundsError, msg
-        
-        
-        
-        
 
     # pick is either an NFLTeam object, 'over', or 'under'
     def place_bet(self, user_id, game_id, amount,
@@ -89,5 +87,18 @@ class BetsManager(object):
             raise RuntimeError, "Bad bettype %s:" % bettype
         return self._make_bet(bettype, user_id, game_id, amount, pick)
 
+    def get_bets(self, user_id=None, game_id=None):
+        pass
+
+    def get_game_bets(self, game_id):
+        q = self.query()
         
+
+    def get_user_bets(self, user_id):
+        pass
+
+    def get_all_bets(self):
+        pass
+    
+    
     

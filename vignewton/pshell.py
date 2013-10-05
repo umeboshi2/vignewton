@@ -83,6 +83,7 @@ def setup(env):
     om.oddscache.set_url(odds_url)
     from vignewton.managers.accounting import AccountingManager
     am = AccountingManager(db)
+    am.initialize_bets_manager()
     env['am'] = am
     #env['games'] = om.oddscache.get_latest()[0].content
     #env['bg'] = env['games'][-3]
@@ -90,4 +91,6 @@ def setup(env):
     gm = NFLGameManager(db)
     env['gm'] = gm
     gm.set_schedule_url(url)
-
+    from vignewton.managers.util import determine_max_bet
+    env['dmb'] = determine_max_bet
+    

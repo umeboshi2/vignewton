@@ -109,3 +109,12 @@ def parse_ical_nflgame(event):
 def parse_ical_nflschedule(content):
     cal = icalendar.Calendar.from_ical(content)
     return (e for e in cal.walk() if e.name == 'VEVENT')
+
+def determine_max_bet(balance):
+    juice_money = balance / 10
+    workable = balance - juice_money
+    workable_tens = workable / 10
+    true_workable = workable_tens * 10
+    if true_workable + juice_money > balance:
+        raise RuntimeError, "Big problem with math"
+    return true_workable

@@ -115,6 +115,8 @@ class UserBet(Base):
     __tablename__ = 'vig_user_bets'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('users.id'))
+    game_id = Column(Integer,
+                     ForeignKey('vig_nfl_games.id'))
     created = Column(DateTime)
     amount = Column(Numeric(16,2))
     bet_type = Column('bet_type', BET_TYPE)
