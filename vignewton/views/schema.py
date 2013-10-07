@@ -18,3 +18,26 @@ class AddUserSchema(colander.Schema):
         )
     
     
+class CreditAmountSchema(colander.Schema):
+    amount = colander.SchemaNode(
+        colander.String(),
+        title='Amount',
+        description="Amount of creditsffff",
+        widget=deform.widget.TextInputWidget(mask='$9990',
+                                             mask_placeholder='0'),
+        )
+    
+class AccountCreditAmountSchema(colander.Schema):
+    user = colander.SchemaNode(
+        colander.String(),
+        title='User',
+        widget=deferred_choices,
+        description="Amount of User's credits",
+        )
+    amount = colander.SchemaNode(
+        colander.Integer(),
+        title='Amount',
+        description="Amount of credits",
+        )
+    
+    

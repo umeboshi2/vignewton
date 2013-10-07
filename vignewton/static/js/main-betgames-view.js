@@ -12,7 +12,7 @@
       url = $(this).attr('href');
       $('header > h2').text(url);
       form = document.createElement('form');
-      form.setAttribute('method', 'get');
+      form.setAttribute('method', 'post');
       form.setAttribute('action', url);
       return form.submit();
     });

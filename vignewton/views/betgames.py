@@ -21,9 +21,16 @@ from vignewton.managers.util import BettableGamesCollector
 
 from vignewton.views.base import BaseViewer
 from vignewton.views.base import make_main_menu, make_ctx_menu
+from vignewton.views.schema import CreditAmountSchema
+
+CONTEXT_BETTYPE = dict(over='underover', under='underover',
+                       underdog='line', favored='line')
+
 
 def text_for_line_bet(odds, game, betval):
-    gameline = "%s at %s" % (game.summary, game.start.isoformat())
+    game_date_format = '%A - %B %d'
+    game_start = game.start.strftime(game_date_format)
+    gameline = "%s at %s" % (game.summary, game_start)
     points = 'than %d points.' % odds.spread
     team = getattr(odds, betval).name
     teampart = 'Betting on %s, %s,' % (betval, team)
@@ -36,13 +43,17 @@ def text_for_line_bet(odds, game, betval):
     return gameline, betline
 
 def text_for_underover_bet(odds, game, betval):
-    gameline = "%s at %s" % (game.summary, game.start.isoformat())
+    game_date_format = '%A - %B %d'
+    game_start = game.start.strftime(game_date_format)
+    gameline = "%s at %s" % (game.summary, game_start)
     points = ' %d points.' % odds.total
     prefix = "Betting on total points by both teams to be %s" % betval
     betline = '%s %s' % (prefix, points)
     return gameline, betline
 
-    
+CONTEXT_TEXTFUN = dict(line=text_for_line_bet,
+                       underover=text_for_underover_bet)
+
 
 class NFLGameBetsViewer(BaseViewer):
     def __init__(self, request):
@@ -105,25 +116,65 @@ class NFLGameBetsViewer(BaseViewer):
         #content = self.render(template, env)
         #self.layout.content = content
         x = id
-        
-    def place_bet(self):
-        game_id = self.request.matchdict['id']
+
+    def _get_bet_context(self):
         context = self.request.matchdict['context']
         if context[:3] == 'bet':
             context = context[3:]
-            if context not in ['under', 'over', 'favored', 'underdog']:
+            if context not in CONTEXT_BETTYPE:
                 raise RuntimeError, "Bad Context %s" % context
         else:
             raise RuntimeError, "Bad Context %s" % context
+        return context
+
+    def _get_misc_data(self, odds, game, context):
+        bettype = CONTEXT_BETTYPE[context]
+        gameline, betline = CONTEXT_TEXTFUN[bettype](odds, game, context)
+        return bettype, gameline, betline
+    
+    def _place_bet_submitted(self, form, odds, game):
+        controls = self.request.POST.items()
+        try:
+            data = form.validate(controls)
+        except deform.ValidationFailure, e:
+            self.layout.content = e.render()
+            return
+        amount = int(data['amount'][1:])
+        user_id = self.get_current_user_id()
+        context = self._get_bet_context()
+        bettype, gameline, betline = self._get_misc_data(odds, game, context)
+        template = 'vignewton:templates/main-place-bet-ask-confirm.mako'
+        env = dict(amount=amount, gameline=gameline,
+                   betline=betline,
+                   odds=odds,
+                   game=game)
+        content = self.render(template, env)
+        self.layout.content = content
+        
+        
+        
+    
+    def place_bet(self):
+        game_id = self.request.matchdict['id']
         odds = self.odds.get_odds(game_id)
         game = odds.game
-        if context in ['favored', 'underdog']:
-            bettype = 'line'
-            gameline, betline = text_for_line_bet(odds, game, context)
-            content = '%s<br>%s' % (gameline, betline)
+        schema = CreditAmountSchema()
+        form = deform.Form(schema, buttons=('submit',))
+        self.layout.resources.deform_auto_need(form)
+        if 'submit' in self.request.POST:
+            self._place_bet_submitted(form, odds, game)
         else:
-            gameline, betline = text_for_underover_bet(odds, game, context)
-            content = '%s<br>%s' % (gameline, betline)
-        self.layout.content = content
+            context = self._get_bet_context()
+            bettype, gameline, betline = self._get_misc_data(odds,
+                                                             game, context)
+            
+            template = 'vignewton:templates/main-place-bet.mako'
+            env = dict(form=form, gameline=gameline,
+                       betline=betline,
+                       odds=odds,
+                       game=game)
+            content = self.render(template, env)
+            self.layout.content = content
+        
         
         

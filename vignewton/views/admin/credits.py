@@ -19,59 +19,14 @@ from vignewton.managers.accounting import AccountingManager
 from vignewton.views.base import make_main_menu, make_ctx_menu
 from vignewton.views.base import AdminViewer
 from vignewton.views.base import get_regular_users
-
+from vignewton.views.schema import deferred_choices, make_select_widget
+from vignewton.views.schema import CreditAmountSchema
+from vignewton.views.schema import AccountCreditAmountSchema
 
 import colander
 import deform
-
-def deferred_choices(node, kw):
-    choices = kw['choices']
-    return deform.widget.SelectWidget(values=choices)
-
-def make_select_widget(choices):
-    return deform.widget.SelectWidget(values=choices)
-
-
-
-class CreditAmountSchema(colander.Schema):
-    amount = colander.SchemaNode(
-        colander.Integer(),
-        title='Amount',
-        description="Amount of credits",
-        )
-    
-class AccountCreditAmountSchema(colander.Schema):
-    user = colander.SchemaNode(
-        colander.String(),
-        title='User',
-        widget=deferred_choices,
-        description="Amount of User's credits",
-        )
-    amount = colander.SchemaNode(
-        colander.Integer(),
-        title='Amount',
-        description="Amount of credits",
-        )
     
     
-def prepare_main_data(request):
-    layout = request.layout_manager.layout
-    menu = layout.ctx_menu
-    url = request.route_url('admin_users', context='list', id='all')
-    menu.append_new_entry('Manage Users', url)
-    url = request.route_url('admin_credits', context='main', id=None)
-    menu.append_new_entry('Manage Credits', url)
-    url = request.route_url('admin_sitetext', context='list', id=None)
-    menu.append_new_entry('Manage Text', url)
-    url = request.route_url('admin_images', context='list', id=None)
-    menu.append_new_entry('Manage Images', url)
-    main_menu = make_main_menu(request)
-    layout.title = 'Admin Page'
-    layout.header = 'Admin Page'
-    layout.main_menu = main_menu.render()
-    layout.ctx_menu = menu
-
-
 def make_context_menu(request):
     layout = request.layout_manager.layout
     menu = layout.ctx_menu

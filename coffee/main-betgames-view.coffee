@@ -13,7 +13,7 @@ $(document).ready ->
                 # 
                 #$(window).load(url)
                 form = document.createElement('form')
-                form.setAttribute('method', 'get')
+                form.setAttribute('method', 'post')
                 form.setAttribute('action', url)
                 form.submit()
                 
