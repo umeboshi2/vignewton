@@ -74,9 +74,18 @@ def determine_bet(bet, fscore, uscore):
         raise RuntimeError, "Bad bet type %s" % bet.bet_type
     
         
-def make_closed_bet(bet):
+def make_closed_bet(bet, status):
+    now = datetime.now()
     cb = ClosedBet()
-    
+    for field in ['id', 'user_id', 'game_id', 'created', 'amount',
+                  'bet_type', 'underover', 'team_id', 'total',
+                  'spread', 'favored_id', 'underdog_id']:
+        value = getattr(bet, field)
+        setattr(cb, field, value)
+    cb.closed = now
+    cb.status = status
+    return cb
+
 
 class BetsManager(object):
     def __init__(self, session):

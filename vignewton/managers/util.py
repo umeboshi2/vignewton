@@ -8,6 +8,41 @@ import bs4
 
 
 
+class GameDateCollector(object):
+    def __init__(self, games):
+        self.gdates = dict()
+        for game in games:
+            self._add_game(game)
+            
+    def _add_game(self, game):
+        dt = game.start
+        date = dt.date()
+        try:
+            self.gdates[date].append(game)
+        except KeyError:
+            self.gdates[date] = [game]
+
+    @property
+    def dates(self):
+        return self.gdates
+
+class BettableGamesCollector(object):
+    def __init__(self, olist):
+        self.gdates = dict()
+        for odds in olist:
+            self._add_game(odds)
+
+    def _add_game(self, odds):
+        date = odds.game.start.date()
+        try:
+            self.gdates[date].append(odds)
+        except KeyError:
+            self.gdates[date] = [odds]
+        
+    @property
+    def dates(self):
+        return self.gdates
+    
 def parse_game_time(datestring, timestring):
     now = datetime.now()
     dtstring = '%sT%s' % (datestring, timestring)

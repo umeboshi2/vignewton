@@ -26,6 +26,8 @@ def prepare_main_data(request):
     menu = layout.ctx_menu
     url = request.route_url('admin_users', context='list', id='all')
     menu.append_new_entry('Manage Users', url)
+    url = request.route_url('admin_credits', context='main', id=None)
+    menu.append_new_entry('Manage Credits', url)
     url = request.route_url('admin_sitetext', context='list', id=None)
     menu.append_new_entry('Manage Text', url)
     url = request.route_url('admin_images', context='list', id=None)

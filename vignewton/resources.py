@@ -1,7 +1,9 @@
 from pyramid.security import Allow, Everyone, Authenticated
 from fanstatic import Library, Resource
+from js.lightbox import lightbox
 
 from haberdashery.resources import jqueryui, fc_css, deform_css
+
 
 
 #from trumpet.resources import jqueryui
@@ -21,9 +23,10 @@ post_to_url = Resource(js, 'post2url.js', depends=[jqueryui])
 
 
 main_calendar_view = Resource(js, 'main-calendar-view.js', depends=[fc_css])
+main_betgames_view = Resource(js, 'main-betgames-view.js', depends=[jqueryui])
 
 
-
+from vignewton.security import authn_policy
 
 class StaticResources(TrumpetResources):
     main_screen = main_screen
@@ -34,8 +37,11 @@ class StaticResources(TrumpetResources):
     
 
     main_calendar_view = main_calendar_view
+    main_betgames_view = main_betgames_view
     
     post_to_url = post_to_url
+    lightbox = lightbox
+    
     
 # the acl entries are allow/deny, group, permission
 class RootGroupFactory(object):
@@ -47,9 +53,10 @@ class RootGroupFactory(object):
         (Allow, 'editor', ('wiki_add', 'wiki_edit')),
         (Allow, 'admin', ('admin', 'manage')),
         ]
-
+    authn_policy = authn_policy
+    
     def __init__(self, request):
         # comment
         pass
 
-
+    

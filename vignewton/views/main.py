@@ -3,7 +3,7 @@ from datetime import datetime, date, timedelta
 from docutils.core import publish_parts
 
 from pyramid.httpexceptions import HTTPFound, HTTPNotFound
-from pyramid.security import authenticated_userid
+#from pyramid.security import authenticated_userid
 from pyramid.renderers import render
 from pyramid.response import Response
 
@@ -14,6 +14,8 @@ import deform
 from trumpet.views.menus import BaseMenu
 
 from vignewton.managers.nflgames import NFLGameManager
+from vignewton.managers.odds import NFLOddsManager
+from vignewton.managers.util import BettableGamesCollector
 
 from vignewton.views.base import BaseViewer
 from vignewton.views.base import make_main_menu, make_ctx_menu
@@ -59,6 +61,8 @@ class MainViewer(BaseViewer):
         self.layout.main_menu = make_main_menu(self.request).render()
         self.layout.ctx_menu = make_ctx_menu(self.request).output()
 
+        self.odds = NFLOddsManager(self.request.db)
+        
         # begin dispatch
         if self.route == 'home':
             self.main_view()
@@ -82,12 +86,43 @@ class MainViewer(BaseViewer):
             msg = 'Undefined Context: %s' % self.context
             self.layout.content = '<b>%s</b>' % msg
 
-            
+
+
     def main_view(self):
-        #template = 'goout:templates/main-page.mako'
-        #env = dict(dates=dates, dc=dc, dformat=dformat)
-        #content = render(template, env, request=self.request)
-        content = "Main Page"
+        authn_policy = self.request.context.authn_policy
+        authn = authn_policy.authenticated_userid(self.request)
+        if authn is None:
+            url = self.request.route_url('login')
+            content = '<a href="%s">Login</a>' % url
+            self.layout.content = content
+        else:
+            admin_username = self.get_admin_username()
+            if authn == admin_username:
+                return self.main_admin_view()
+            else:
+                return self.main_authenticated_view()
+        
+    def main_authenticated_view(self):
+        self.layout.header = 'NFL Bettable Games' 
+        olist = self.odds.get_current_odds()
+        collector = BettableGamesCollector(olist)
+        dates = collector.dates.keys()
+        dates.sort()
+        game_date_format = '%A - %B %d'
+        template = 'vignewton:templates/main-betgames-view.mako'
+        env = dict(collector=collector, dates=dates,
+                   game_date_format=game_date_format)
+        content = self.render(template, env)
+        self.layout.content = content
+        self.layout.resources.lightbox.need()
+        self.layout.resources.main_betgames_view.need()
+        
+    def main_admin_view(self):
+        self.layout.content = "Main Admin View"
+        
+        
+    def schedule_view(self):
+        content = "Schedule Page"
         self.layout.content = content
         self.layout.subheader = 'Vig Newton'
         self.layout.resources.main_calendar_view.need()
@@ -97,7 +132,7 @@ class MainViewer(BaseViewer):
         env = {}
         content = self.render(template, env)
         self.layout.content = content
-        
+
     def view_event(self):
         pass
     

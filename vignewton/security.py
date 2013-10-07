@@ -3,6 +3,8 @@ import random
 from string import ascii_letters
 
 from pyramid.authentication import AuthTktAuthenticationPolicy
+from pyramid.authentication import SessionAuthenticationPolicy
+
 from pyramid.authorization import ACLAuthorizationPolicy
 from sqlalchemy.orm.exc import NoResultFound
 
@@ -50,10 +52,11 @@ def check_user_password(user, password):
     return check_password(user.pw.password, password)
 
 
-authn_policy = AuthTktAuthenticationPolicy(
-    secret='v3rys3cret',
-    callback=authenticate)
+#authn_policy = AuthTktAuthenticationPolicy(
+#    secret='v3rys3cret',
+#    callback=authenticate)
 
+authn_policy = SessionAuthenticationPolicy(callback=authenticate)
 authz_policy = ACLAuthorizationPolicy()
 
 
@@ -64,6 +67,7 @@ def make_authn_authz_policies(secret, cookie, callback=authenticate,
         callback=callback,
         cookie_name=cookie,
         timeout=timeout)
+    authn_policy = SessionAuthenticationPolicy(callback=authenticate)
     authz_policy = ACLAuthorizationPolicy()
     return authn_policy, authz_policy
 

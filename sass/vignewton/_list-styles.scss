@@ -1,0 +1,54 @@
+
+.listview-simple-header {
+    background: $menu-header-bg-color;
+    color: $menu-header-text-color;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.listview-header {
+    @include border-radius(0.5em);
+    background: $menu-header-bg-color;
+    color: $menu-header-text-color;
+    text-align: center;
+    font-size: 1.25em;
+    border-style: solid;
+    border-width: 0.3em;
+    border-color: $basecolor2;
+}
+
+.listview-history {
+    border-style: solid;
+    border-width: 0.3em;
+    border-color: $basecolor2;
+}
+
+
+
+.listview-list {
+    background: $basecolor4;
+    padding: 0.3em;
+}
+
+.listview-list-entry-header {
+    @include border-radius(0.5em);
+    font-size: 1.2em;
+    text-align: center;
+    background: $basecolor3;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color: $basecolor2;
+    padding: 0.3em;
+}
+.listview-list-entry {
+    background: $basecolor4;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: $basecolor2;
+    padding: 0.3em;
+}
+
+.listview-list-entry-status {
+    float: right;
+}

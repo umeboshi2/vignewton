@@ -43,16 +43,24 @@ def make_ctx_menu(request):
         menu.append_new_entry('Sign In', login_url)
     if 'user' in request.session:
         user = request.session['user']
+        url = request.route_url('home')
+        menu.append_new_entry('Main View', url)
         url = request.route_url('view_wiki')
         menu.append_new_entry('Wiki', url)
-
         url = request.route_url('vig_nflteams', context='main', id='all')
         menu.append_new_entry('NFL Teams', url)
 
-        url = request.route_url('vig_betgames', context='main', id='all')
-        menu.append_new_entry('Bettable Games', url)
     return menu
     
+def get_regular_users(request):
+    users = request.db.query(User).all()
+    skey = 'vignewton.admin.admin_username'
+    admin_username = request.registry.settings.get(skey, 'admin')
+    return [u for u in users if u.username != admin_username]
+
+
+
+
 class BaseViewer(TrumpetViewer):
     def __init__(self, request):
         super(BaseViewer, self).__init__(request)
@@ -77,6 +85,11 @@ class BaseViewer(TrumpetViewer):
 
     def get_app_settings(self):
         return self.request.registry.settings
+
+    def get_admin_username(self):
+        skey = 'vignewton.admin.admin_username'
+        admin_username = self.request.registry.settings.get(skey, 'admin')
+        return admin_username
     
 class AdminViewer(BaseViewer):
     def __init__(self, request):

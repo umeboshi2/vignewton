@@ -27,6 +27,8 @@ NFL_REGION = Enum('North', 'South', 'East', 'West', name='vig_nfl_region')
 UNDER_OVER = Enum('under', 'over', name='vig_under_over_enum')
 
 BET_TYPE = Enum('underover', 'line')
+CLOSED_BET_STATUS = Enum('wind', 'lose', 'push', name='vig_closed_bet_status')
+
 
 class NFLScheduleData(Base):
     __tablename__ = 'vig_nfl_schedule_data'
@@ -162,7 +164,7 @@ UserBet.team = relationship(NFLTeam,
 
 
 class ClosedBet(Base):
-    __tablename__ = 'vig_user_bets'
+    __tablename__ = 'vig_closed_bets'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('users.id'))
     game_id = Column(Integer,
@@ -176,6 +178,9 @@ class ClosedBet(Base):
     spread = Column(Numeric(16,2))
     favored_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
     underdog_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    closed = Column(DateTime)
+    status = Column('status', CLOSED_BET_STATUS)
+    
     
 ClosedBet.game = relationship(NFLGame)
 ClosedBet.favored = relationship(NFLTeam,

@@ -162,6 +162,17 @@ class AccountingManager(object):
         q = self.session.query(AccountBalance)
         return q.get(account_id)
 
+    def get_account_balance_total(self):
+        cash_id = self.cash.id
+        wild_id = self.inthewild.id
+        wagers_id = self.wagers.id
+        juice_id = self.juice.id
+        standard_accounts = [cash_id, wild_id, wagers_id, juice_id]
+        q = self.session.query(func.sum(AccountBalance.balance))
+        # where account_id not in standard_accounts
+        q = q.filter(~AccountBalance.account_id.in_(standard_accounts))
+        return q.one()
+    
     # This comes from the wild
     def add_to_cash(self, amount):
         if amount <= 0:
@@ -188,6 +199,38 @@ class AccountingManager(object):
         dt = self.session.merge(dt)
         self._refresh_standard_accounts()
         return dt, cash, wild
+
+    def take_from_cash(self, amount):
+        cash_balance = self.get_balance(self.cash.id).balance
+        if cash_balance < amount:
+            msg = "Cash balance %d, amount %d" % (cash_balance, amount)
+            raise InsufficientFundsError, msg
+        with transaction.manager:
+            now = datetime.now()
+            cash = self.get_balance(self.cash.id)
+            wild = self.get_balance(self.inthewild.id)
+            # transfer to wild and from cash
+            to_wild, from_cash = make_double_entries(self.inthewild.id,
+                                                     self.cash.id,
+                                                     amount,
+                                                     now)
+            dt = declare_xfer(from_cash, to_wild, cash, wild, now) 
+            #adjust balances
+            wild.balance += amount
+            cash.balance -= amount
+            # update database
+            self.session.add(to_wild)
+            self.session.add(from_cash)
+            self.session.add(dt)
+            cash = self.session.merge(cash)
+            wild = self.session.merge(wild)
+        dt = self.session.merge(dt)
+        self._refresh_standard_accounts()
+        return dt, cash, wild
+
+       
+        
+        
 
     def deposit_to_account(self, account_id, amount):
         if amount <= 0:

@@ -3,8 +3,24 @@ import os
 import sys
 import time
 import subprocess
+import re
 
-package_name = 'vignewton'
+package_name_re_string = "setup\(name=\'(?P<name>[\d\w]+).+"
+package_name_re = re.compile(package_name_re_string)
+package_name = None
+
+if package_name is None:
+    with file('setup.py') as setup:
+        pre = package_name_re
+        for line in setup:
+            match = pre.match(line.strip())
+            if match:
+                package_name = match.groupdict()['name']
+                break
+    if package_name is None:
+        raise RuntimeError, "Unable to determine package name, please set it in this file"
+
+print "Package is", package_name
 
 javascript_directory = os.path.join(package_name, 'static/js/')
 

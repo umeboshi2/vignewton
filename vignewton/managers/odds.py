@@ -62,7 +62,7 @@ class NFLOddsManager(object):
     
     def get_odds(self, game_id):
         q = self.query()
-        q.filter_by(game_id=game_id)
+        q = q.filter_by(game_id=game_id)
         return q.one()
 
     def _fix_number(self, numstr):
@@ -146,10 +146,17 @@ class NFLOddsManager(object):
         oddslist = [self.session.merge(o) for o in oddslist]
         return oddslist, updated
 
+    def _filter_zero_odds(self, query):
+        query = query.filter(NFLGameOdds.total > 0)
+        query = query.filter(NFLGameOdds.spread > 0)
+        return query
+    
     def get_current_odds(self):
         now = datetime.now()
         q = self.query()
         q = q.filter(NFLGame.start >= now)
+        q = q.order_by(NFLGame.start)
+        q = self._filter_zero_odds(q)
         return q.all()
     
     

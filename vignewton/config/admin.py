@@ -18,3 +18,7 @@ def configure_admin(config, rootpath='/admin', permission='admin'):
                'admin_users', permission=permission)
 
     
+    config.add_route('admin_credits', '%s/credits/{context}/{id}' % rootpath)
+    add_view(config, 'vignewton.views.admin.credits.CreditsViewer',
+             'admin_credits', permission=permission)
+    
