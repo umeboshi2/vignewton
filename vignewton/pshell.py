@@ -93,4 +93,5 @@ def setup(env):
     gm.set_schedule_url(url)
     from vignewton.managers.util import determine_max_bet
     env['dmb'] = determine_max_bet
+    env['game'] = gm.query().get(125)
     

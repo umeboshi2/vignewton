@@ -126,8 +126,6 @@ class NFLGameManager(object):
         for event in events:
             self.insert_new_game(event)
         
-    
-        
     def query(self):
         q = self.session.query(NFLGame)
         return q
@@ -262,4 +260,11 @@ class NFLGameManager(object):
             q = q.filter(NFLGame.start <= late)
             return q.one()
         
+    def get_score(self, game_id):
+        game = self.query().get(game_id)
+        if game is None:
+            raise RuntimeError, "No such game %d" % game_id
+        if game.score is None:
+            return None
+        return game.score.away_score, game.score.home_score
     

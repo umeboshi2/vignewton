@@ -3,22 +3,26 @@ import transaction
 
 from pyramid import testing
 
-from .models import DBSession
+#from .models import DBSession
+from vignewton.models.main import DBSession
 
+def initializedb():
+    pass
 
 class TestMyView(unittest.TestCase):
     def setUp(self):
         self.config = testing.setUp()
         from sqlalchemy import create_engine
         engine = create_engine('sqlite://')
-        from .models import (
+        from vignewton.models.main import (
             Base,
-            MyModel,
+            User,
             )
         DBSession.configure(bind=engine)
         Base.metadata.create_all(engine)
         with transaction.manager:
-            model = MyModel(name='one', value=55)
+            model = User('username')
+            model.username = "TestUser"
             DBSession.add(model)
 
     def tearDown(self):
@@ -26,8 +30,9 @@ class TestMyView(unittest.TestCase):
         testing.tearDown()
 
     def test_it(self):
-        from .views import my_view
+        from vignewton.views.login import LoginViewer
         request = testing.DummyRequest()
-        info = my_view(request)
-        self.assertEqual(info['one'].name, 'one')
-        self.assertEqual(info['project'], 'vignewton')
+        info = LoginViewer(request)
+        #self.assertEqual(info['one'].name, 'one')
+        #self.assertEqual(info['project'], 'vignewton')
+        print info
