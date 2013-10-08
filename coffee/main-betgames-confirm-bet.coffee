@@ -1,12 +1,12 @@
 $(document).ready ->
         $('.betgame-window').hide()
         
-        $('.action-button').click ->
+        $('#confirm-bet-button').click ->
                 btnid = $(this).attr('id')
                 betlist = btnid.split('-')
                 bettype = betlist[0]
                 game_id = new Number(betlist[1])
-                url = $(this).attr('href')
+                url = $('#confirm-url').val()
                 $('header > h2').text("$$$$$$$" + url)
                 # I can't remember how to load another
                 # url, so I'm using a hacky form submit

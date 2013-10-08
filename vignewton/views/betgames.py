@@ -144,13 +144,29 @@ class NFLGameBetsViewer(BaseViewer):
         context = self._get_bet_context()
         bettype, gameline, betline = self._get_misc_data(odds, game, context)
         template = 'vignewton:templates/main-place-bet-ask-confirm.mako'
+        url = '#'
         env = dict(amount=amount, gameline=gameline,
                    betline=betline,
                    odds=odds,
-                   game=game)
+                   game=game,
+                   url=url)
         content = self.render(template, env)
+        self.layout.resources.main_betgames_confirm_bet.need()
         self.layout.content = content
+        self.session['current_bettype'] = bettype
+        self.session['current_amount'] = amount
+        self.session['current_betval'] = context
         
+    def place_bet_confirm(self):
+        context = self._get_bet_context()
+        game_id = self.request.matchdict['id']
+        game = self.games.get(game_id)
+        user_id = self.get_current_user_id()
+        post = self.request.POST
+        amount = int(post['amount'])
+        bettype = self.session['current_bettype']
+        amount = self.session['current_amount']
+        betval = self.session['current_betval']
         
         
     

@@ -139,6 +139,15 @@ def main(global_config, **settings):
                     layout='base',
                     renderer=basetemplate,
                     route_name=route_name)
+
+    route_name = 'vig_really_bet'
+    match = '/vigmakebet/{game_id}/{bettype}/{amount}/{betval}'
+    config.add_route(route_name, match)
+    config.add_view('vignewton.views.betgames.NFLGameBetsViewer',
+                    layout='base',
+                    renderer=basetemplate,
+                    route_name=route_name)
+    
     
     ##################################
     # Login Views

@@ -24,6 +24,8 @@ post_to_url = Resource(js, 'post2url.js', depends=[jqueryui])
 
 main_calendar_view = Resource(js, 'main-calendar-view.js', depends=[fc_css])
 main_betgames_view = Resource(js, 'main-betgames-view.js', depends=[jqueryui])
+main_betgames_confirm_bet = Resource(js, 'main-betgames-confirm-bet.js',
+                                     depends=[jqueryui])
 
 
 from vignewton.security import authn_policy
@@ -38,6 +40,7 @@ class StaticResources(TrumpetResources):
 
     main_calendar_view = main_calendar_view
     main_betgames_view = main_betgames_view
+    main_betgames_confirm_bet = main_betgames_confirm_bet
     
     post_to_url = post_to_url
     lightbox = lightbox
