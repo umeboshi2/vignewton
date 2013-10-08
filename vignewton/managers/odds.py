@@ -65,6 +65,13 @@ class NFLOddsManager(object):
         q = q.filter_by(game_id=game_id)
         return q.one()
 
+    def get_data(self, odds):
+        data = dict(favored_id=odds.favored_id,
+                    underdog_id=odds.underdog_id,
+                    total=odds.total,
+                    spread=odds.spread)
+        return data
+    
     def _fix_number(self, numstr):
         numstr = numstr.encode('utf-8')
         numstr = numstr.strip()

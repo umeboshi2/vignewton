@@ -14,7 +14,7 @@ from sqlalchemy import or_
 from vignewton.models.main import NFLOddsData, NFLGameOdds
 from vignewton.models.main import NFLGame
 from vignewton.models.main import UserAccount, UserBet
-from vignewton.models.main import ClosedBet
+from vignewton.models.main import CurrentBet, ClosedBet
 from vignewton.models.main import BetHistory
 
 from vignewton.managers.base import InsufficientFundsError
@@ -30,6 +30,15 @@ WINLOSE = { True : 'win',
 
 
 class BetNotInTensError(Exception):
+    pass
+
+class MinimumBetError(Exception):
+    pass
+
+class UnconfirmedBetExistsError(Exception):
+    pass
+
+class NoCurrentBetError(Exception):
     pass
 
 # returns favored, underdog, push
@@ -101,10 +110,13 @@ class BetsManager(object):
     def get(self, bet_id):
         return self.query().get(bet_id)
 
+    def get_current_bet(self, user_id):
+        q = self.session.query(CurrentBet)
+        return q.get(user_id)
+
     def _get_odds(self, game_id):
         odds = self.odds.get_odds(game_id)
         return odds
-    
 
     def _copy_current_odds(self, bet, odds):
         for field in ['favored_id', 'underdog_id', 'total',
@@ -114,6 +126,8 @@ class BetsManager(object):
     def _check_amount(self, user_id, amount):
         if amount % 10 != 0:
             raise BetNotInTensError, "Bad amount %d" % amount
+        if amount < 10:
+            raise MinimumBetError, "Bet must be at least ten: %d" % amount
         acct = self.accounts.get(user_id)
         balance = acct.balance.balance
         max_bet = determine_max_bet(balance)
@@ -124,6 +138,9 @@ class BetsManager(object):
             raise InsufficientFundsError, msg
         return True
 
+    def check_bet_amount(self, user_id, amount):
+        return self._check_amount(user_id, amount)
+    
     def _make_bet(self, bettype, user_id, game_id, amount, pick):
         with transaction.manager:
             odds = self._get_odds(game_id)
@@ -144,8 +161,7 @@ class BetsManager(object):
         return self.session.merge(bet)
 
     # pick is either an NFLTeam object, 'over', or 'under'
-    def place_bet(self, user_id, game_id, amount,
-                  bettype, pick):
+    def request_bet(self, user_id, game_id, amount, bettype, pick):
         # here we sanitize the bettype and
         # amount arguments
         if bettype not in ['line', 'underover']:
@@ -153,6 +169,60 @@ class BetsManager(object):
         # check amount
         # self.accounts.check_bet_amount(user_id, amount)
         self._check_amount(user_id, amount)
+        if self.get_current_bet(user_id) is not None:
+            raise UnconfirmedBetExistsError, "Betting in progress"
+        with transaction.manager:
+            now = datetime.now()
+            curbet = CurrentBet()
+            curbet.user_id = user_id
+            curbet.game_id = game_id
+            curbet.created = now
+            curbet.amount = amount
+            curbet.bet_type = bettype
+            if bettype == 'line':
+                # the pick is a team
+                curbet.team_id = pick.id
+            else:
+                # the pick is under/over
+                curbet.underover = pick
+            self.session.add(curbet)
+        return self.session.merge(curbet)
+
+    def show_requested_bet(self, user_id):
+        current = self.get_current_bet(user_id)
+        if current is None:
+            raise NoCurrentBetError, "No current bet"
+        odds = self._get_odds(game_id)
+        odata = self.odds.get_data(odds)
+        return current, odata
+    
+    
+    def place_requested_bet(self, user_id):
+        current, odata = self.show_requested_bet(user_id)
+        game_id = current.game_id
+        amount = current.amount
+        bettype = current.bet_type
+        underover = current.underover
+        team_id = current.team_id
+        with transaction.manager:
+            now = datetime.now()
+            bet = UserBet()
+            bet.user_id = user_id
+            bet.game_id = current.game_id
+            bet.created = current.created
+            bet.amount = current.amount
+            bet.bet_type = current.bet_type
+            bet.underover = current.underover
+            bet.team_id = current.team_id
+            for field in odata:
+                setattr(bet, field, odata[field])
+            self.session.add(bet)
+            dq = self.session.query(CurrentBet).filter_by(user_id=user_id)
+            dq.delete()
+        return self.session.merge(bet)
+    
+    def place_betNOUSE(self, user_id, game_id, amount,
+                  bettype, pick):
         
         return self._make_bet(bettype, user_id, game_id, amount, pick)
 
@@ -206,7 +276,12 @@ class BetsManager(object):
             self.accounts.lose_bet(bet.amount)
         else:
             raise RuntimeError, "bad result %s" % result
-        
+        with transaction.manager:
+            cb = make_closed_bet(bet, result)
+            self.session.add(cb)
+            self.session.delete(bet)
+        return self.session.merge(cb)
+    
 
     def get_all_bets(self):
         return self.query().all()

@@ -153,9 +153,9 @@ class NFLGameBetsViewer(BaseViewer):
         content = self.render(template, env)
         self.layout.resources.main_betgames_confirm_bet.need()
         self.layout.content = content
-        self.session['current_bettype'] = bettype
-        self.session['current_amount'] = amount
-        self.session['current_betval'] = context
+        #self.session['current_bettype'] = bettype
+        #self.session['current_amount'] = amount
+        #self.session['current_betval'] = context
         
     def place_bet_confirm(self):
         context = self._get_bet_context()
@@ -164,9 +164,9 @@ class NFLGameBetsViewer(BaseViewer):
         user_id = self.get_current_user_id()
         post = self.request.POST
         amount = int(post['amount'])
-        bettype = self.session['current_bettype']
-        amount = self.session['current_amount']
-        betval = self.session['current_betval']
+        #bettype = self.session['current_bettype']
+        #amount = self.session['current_amount']
+        #betval = self.session['current_betval']
         
         
     

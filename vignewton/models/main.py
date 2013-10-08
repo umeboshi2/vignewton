@@ -138,6 +138,17 @@ class UserAccount(Base):
 UserAccount.user = relationship(User)
 UserAccount.account = relationship(Account)
 
+class CurrentBet(Base):
+    __tablename__ = 'vig_user_current_bet'
+    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
+    game_id = Column(Integer,
+                     ForeignKey('vig_nfl_games.id'))
+    created = Column(DateTime)
+    amount = Column(Numeric(16,2))
+    bet_type = Column('bet_type', BET_TYPE)
+    underover = Column('underover', UNDER_OVER, default='under')
+    team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    
 class UserBet(Base):
     __tablename__ = 'vig_user_bets'
     id = Column(Integer, primary_key=True)
@@ -147,7 +158,7 @@ class UserBet(Base):
     created = Column(DateTime)
     amount = Column(Numeric(16,2))
     bet_type = Column('bet_type', BET_TYPE)
-    underover = Column('underover', UNDER_OVER)
+    underover = Column('underover', UNDER_OVER, default='under')
     team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
     total = Column(Numeric(16,2))
     spread = Column(Numeric(16,2))
@@ -172,7 +183,7 @@ class ClosedBet(Base):
     created = Column(DateTime)
     amount = Column(Numeric(16,2))
     bet_type = Column('bet_type', BET_TYPE)
-    underover = Column('underover', UNDER_OVER)
+    underover = Column('underover', UNDER_OVER, default='under')
     team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
     total = Column(Numeric(16,2))
     spread = Column(Numeric(16,2))
