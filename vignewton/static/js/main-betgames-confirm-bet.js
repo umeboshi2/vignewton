@@ -3,13 +3,13 @@
 
   $(document).ready(function() {
     $('.betgame-window').hide();
-    $('.action-button').click(function() {
+    $('#confirm-bet-button').click(function() {
       var betlist, bettype, btnid, game_id, url;
       btnid = $(this).attr('id');
       betlist = btnid.split('-');
       bettype = betlist[0];
       game_id = new Number(betlist[1]);
-      url = $(this).attr('href');
+      url = $('#confirm-url').val();
       $('header > h2').text("$$$$$$$" + url);
       return window.location = url;
     });
