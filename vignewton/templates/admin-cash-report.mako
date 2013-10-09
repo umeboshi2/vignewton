@@ -13,7 +13,7 @@
       Wagers Balance: ${accounts.wagers.balance.balance}<br>
     </div>
     <div class="listview-list-entry">
-      Juice Balance: ${accounts.wagers.balance.balance}<br>
+      Juice Balance: ${accounts.juice.balance.balance}<br>
     </div>
     <div class="listview-list-entry">
       <% acct_bal = accounts.get_account_balance_total()[0] %>
