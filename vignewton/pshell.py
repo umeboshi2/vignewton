@@ -89,7 +89,7 @@ def setup(env):
     env['om'] = om
     om.oddscache.set_url(odds_url)
     if not om.get_current_odds():
-        filename = 'o.pickle'
+        filename = 'testdata/o.pickle'
         if not os.path.isfile(filename):
             om.update_current_odds()
         else:

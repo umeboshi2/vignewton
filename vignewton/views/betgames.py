@@ -113,6 +113,8 @@ class NFLGameBetsViewer(BaseViewer):
             showbet=self.show_current_bet,
             cancelbet=self.place_bet_cancel,
             confirmbet=self.place_bet_confirm,
+            pending=self.show_pending_bets,
+            closed=self.show_closed_bets,
             )
 
         if self.context in self._cntxt_meth:
@@ -247,6 +249,19 @@ class NFLGameBetsViewer(BaseViewer):
                        game=game)
             content = self.render(template, env)
             self.layout.content = content
+
+    def show_pending_bets(self):
+        user_id = self.get_current_user_id()
+        bets = self.bets.get_user_bets(user_id)
+        template = 'vignewton:templates/main-user-pending-bets.mako'
+        env = dict(bets=bets)
+        content = self.render(template, env)
+        self.layout.content = content
         
+
+    def show_closed_bets(self):
+        self.layout.content = "show closed bets(todo)"
+
+    
         
         

@@ -50,23 +50,24 @@ def main(global_config, **settings):
             populate_team_map(DBSession)
         except IntegrityError:
             pass
-        
-        if os.path.isfile('nfl-teams.csv'):
+
+        filename = 'testdata/nfl-teams.csv'
+        if os.path.isfile(filename):
             from sqlalchemy.exc import IntegrityError
             from vignewton.managers.nflgames import NFLTeamManager
             from vignewton.managers.util import get_nfl_teams
             m = NFLTeamManager(DBSession)
-            teams = get_nfl_teams('nfl-teams.csv')
+            teams = get_nfl_teams(filename)
             try:
                 m.populate_teams(teams)
             except IntegrityError:
                 transaction.abort()
-        
-        if os.path.isfile('nfl.ics'):
+        filename = 'testdata/nfl.ics'
+        if os.path.isfile(filename):
             from vignewton.managers.nflgames import NFLGameManager
             m = NFLGameManager(DBSession)
             try:
-                m.populate_games(file('nfl.ics').read())
+                m.populate_games(file(filename).read())
             except IntegrityError:
                 import transaction
                 transaction.abort()
