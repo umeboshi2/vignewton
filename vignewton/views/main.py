@@ -15,10 +15,13 @@ from trumpet.views.menus import BaseMenu
 
 from vignewton.managers.nflgames import NFLGameManager
 from vignewton.managers.odds import NFLOddsManager
+from vignewton.managers.bets import BetsManager
+from vignewton.managers.bets import NoCurrentBetError
 from vignewton.managers.util import BettableGamesCollector
 
 from vignewton.views.base import BaseViewer
 from vignewton.views.base import make_main_menu, make_ctx_menu
+from vignewton.views.schema import CreditAmountSchema
 
 class MainCalJSONViewer(BaseViewer):
     def __init__(self, request):
@@ -62,6 +65,13 @@ class MainViewer(BaseViewer):
         self.layout.ctx_menu = make_ctx_menu(self.request).output()
 
         self.odds = NFLOddsManager(self.request.db)
+        self.bets = BetsManager(self.request.db)
+        
+        # make form resources available
+        schema = CreditAmountSchema()
+        form = deform.Form(schema, buttons=('submit',))
+        self.layout.resources.deform_auto_need(form)
+        del schema, form
         
         # begin dispatch
         if self.route == 'home':
@@ -74,10 +84,7 @@ class MainViewer(BaseViewer):
         # make dispatch table
         self._cntxt_meth = dict(
             main=self.main_view,
-            viewevent=self.view_event,
-            viewvenue=self.view_venue,
-            viewdayevents=self.view_events_for_day,
-            exportevent=self.export_event,
+            schedcal=self.schedule_view,
             )
 
         if self.context in self._cntxt_meth:
@@ -103,7 +110,17 @@ class MainViewer(BaseViewer):
                 return self.main_authenticated_view()
         
     def main_authenticated_view(self):
-        self.layout.header = 'NFL Bettable Games' 
+        self.layout.header = 'NFL Bettable Games'
+        user_id = self.get_current_user_id()
+        try:
+            current, odata = self.bets.show_requested_bet(user_id)
+        except NoCurrentBetError:
+            current = None
+        if current is not None:
+            rfun = self.request.route_url
+            url = rfun('vig_betgames', context='showbet', id='user')
+            self.response = HTTPFound(url)
+            return
         olist = self.odds.get_current_odds()
         collector = BettableGamesCollector(olist)
         dates = collector.dates.keys()

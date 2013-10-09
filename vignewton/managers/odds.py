@@ -1,6 +1,7 @@
 import csv
 import re
 from datetime import datetime, timedelta
+import cPickle as Pickle
 
 import requests
 import transaction
@@ -23,6 +24,9 @@ from vignewton.managers.oddsparser import NewOddsParser
 
 ten_minutes = timedelta(minutes=10)
 odds_ttl = ten_minutes
+
+class OddsPresentError(Exception):
+    pass
 
 class NFLOddsCache(BasicCache):
     def __init__(self, session):
@@ -53,12 +57,15 @@ class NFLOddsManager(object):
         self.games = NFLGameManager(self.session)
         self.teams = NFLTeamManager(self.session)
         self.oddscache = NFLOddsCache(self.session)
-
+        
     def query(self):
         return self.session.query(NFLGameOdds)
 
     def get(self, game_id):
         return self.query().get(game_id)
+
+    def archive_cache_table(self):
+        return self.oddscache.archive_table('odds')
     
     def get_odds(self, game_id):
         q = self.query()
@@ -138,7 +145,36 @@ class NFLOddsManager(object):
             odds = self.session.merge(odds)
         return odds
     
-        
+    def _populate_odds(self, games):
+        olist = list()
+        for game in games:
+            print "GAMEODDS", game
+            game_id = self.games.get_game_from_odds(game).id
+            odds = self.get(game_id)
+            if odds is not None:
+                raise OddsPresentError, "odds table should be empty"
+            odds = self.add_game_odds(game_id, game)
+            olist.append(odds)
+        olist = [self.session.merge(o) for o in olist]
+        return olist
+    
+    # this is for testing and needs
+    # an html file to parse
+    def populate_current_odds(self, filename):
+        oc = self.oddscache
+        html = file(filename).read()
+        oc.parser.set_html(html)
+        oc.parser.parse()
+        games = oc.parser.games
+        latest = oc.add(games)
+        olist = self._populate_odds(latest.content)
+        return olist
+    
+
+    def populate_from_pickle(self, filename):
+        games = Pickle.load(file(filename))
+        return self._populate_odds(games)
+    
     def update_current_odds(self):
         latest, updated = self.oddscache.get_latest()
         oddslist = list()

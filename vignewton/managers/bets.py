@@ -35,6 +35,9 @@ class BetNotInTensError(Exception):
 class MinimumBetError(Exception):
     pass
 
+class MaximumBetError(Exception):
+    pass
+
 class UnconfirmedBetExistsError(Exception):
     pass
 
@@ -103,6 +106,9 @@ class BetsManager(object):
         self.teams = NFLTeamManager(self.session)
         self.odds = NFLOddsManager(self.session)
         self.accounts = AccountingManager(self.session)
+        # FIXME: put this in config or database
+        self.max_bet = 500
+        
         
     def query(self):
         return self.session.query(UserBet)
@@ -128,6 +134,9 @@ class BetsManager(object):
             raise BetNotInTensError, "Bad amount %d" % amount
         if amount < 10:
             raise MinimumBetError, "Bet must be at least ten: %d" % amount
+        if amount > self.max_bet:
+            msg = "Bet must be no more than %d: amount %d"
+            raise MaximumBetError, msg % (self.max_bet, amount)
         acct = self.accounts.get(user_id)
         balance = acct.balance.balance
         max_bet = determine_max_bet(balance)
@@ -141,25 +150,6 @@ class BetsManager(object):
     def check_bet_amount(self, user_id, amount):
         return self._check_amount(user_id, amount)
     
-    def _make_bet(self, bettype, user_id, game_id, amount, pick):
-        with transaction.manager:
-            odds = self._get_odds(game_id)
-            now = datetime.now()
-            bet = UserBet()
-            bet.bet_type = bettype
-            bet.created = now
-            bet.user_id = user_id
-            bet.amount = amount
-            if bettype == 'line':
-                # the pick is a team
-                bet.team_id = pick.id
-            else:
-                # the pick is under/over
-                bet.underover = pick
-            self._copy_current_odds(bet, odds)
-            self.session.add(bet)
-        return self.session.merge(bet)
-
     # pick is either an NFLTeam object, 'over', or 'under'
     def request_bet(self, user_id, game_id, amount, bettype, pick):
         # here we sanitize the bettype and
@@ -192,11 +182,16 @@ class BetsManager(object):
         current = self.get_current_bet(user_id)
         if current is None:
             raise NoCurrentBetError, "No current bet"
-        odds = self._get_odds(game_id)
+        odds = self._get_odds(current.game_id)
         odata = self.odds.get_data(odds)
         return current, odata
     
-    
+    def cancel_requested_bet(self, user_id):
+        with transaction.manager:
+            q = self.session.query(CurrentBet)
+            q = q.filter_by(user_id=user_id)
+            q.delete()
+            
     def place_requested_bet(self, user_id):
         current, odata = self.show_requested_bet(user_id)
         game_id = current.game_id
@@ -219,12 +214,10 @@ class BetsManager(object):
             self.session.add(bet)
             dq = self.session.query(CurrentBet).filter_by(user_id=user_id)
             dq.delete()
+        account = self.accounts.get(user_id)
+        self.accounts.place_bet(account.id, amount)
         return self.session.merge(bet)
     
-    def place_betNOUSE(self, user_id, game_id, amount,
-                  bettype, pick):
-        
-        return self._make_bet(bettype, user_id, game_id, amount, pick)
 
     def get_bets(self, user_id=None, game_id=None):
         pass

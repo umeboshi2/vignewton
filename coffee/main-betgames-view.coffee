@@ -7,17 +7,23 @@ $(document).ready ->
                 bettype = betlist[0]
                 game_id = new Number(betlist[1])
                 url = $(this).attr('href')
-                $('header > h2').text("$$$$$$$" + url)
-                # I can't remember how to load another
-                # url, so I'm using a hacky form submit
-                # 
-                #$(window).load(url)
-                #form = document.createElement('form')
-                #form.setAttribute('method', 'post')
-                #form.setAttribute('action', url)
-                #form.submit()
-                #$(:window).load(url)
                 window.location = url
+                
+        $('.action-button-testing').click ->
+                btnid = $(this).attr('id')
+                betlist = btnid.split('-')
+                bettype = betlist[0]
+                game_id = new Number(betlist[1])
+                url = $(this).attr('href')
+                eid = '#betgame-window-' + game_id
+                $('header > h2').text('loading...')
+                form_url = $(eid).attr('href')
+                $(eid).load(form_url, {}, () ->
+                        $('header > h2').text(form_url)
+                        )
+                $(eid).show()
+                
+                
                 
         $('#nothere').click ->
                 betval = betlist[2]

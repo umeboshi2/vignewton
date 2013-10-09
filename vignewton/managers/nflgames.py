@@ -112,6 +112,9 @@ class NFLGameManager(object):
         self.schedules = NFLScheduleCache(self.session)
         self.teams = NFLTeamManager(self.session)
         self.fnlookup = self.make_fullname_lookup()
+
+    def archive_cache_table(self):
+        return self.schedules.archive_table('schedule')
         
     def make_fullname_lookup(self):
         return self.teams.make_fullname_lookup()

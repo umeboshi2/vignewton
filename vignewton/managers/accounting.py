@@ -16,7 +16,7 @@ from vignewton.models.main import Transfer, LedgerEntry
 from vignewton.models.main import UserAccount
 
 from vignewton.models.main import BetFinal, CashTransfer
-from vignewton.models.main import BaseTransfer
+from vignewton.models.main import BaseTransfer, TransferType
 from vignewton.models.main import DeclarativeTransfer
 
 from vignewton.managers.base import InsufficientFundsError
@@ -50,8 +50,9 @@ from vignewton.managers.base import NoBetsManagerError
 #
 #
 
-def make_double_entries(creditor, debtor, amount, now):
+def make_double_entries(ttype, creditor, debtor, amount, now):
     c = BaseTransfer()
+    c.type_id = ttype.id
     c.created = now
     c.account_id = creditor
     c.amount = amount
@@ -127,6 +128,10 @@ class AccountingManager(object):
         q = q.filter_by(name='InTheWild_Account')
         return q.one()
     
+    def _get_xfer_type(self, name):
+        q = self.session.query(TransferType)
+        q = q.filter_by(name=name)
+        return q.one()
     
     def add_account(self, name):
         with transaction.manager:
@@ -181,24 +186,23 @@ class AccountingManager(object):
             cash = self.get_balance(self.cash.id)
             wild = self.get_balance(self.inthewild.id)
             now = datetime.now()
+            ttype = self._get_xfer_type('deposit_cash')
             # transfer to cash and from wild
-            to_cash, from_wild = make_double_entries(self.cash.id,
+            to_cash, from_wild = make_double_entries(ttype,
+                                                     self.cash.id,
                                                      self.inthewild.id,
                                                      amount,
                                                      now)
-            dt = declare_xfer(to_cash, from_wild, cash, wild, now)
             #adjust balances
             cash.balance += amount
             wild.balance -= amount
             # update database
             self.session.add(to_cash)
             self.session.add(from_wild)
-            self.session.add(dt)
             cash = self.session.merge(cash)
             wild = self.session.merge(wild)
-        dt = self.session.merge(dt)
         self._refresh_standard_accounts()
-        return dt, cash, wild
+        return cash, wild
 
     def take_from_cash(self, amount):
         cash_balance = self.get_balance(self.cash.id).balance
@@ -209,24 +213,23 @@ class AccountingManager(object):
             now = datetime.now()
             cash = self.get_balance(self.cash.id)
             wild = self.get_balance(self.inthewild.id)
+            ttype = self._get_xfer_type('withdraw_cash')
             # transfer to wild and from cash
-            to_wild, from_cash = make_double_entries(self.inthewild.id,
+            to_wild, from_cash = make_double_entries(ttype,
+                                                     self.inthewild.id,
                                                      self.cash.id,
                                                      amount,
                                                      now)
-            dt = declare_xfer(from_cash, to_wild, cash, wild, now) 
             #adjust balances
             wild.balance += amount
             cash.balance -= amount
             # update database
             self.session.add(to_wild)
             self.session.add(from_cash)
-            self.session.add(dt)
             cash = self.session.merge(cash)
             wild = self.session.merge(wild)
-        dt = self.session.merge(dt)
         self._refresh_standard_accounts()
-        return dt, cash, wild
+        return cash, wild
 
        
         
@@ -239,8 +242,10 @@ class AccountingManager(object):
             acct = self.get_balance(account_id)
             wild = self.get_balance(self.inthewild.id)
             now = datetime.now()
+            ttype = self._get_xfer_type('deposit_acct')
             # make double entries
-            to_acct, from_wild = make_double_entries(account_id,
+            to_acct, from_wild = make_double_entries(ttype,
+                                                     account_id,
                                                      self.inthewild.id,
                                                      amount,
                                                      now)
@@ -252,12 +257,10 @@ class AccountingManager(object):
             # update database
             self.session.add(to_acct)
             self.session.add(from_wild)
-            self.session.add(dt)
             acct = self.session.merge(acct)
             wild = self.session.merge(wild)
-        dt = self.session.merge(dt)
         self._refresh_standard_accounts()
-        return dt, acct, wild
+        return acct, wild
 
     def pay_account(self, account_id, amount):
         "from user account to wild"
@@ -269,27 +272,25 @@ class AccountingManager(object):
             acct = self.get_balance(account_id)
             wild = self.get_balance(self.inthewild.id)
             now = datetime.now()
+            ttype = self._get_xfer_type('withdraw_acct')
             # transfer to wild
             # transfer from account
-            to_wild, from_acct = make_double_entries(self.inthewild.id,
+            to_wild, from_acct = make_double_entries(ttype,
+                                                     self.inthewild.id,
                                                      account_id,
                                                      amount,
                                                      now)
             
-            # declarative transfer
-            dt = declare_xfer(from_acct, to_wild, acct, wild, now)
             #adjust balances
             wild.balance += amount
             acct.balance -= amount
             # update database
             self.session.add(to_wild)
             self.session.add(from_acct)
-            self.session.add(dt)
             acct = self.session.merge(acct)
             wild = self.session.merge(wild)
-        dt = self.session.merge(dt)
         self._refresh_standard_accounts()
-        return dt, acct, wild
+        return acct, wild
 
 
     # This just moves money from the
@@ -299,8 +300,6 @@ class AccountingManager(object):
     # A matching amount is moved from the cash accout
     # to the wager account to cover the bet.
     def place_bet(self, account_id, amount):
-        if self.bets is None:
-            raise NoBetsManagerError, "No bets manager"
         juice_insurance = amount / 10
         total = amount + juice_insurance
         acct = self.get_balance(account_id)
@@ -320,34 +319,31 @@ class AccountingManager(object):
             juice = self.get_balance(self.juice.id)
             cash = self.get_balance(self.cash.id)
             now = datetime.now()
+            ttype = self._get_xfer_type('place_bet')
             # transfer to wager
             # transfer from account
-            to_wagers, from_acct = make_double_entries(self.wagers.id,
+            to_wagers, from_acct = make_double_entries(ttype,
+                                                       self.wagers.id,
                                                        account_id,
                                                        amount,
                                                        now)
             
             # transfer to juice
             # account covers juice
-            to_juice, juiced_from = make_double_entries(self.juice.id,
+            to_juice, juiced_from = make_double_entries(ttype,
+                                                        self.juice.id,
                                                         account_id,
                                                         juice_insurance,
                                                         now)
             # transfer to wager
             # transfer from cash
-            cash_to_wagers, from_cash = make_double_entries(self.wagers.id,
+            cash_to_wagers, from_cash = make_double_entries(ttype,
+                                                            self.wagers.id,
                                                             self.cash.id,
                                                             amount,
                                                             now)
             dbobjects = [to_wagers, from_acct, to_juice, juiced_from,
                          cash_to_wagers, from_cash]
-            # declarative transfer
-            dt = declare_xfer(from_acct, to_wagers, acct, wagers, now)
-            # declarative juice
-            dtj = declare_xfer(juiced_from, to_juice, acct, juice, now)
-            # declarative cash
-            dtc = declare_xfer(from_cash, cash_to_wagers, cash, wagers, now)
-            dbobjects += [dt, dtj, dtc]
             #adjust balances
             wagers.balance += amount + amount
             acct.balance -= amount
@@ -372,8 +368,6 @@ class AccountingManager(object):
     # money from the juice account to the
     # user account.
     def win_bet(self, account_id, amount):
-        if self.bets is None:
-            raise NoBetsManagerError, "No bets manager"
         acct = self.get_balance(account_id)
         wagers = self.get_balance(self.wagers.id)
         juice = self.get_balance(self.juice.id)
@@ -387,26 +381,25 @@ class AccountingManager(object):
             raise InsufficientFundsError, msg
         with transaction.manager:
             now = datetime.now()
+            ttype = self._get_xfer_type('win_bet')
             # transfer to user
             # transfer from wagers
             payout = amount + amount
-            to_acct, from_wagers = make_double_entries(account_id,
+            to_acct, from_wagers = make_double_entries(ttype,
+                                                       account_id,
                                                        self.wagers.id,
                                                        payout, now)
             
 
             # juice to user
             # juice from juice
-            juiced_to, from_juice = make_double_entries(account_id,
+            juiced_to, from_juice = make_double_entries(ttype,
+                                                        account_id,
                                                         self.juice.id,
                                                         juice_insurance,
                                                         now)
             # make object list
             dbobjects = [to_acct, from_wagers, from_juice, juiced_to]
-            # declarative transfers
-            dt = declare_xfer(to_acct, from_wagers, acct, wagers, now)
-            dtj = declare_xfer(juiced_to, from_juice, acct, juice, now)
-            dbobjects += [dt, dtj]
             # adjust balances
             acct.balance += payout
             wagers.balance -= payout
@@ -428,8 +421,6 @@ class AccountingManager(object):
     # of money from the juice account to the
     # cash account.
     def lose_bet(self, amount):
-        if self.bets is None:
-            raise NoBetsManagerError, "No bets manager"
         cash = self.get_balance(self.cash.id)
         wagers = self.get_balance(self.wagers.id)
         juice = self.get_balance(self.juice.id)
@@ -437,19 +428,19 @@ class AccountingManager(object):
         total = amount + juice_insurance
         with transaction.manager:
             now = datetime.now()
+            ttype = self._get_xfer_type('lose_bet')
             payback = amount + amount
-            to_cash, from_wagers = make_double_entries(self.cash.id,
+            to_cash, from_wagers = make_double_entries(ttype,
+                                                       self.cash.id,
                                                        self.wagers.id,
                                                        payback,
                                                        now)
-            get_juice, juiced_from = make_double_entries(self.cash.id,
+            get_juice, juiced_from = make_double_entries(ttype,
+                                                         self.cash.id,
                                                          self.juice.id,
                                                          juice_insurance,
                                                          now)
-            dt = declare_xfer(to_cash, from_wagers, cash, wagers, now)
-            dtj = declare_xfer(get_juice, juiced_from, cash, juice, now)
-            dbobjects = [to_cash, from_wagers, get_juice, juiced_from,
-                         dt, dtj]
+            dbobjects = [to_cash, from_wagers, get_juice, juiced_from]
             # adjust balances
             cash.balance += payback
             wagers.balance -= payback
@@ -457,8 +448,8 @@ class AccountingManager(object):
             juice.balance -= juice_insurance
             for dbobj in dbobjects:
                 self.session.add(dbobj)
-                for dbobj in [cash, wagers, juice]:
-                    self.session.merge(dbobj)
+            for dbobj in [cash, wagers, juice]:
+                self.session.merge(dbobj)
         self._refresh_standard_accounts()
         return cash, wagers, juice
 
@@ -470,8 +461,6 @@ class AccountingManager(object):
     # back to the user account.
     # This is the opposite of place_bet.
     def push_bet(self, account_id, amount):
-        if self.bets is None:
-            raise NoBetsManagerError, "No bets manager"
         acct = self.get_balance(account_id)
         cash = self.get_balance(self.cash.id)
         wagers = self.get_balance(self.wagers.id)
@@ -480,29 +469,28 @@ class AccountingManager(object):
         total = amount + juice_insurance
         with transaction.manager:
             now = datetime.now()
+            ttype = self._get_xfer_type('push_bet')
             wagers_loss = amount + amount
             # transfer from wagers to account
-            to_acct, from_wagers = make_double_entries(account_id,
+            to_acct, from_wagers = make_double_entries(ttype,
+                                                       account_id,
                                                        self.wagers.id,
                                                        amount,
                                                        now)
             # transfer from wagers to cash
-            to_cash, cfrom_wagers = make_double_entries(self.cash.id,
+            to_cash, cfrom_wagers = make_double_entries(ttype,
+                                                        self.cash.id,
                                                         self.wagers.id,
                                                         amount,
                                                         now)
             # transfer from juice to account
-            jto_acct, from_juice = make_double_entries(account_id,
+            jto_acct, from_juice = make_double_entries(ttype,
+                                                       account_id,
                                                        self.juice.id,
                                                        juice_insurance,
                                                        now)
             dbobjects = [to_acct, from_wagers, to_cash, cfrom_wagers,
                          jto_acct, from_juice]
-            # declarative transfers
-            dt = declare_xfer(to_acct, from_wagers, acct, wagers, now)
-            dtc = declare_xfer(to_cash, cfrom_wagers, cash, wagers, now)
-            dtj = declare_xfer(jto_acct, from_juice, acct, juice, now)
-            dbobjects += [dt, dtc, dtj]
             # adjust balances
             acct.balance += amount
             cash.balance += amount

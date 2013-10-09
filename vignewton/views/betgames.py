@@ -18,6 +18,7 @@ from vignewton.managers.nflgames import NFLTeamManager
 from vignewton.managers.odds import NFLOddsManager
 from vignewton.managers.bets import BetsManager
 from vignewton.managers.util import BettableGamesCollector
+from vignewton.managers.base import InsufficientFundsError
 
 from vignewton.views.base import BaseViewer
 from vignewton.views.base import make_main_menu, make_ctx_menu
@@ -54,7 +55,31 @@ def text_for_underover_bet(odds, game, betval):
 CONTEXT_TEXTFUN = dict(line=text_for_line_bet,
                        underover=text_for_underover_bet)
 
+def get_context_from_current_bet(cb, odds):
+    if cb.bet_type == 'underover':
+        return cb.underover
+    else:
+        team_id = cb.team_id
+        if team_id == odds.favored_id:
+            return 'favored'
+        else:
+            return 'underdog'
+        
 
+class NFLBetFrag(BaseViewer):
+    def __init__(self, request):
+        super(NFLBetFrag, self).__init__(request)
+        #self._template = 'vignewton:templates/main-betgame-frag.mako'
+        #self.bets = BetsManager(self.request.db)
+        self.render_frag()
+        
+    def render_frag(self):
+        schema = CreditAmountSchema()
+        form = deform.Form(schema, buttons=('submit',))
+        self.layout.resources.deform_auto_need(form)
+        self.response = form.render()
+        
+    
 class NFLGameBetsViewer(BaseViewer):
     def __init__(self, request):
         super(NFLGameBetsViewer, self).__init__(request)
@@ -65,6 +90,12 @@ class NFLGameBetsViewer(BaseViewer):
         self.games = NFLGameManager(self.request.db)
         self.odds = NFLOddsManager(self.request.db)
         self.bets = BetsManager(self.request.db)
+
+        # make form resources available
+        schema = CreditAmountSchema()
+        form = deform.Form(schema, buttons=('submit',))
+        self.layout.resources.deform_auto_need(form)
+        del schema, form
         
         settings = self.get_app_settings()
         url = settings['vignewton.nfl.odds.url']
@@ -79,6 +110,9 @@ class NFLGameBetsViewer(BaseViewer):
             betunder=self.place_bet,
             betfavored=self.place_bet,
             betunderdog=self.place_bet,
+            showbet=self.show_current_bet,
+            cancelbet=self.place_bet_cancel,
+            confirmbet=self.place_bet_confirm,
             )
 
         if self.context in self._cntxt_meth:
@@ -131,7 +165,29 @@ class NFLGameBetsViewer(BaseViewer):
         bettype = CONTEXT_BETTYPE[context]
         gameline, betline = CONTEXT_TEXTFUN[bettype](odds, game, context)
         return bettype, gameline, betline
-    
+
+
+    def show_current_bet(self):
+        user_id = self.get_current_user_id()
+        current, odata = self.bets.show_requested_bet(user_id)
+        amount = current.amount
+        odds = self.odds.get(current.game_id)
+        game = odds.game
+        context = get_context_from_current_bet(current, odds)
+        bettype, gameline, betline = self._get_misc_data(odds, game, context)
+        template = 'vignewton:templates/main-place-bet-ask-confirm.mako'
+        confirm_url = self.url(context='confirmbet', id='bet')
+        cancel_url = self.url(context='cancelbet', id='bet')
+        env = dict(amount=amount, gameline=gameline,
+                   betline=betline,
+                   odds=odds,
+                   game=game,
+                   confirm_url=confirm_url,
+                   cancel_url=cancel_url,)
+        content = self.render(template, env)
+        self.layout.resources.main_betgames_confirm_bet.need()
+        self.layout.content = content
+        
     def _place_bet_submitted(self, form, odds, game):
         controls = self.request.POST.items()
         try:
@@ -143,30 +199,30 @@ class NFLGameBetsViewer(BaseViewer):
         user_id = self.get_current_user_id()
         context = self._get_bet_context()
         bettype, gameline, betline = self._get_misc_data(odds, game, context)
-        template = 'vignewton:templates/main-place-bet-ask-confirm.mako'
-        url = '#'
-        env = dict(amount=amount, gameline=gameline,
-                   betline=betline,
-                   odds=odds,
-                   game=game,
-                   url=url)
-        content = self.render(template, env)
-        self.layout.resources.main_betgames_confirm_bet.need()
-        self.layout.content = content
-        #self.session['current_bettype'] = bettype
-        #self.session['current_amount'] = amount
-        #self.session['current_betval'] = context
+        if CONTEXT_BETTYPE[context] == 'line':
+            if context == 'favored':
+                pick = self.teams.get(odds.favored_id)
+            else:
+                pick = self.teams.get(odds.underdog_id)
+        else:
+            pick = context
+        try:
+            self.bets.request_bet(user_id, game.id, amount, bettype, pick)
+        except InsufficientFundsError, e:
+            self.layout.content = str(e)
+            return
+        self.show_current_bet()
+
         
     def place_bet_confirm(self):
-        context = self._get_bet_context()
-        game_id = self.request.matchdict['id']
-        game = self.games.get(game_id)
         user_id = self.get_current_user_id()
-        post = self.request.POST
-        amount = int(post['amount'])
-        #bettype = self.session['current_bettype']
-        #amount = self.session['current_amount']
-        #betval = self.session['current_betval']
+        self.bets.place_requested_bet(user_id)
+        self.response = HTTPFound('/')
+
+    def place_bet_cancel(self):
+        user_id = self.get_current_user_id()
+        self.bets.cancel_requested_bet(user_id)
+        self.response = HTTPFound('/')
         
         
     

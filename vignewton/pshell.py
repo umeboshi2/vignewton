@@ -50,7 +50,14 @@ def even_more_setup(env):
     
     
     
-
+def backup_cache(gm, om):
+    ofilename = 'odds-cache.zip'
+    sfilename = 'sched-cache.zip'
+    with file(ofilename, 'wb') as o:
+        o.write(om.archive_cache_table())
+    with file(sfilename, 'wb') as o:
+        o.write(gm.archive_cache_table())
+        
 def setup(env):
     request = env['request']
     db = request.db
@@ -81,6 +88,13 @@ def setup(env):
     om = NFLOddsManager(db)
     env['om'] = om
     om.oddscache.set_url(odds_url)
+    if not om.get_current_odds():
+        filename = 'o.pickle'
+        if not os.path.isfile(filename):
+            om.update_current_odds()
+        else:
+            om.populate_from_pickle(filename)
+            
     from vignewton.managers.accounting import AccountingManager
     am = AccountingManager(db)
     am.initialize_bets_manager()
@@ -94,4 +108,9 @@ def setup(env):
     from vignewton.managers.util import determine_max_bet
     env['dmb'] = determine_max_bet
     env['game'] = gm.query().get(125)
+    backup_cache(gm, om)
+    from vignewton.managers.bets import BetsManager
+    bm = BetsManager(db)
+    env['bm'] = bm
+    
     

@@ -78,6 +78,15 @@ class NFLGameScore(Base):
     def __repr__(self):
         s = '<NFLGameScore: %d at %d>' % (self.away_score, self.home_score)
         return s
+
+
+class MainCache(Base):
+    __tablename__ = 'vig_main_cache'
+    id = Column(Integer, primary_key=True)
+    type = Column(Unicode(50))
+    retrieved = Column(DateTime)
+    updated = Column(DateTime)
+    content = Column(PickleType)
     
 class NFLOddsData(Base):
     __tablename__ = 'vig_nfl_odds_data'
@@ -233,13 +242,20 @@ class CashTransfer(Base):
     cash_balance = Column(Numeric(16,2))
     created = Column(DateTime)
     
-
+class TransferType(Base):
+    __tablename__ = 'vig_account_transfer_types'
+    id = Column(Integer, primary_key=True)
+    name = Column(Unicode(100), unique=True)
+    
 class BaseTransfer(Base):
     __tablename__ = 'vig_base_account_ledger'
     id = Column(Integer, primary_key=True)
+    type_id = Column(Integer, ForeignKey('vig_account_transfer_types.id'))
     created = Column(DateTime)
     account_id = Column(Integer, ForeignKey('vig_accounts.id'))
     amount = Column(Numeric(16,2))
+
+BaseTransfer.type = relationship(TransferType)
 
 class DeclarativeTransfer(Base):
     __tablename__ = 'vig_declarative_ledger'
@@ -278,8 +294,23 @@ class LoginHistory(Base):
 
 populate = vignewton.models.usergroup.populate
 
+XFERTYPES = ['deposit_cash', 'withdraw_cash',
+             'deposit_acct', 'withdraw_acct',
+             'place_bet', 'win_bet', 'lose_bet',
+             'push_bet']
+
+
 def populate_accounting_tables(session):
     db = session
+    try:
+        with transaction.manager:
+            for xftertype in XFERTYPES:
+                x = TransferType()
+                x.name = xftertype
+                db.add(x)
+    except IntegrityError:
+        transaction.abort()
+            
     try:
         from vignewton.managers.accounting import AccountingManager
         am = AccountingManager(db)
@@ -287,7 +318,6 @@ def populate_accounting_tables(session):
             am.add_account('%s_Account' % acct)
     except IntegrityError:
         transaction.abort()
-        
 
 
 def make_test_data(session):

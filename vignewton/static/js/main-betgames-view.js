@@ -10,8 +10,22 @@
       bettype = betlist[0];
       game_id = new Number(betlist[1]);
       url = $(this).attr('href');
-      $('header > h2').text("$$$$$$$" + url);
       return window.location = url;
+    });
+    $('.action-button-testing').click(function() {
+      var betlist, bettype, btnid, eid, form_url, game_id, url;
+      btnid = $(this).attr('id');
+      betlist = btnid.split('-');
+      bettype = betlist[0];
+      game_id = new Number(betlist[1]);
+      url = $(this).attr('href');
+      eid = '#betgame-window-' + game_id;
+      $('header > h2').text('loading...');
+      form_url = $(eid).attr('href');
+      $(eid).load(form_url, {}, function() {
+        return $('header > h2').text(form_url);
+      });
+      return $(eid).show();
     });
     return $('#nothere').click(function() {
       var betval, betwin_id, betwin_id_sel, betwin_visible;

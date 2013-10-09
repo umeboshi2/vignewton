@@ -78,10 +78,6 @@ class CreditsViewer(AdminViewer):
             self.layout.content = '<b>%s</b>' % msg
 
 
-    def _update_odds(self):
-        pass
-    
-    
     def main_view(self):
         self.layout.header = 'Main Credits View'
         self.layout.content = 'Main Credits View'
@@ -107,13 +103,13 @@ class CreditsViewer(AdminViewer):
             return
         amount = int(data['amount'])
         if transfer == 'deposit':
-            dt, cash, wild = self.accounts.add_to_cash(amount)
+            cash, wild = self.accounts.add_to_cash(amount)
         elif transfer == 'withdraw':
-            dt, cash, wild = self.accounts.take_from_cash(amount)
+            cash, wild = self.accounts.take_from_cash(amount)
         else:
             raise RuntimeError, "bad problem"
         template = 'vignewton:templates/admin-cash-report.mako'
-        env = dict(dt=dt, cash=cash, wild=wild, accounts=self.accounts)
+        env = dict(cash=cash, wild=wild, accounts=self.accounts)
         content = self.render(template, env)
         #self.layout.content = "Deposit %d into cash box" % amount
         self.layout.content = content

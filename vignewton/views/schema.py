@@ -23,7 +23,7 @@ class CreditAmountSchema(colander.Schema):
         colander.String(),
         title='Amount',
         description="Amount of creditsffff",
-        widget=deform.widget.TextInputWidget(mask='$9990',
+        widget=deform.widget.TextInputWidget(mask='$990',
                                              mask_placeholder='0'),
         )
     

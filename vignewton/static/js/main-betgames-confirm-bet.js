@@ -2,30 +2,15 @@
 (function() {
 
   $(document).ready(function() {
-    $('.betgame-window').hide();
     $('#confirm-bet-button').click(function() {
-      var betlist, bettype, btnid, game_id, url;
-      btnid = $(this).attr('id');
-      betlist = btnid.split('-');
-      bettype = betlist[0];
-      game_id = new Number(betlist[1]);
+      var url;
       url = $('#confirm-url').val();
-      $('header > h2').text("$$$$$$$" + url);
       return window.location = url;
     });
-    return $('#nothere').click(function() {
-      var betval, betwin_id, betwin_id_sel, betwin_visible;
-      betval = betlist[2];
-      betwin_id = "betgame-window-" + game_id;
-      betwin_id_sel = "#" + betwin_id;
-      $(betwin_id_sel).text("Bet on this game");
-      betwin_visible = $(betwin_id_sel).is(":visible");
-      $('header > h2').text(betwin_visible);
-      if (betwin_visible) {
-        return $(betwin_id_sel).hide();
-      } else {
-        return $(betwin_id_sel).show();
-      }
+    return $('#cancel-bet-button').click(function() {
+      var url;
+      url = $('#cancel-url').val();
+      return window.location = url;
     });
   });
 

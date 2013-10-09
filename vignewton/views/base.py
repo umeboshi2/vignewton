@@ -45,6 +45,8 @@ def make_ctx_menu(request):
         user = request.session['user']
         url = request.route_url('home')
         menu.append_new_entry('Main View', url)
+        url = request.route_url('main', context='schedcal', id='today')
+        menu.append_new_entry('Schedule', url)
         url = request.route_url('view_wiki')
         menu.append_new_entry('Wiki', url)
         url = request.route_url('vig_nflteams', context='main', id='all')

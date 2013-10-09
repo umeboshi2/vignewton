@@ -24,6 +24,7 @@
       <% under_url = mkurl(broute, context='betunder', id=game_id) %>
       <% over_id = 'underover-{}-over'.format(game_id) %>
       <% over_url = mkurl(broute, context='betover', id=game_id) %>
+      <% form_url = mkurl('vig_betfrag', context='betover', id='foo') %>
       <a href="${game_url}">${summary}</a><br>
       <div class="action-button" id="${favored_id}" href="${favored_url}">${favored_txt}</div>
       over 
@@ -33,7 +34,7 @@
       ${odds.total}
       <div class="action-button" id="${over_id}" href="${over_url}">over</div><br>
     </div>
-    <div class="betgame-window" id="betgame-window-${game_id}" href="${1}"></div>
+    <div class="betgame-window" id="betgame-window-${game_id}" href="${form_url}"><div></div></div>
     %endfor
   </div>
   %endfor

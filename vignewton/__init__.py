@@ -108,12 +108,14 @@ def main(global_config, **settings):
                     route_name='home')
     config.add_route('main', '/main/{context}/{id}')
     config.add_view('vignewton.views.main.MainViewer',
+                    permission='user',
                     layout='base',
                     renderer=basetemplate,
-                    route_name='main')
+                    route_name='main',)
     route_name = 'maincal_json'
     config.add_route(route_name, '/%s/{context}/{id}' % route_name)
     config.add_view('vignewton.views.main.MainCalJSONViewer',
+                    permission='user',
                     route_name=route_name,
                     renderer='json',
                     layout='base',)
@@ -121,6 +123,7 @@ def main(global_config, **settings):
     route_name = 'vig_nflteams'
     config.add_route(route_name, '/vignflteams/{context}/{id}')
     config.add_view('vignewton.views.teams.NFLTeamViewer',
+                    permission='user',
                     layout='base',
                     renderer=basetemplate,
                     route_name=route_name)
@@ -128,6 +131,7 @@ def main(global_config, **settings):
     route_name = 'vig_nflgames'
     config.add_route(route_name, '/vignflgames/{context}/{id}')
     config.add_view('vignewton.views.games.NFLGameViewer',
+                    permission='user',
                     layout='base',
                     renderer=basetemplate,
                     route_name=route_name)
@@ -136,14 +140,24 @@ def main(global_config, **settings):
     route_name = 'vig_betgames'
     config.add_route(route_name, '/vigbetgames/{context}/{id}')
     config.add_view('vignewton.views.betgames.NFLGameBetsViewer',
+                    permission='user',
                     layout='base',
                     renderer=basetemplate,
                     route_name=route_name)
 
+    route_name = 'vig_betfrag'
+    config.add_route(route_name, '/vigbetfrag/{context}/{id}')
+    config.add_view('vignewton.views.betgames.NFLBetFrag',
+                    permission='user',
+                    layout='base',
+                    renderer='string',
+                    route_name=route_name)
+    
     route_name = 'vig_really_bet'
     match = '/vigmakebet/{game_id}/{bettype}/{amount}/{betval}'
     config.add_route(route_name, match)
     config.add_view('vignewton.views.betgames.NFLGameBetsViewer',
+                    permission='user',
                     layout='base',
                     renderer=basetemplate,
                     route_name=route_name)
