@@ -1,0 +1,2987 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Don Best XML Odds</title>
+<LINK REL="stylesheet" HREF="http://feeds.donbest.com/xml/odds/DannySheridan/odds.css" TYPE="text/css">
+<script language="javascript" src="http://feeds.donbest.com/xml/odds/DannySheridan/funcs.js"></script>
+</head>
+<body>
+<script language="JavaScript">
+            number_of_books = 4;
+            display_line = new Array (number_of_books+1);
+        
+//      sports_books [1-1] = 'LVH';
+    
+//      sports_books [2-1] = 'Golden Nugget';
+    
+//      sports_books [3-1] = 'Caesars';
+    
+//      sports_books [4-1] = 'Mirage';
+    </script>
+<table width="700" bordercolor="#000000" border="0" bordercolorlight="#000000" bordercolordark="#000000" bgcolor="#000000" cellspacing="1">
+<script language="JavaScript">
+            league = 1;
+            put_name (league);
+            
+
+        print_header ("NFL WEEK 3");
+    
+
+        print_header ("Monday, September 23rd");
+    
+
+        in_game ('20130923', '17:40');
+        
+        in_team ('419', "OAKLAND", "", '', '', '');
+        
+        in_line ('49½', '0');
+    
+        in_line ('49', '');
+    
+        in_line ('50', '');
+    
+        in_line ('49½', '');
+    
+        in_line ('49', '');
+    
+        in_team ('420', "DENVER", "", '', '', '');
+        
+        in_line ('14½', '0');
+    
+        in_line ('14½', '');
+    
+        in_line ('15', '');
+    
+        in_line ('15', '');
+    
+        in_line ('14½', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL IN-GAME LINES");
+    
+
+        print_header ("");
+    
+
+        in_game ('20130923', '21:40');
+        
+        in_team ('9419', "RAIDERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('9420', "BRONCOS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL WEEK 4");
+    
+
+        print_header ("Thursday, September 26th");
+    
+
+        in_game ('20130926', '17:25');
+        
+        in_team ('101', "SAN FRANCISCO", "", '', '', '');
+        
+        in_line ('3', '0');
+    
+        in_line ('3½ev', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('102', "ST. LOUIS", "", '', '', '');
+        
+        in_line ('44', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL IN-GAME LINES");
+    
+
+        print_header ("");
+    
+
+        in_game ('20130926', '21:30');
+        
+        in_team ('9101', "49ERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('9102', "RAMS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+</script><script language="JavaScript">
+            league = 1;
+            put_name (league);
+            
+
+        print_header ("NFL WEEK 4");
+    
+
+        print_header ("Sunday, September 29th (BYES: CAR, GB)");
+    
+
+        in_game ('20130929', '10:00');
+        
+        in_team ('199', "PITTSBURGH", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('200', "MINNESOTA", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '10:00');
+        
+        in_team ('201', "BALTIMORE", "", '', '', '');
+        
+        in_line ('3½', '0');
+    
+        in_line ('3½', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('202', "BUFFALO", "", '', '', '');
+        
+        in_line ('44½', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '10:00');
+        
+        in_team ('203', "CINCINNATI", "", '', '', '');
+        
+        in_line ('6-09', '0');
+    
+        in_line ('4½', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('204', "CLEVELAND", "", '', '', '');
+        
+        in_line ('41½', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '10:00');
+        
+        in_team ('205', "INDIANAPOLIS", "", '', '', '');
+        
+        in_line ('7½', '0');
+    
+        in_line ('9', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('206', "JACKSONVILLE", "", '', '', '');
+        
+        in_line ('41½', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '10:00');
+        
+        in_team ('207', "SEATTLE", "", '', '', '');
+        
+        in_line ('3-20', '0');
+    
+        in_line ('3ev', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('208', "HOUSTON", "", '', '', '');
+        
+        in_line ('45', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '10:00');
+        
+        in_team ('209', "ARIZONA", "", '', '', '');
+        
+        in_line ('40½', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('210', "TAMPA BAY", "", '', '', '');
+        
+        in_line ('3ev', '0');
+    
+        in_line ('2½-20', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '10:00');
+        
+        in_team ('211', "CHICAGO", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('212', "DETROIT", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('3', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '10:00');
+        
+        in_team ('213', "NY GIANTS", "", '', '', '');
+        
+        in_line ('45½', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('214', "KANSAS CITY", "", '', '', '');
+        
+        in_line ('4½', '0');
+    
+        in_line ('3½', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '13:05');
+        
+        in_team ('215', "NY JETS", "", '', '', '');
+        
+        in_line ('38½', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('216', "TENNESSEE", "", '', '', '');
+        
+        in_line ('5', '0');
+    
+        in_line ('4½', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '13:25');
+        
+        in_team ('217', "DALLAS", "", '', '', '');
+        
+        in_line ('2½', '0');
+    
+        in_line ('1', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('218', "SAN DIEGO", "", '', '', '');
+        
+        in_line ('44½', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '13:25');
+        
+        in_team ('219', "WASHINGTON", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('3ev', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('220', "OAKLAND", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '13:25');
+        
+        in_team ('221', "PHILADELPHIA", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('222', "DENVER", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('10', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20130929', '17:30');
+        
+        in_team ('223', "NEW ENGLAND", "", '', '', '');
+        
+        in_line ('48', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('224', "ATLANTA", "", '', '', '');
+        
+        in_line ('1½', '0');
+    
+        in_line ('pk', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+</script><script language="JavaScript">
+            league = 1;
+            put_name (league);
+            
+
+        print_header ("NFL WEEK 4");
+    
+
+        print_header ("Monday, September 30th");
+    
+
+        in_game ('20130930', '17:40');
+        
+        in_team ('225', "MIAMI", "", '', '', '');
+        
+        in_line ('47', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('226', "NEW ORLEANS", "", '', '', '');
+        
+        in_line ('5½', '0');
+    
+        in_line ('5½', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win Super Bowl");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10001', "CARDINALS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10002', "FALCONS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+1600', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10003', "RAVENS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+3000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10004', "BILLS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10005', "PANTHERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10006', "BEARS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+2000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10007', "BENGALS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+1800', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10008', "BROWNS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10009', "COWBOYS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10010', "BRONCOS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+500', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10011', "LIONS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10012', "PACKERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+800', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10013', "TEXANS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+1000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10014', "COLTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10015', "JAGUARS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10016', "CHIEFS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+6000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10017', "DOLPHINS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+2000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10018', "VIKINGS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10019', "PATRIOTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+1000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10020', "SAINTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10021', "GIANTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+4000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10022', "JETS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10023', "RAIDERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10024', "EAGLES", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+5000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10025', "STEELERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10026', "CHARGERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+6000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10027', "49ERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10028', "SEAHAWKS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+450', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10029', "RAMS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+10000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10030', "BUCS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10031', "TITANS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10032', "REDSKINS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+5000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win AFC Conference");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10101', "RAVENS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+1300', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10102', "BILLS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10103', "BENGALS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+700', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10104', "BROWNS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10105', "BRONCOS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+200', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10106', "TEXANS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10107', "COLTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+2500', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10108', "JAGUARS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10109', "CHIEFS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10110', "DOLPHINS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+800', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10111', "PATRIOTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+400', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10112', "JETS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10113', "RAIDERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10114', "STEELERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+3000', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10115', "CHARGERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10116', "TITANS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+2500', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win NFC Conference");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10121', "CARDINALS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10122', "FALCONS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+900', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10123', "PANTHERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10124', "BEARS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+1100', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10125', "COWBOYS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+2200', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10126', "LIONS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10127', "PACKERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+400', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10128', "VIKINGS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10129', "SAINTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+600', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10130', "GIANTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10131', "EAGLES", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10132', "49ERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+300', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10133', "SEAHAWKS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+225', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10134', "RAMS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10135', "BUCCANEERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10136', "REDSKINS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+2700', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win AFC East");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10201', "BILLS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10202', "DOLPHINS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+240', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10203', "PATRIOTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk-300', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10204', "JETS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win AFC North");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10211', "RAVENS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10212', "BENGALS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk-25', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10213', "BROWNS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10214', "STEELERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+450', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win AFC South");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10221', "TEXANS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk-300', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10222', "COLTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10223', "JAGUARS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10224', "TITANS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+400', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win AFC West");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10231', "BRONCOS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk-600', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10232', "CHIEFS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10233', "RAIDERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10234', "CHARGERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+1500', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win NFC East");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10241', "COWBOYS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+60', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10242', "GIANTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10243', "EAGLES", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+240', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10244', "REDSKINS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win NFC North");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10251', "BEARS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+90', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10252', "LIONS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10253', "PACKERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk-75', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10254', "VIKINGS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win NFC South");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10261', "FALCONS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+50', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10262', "PANTHERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10263', "SAINTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk-40', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10264', "BUCCANEERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Odds to Win NFC West");
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10271', "CARDINALS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10272', "49ERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk+25', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        in_game ('20140202', '15:00');
+        
+        in_team ('10273', "SEAHAWKS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('pk-50', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_team ('10274', "RAMS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+        in_line ('', '');
+    
+				end_game ();
+    
+
+        print_header ("NFL FUTURES");
+    
+
+        print_header ("Regular Season Wins");
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10301', "CARDINALS", "", '', '', '');
+        
+        in_line ('5½o69', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10302', "CARDINALS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10303', "FALCONS", "", '', '', '');
+        
+        in_line ('9½u30', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10304', "FALCONS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10305', "RAVENS", "", '', '', '');
+        
+        in_line ('8½u20', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10306', "RAVENS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10307', "BILLS", "", '', '', '');
+        
+        in_line ('6½u65', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10308', "BILLS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10309', "PANTHERS", "", '', '', '');
+        
+        in_line ('7½o50', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10310', "PANTHERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10311', "BEARS", "", '', '', '');
+        
+        in_line ('8½o60', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10312', "BEARS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10313', "BENGALS", "", '', '', '');
+        
+        in_line ('8½o20', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10314', "BENGALS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10315', "BROWNS", "", '', '', '');
+        
+        in_line ('6½o30', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10316', "BROWNS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10317', "COWBOYS", "", '', '', '');
+        
+        in_line ('8½u20', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10318', "COWBOYS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10319', "BRONCOS", "", '', '', '');
+        
+        in_line ('11½', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10320', "BRONCOS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10321', "LIONS", "", '', '', '');
+        
+        in_line ('8½u15', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10322', "LIONS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10323', "PACKERS", "", '', '', '');
+        
+        in_line ('10½u45', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10324', "PACKERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10325', "TEXANS", "", '', '', '');
+        
+        in_line ('9½o30', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10326', "TEXANS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10327', "COLTS", "", '', '', '');
+        
+        in_line ('7½o57', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10328', "COLTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10329', "JAGUARS", "", '', '', '');
+        
+        in_line ('4½o65', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10330', "JAGUARS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10331', "CHIEFS", "", '', '', '');
+        
+        in_line ('7½o65', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10332', "CHIEFS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10333', "DOLPHINS", "", '', '', '');
+        
+        in_line ('8½u63', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10334', "DOLPHINS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10335', "VIKINGS", "", '', '', '');
+        
+        in_line ('6½o25', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10336', "VIKINGS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10337', "PATRIOTS", "", '', '', '');
+        
+        in_line ('10½o20', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10338', "PATRIOTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10339', "SAINTS", "", '', '', '');
+        
+        in_line ('8½o90', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10340', "SAINTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10341', "GIANTS", "", '', '', '');
+        
+        in_line ('8½u25', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10342', "GIANTS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10343', "JETS", "", '', '', '');
+        
+        in_line ('6½u70', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10344', "JETS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10345', "RAIDERS", "", '', '', '');
+        
+        in_line ('5½u30', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10346', "RAIDERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10347', "EAGLES", "", '', '', '');
+        
+        in_line ('7½u30', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10348', "EAGLES", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10349', "STEELERS", "", '', '', '');
+        
+        in_line ('9½u48', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10350', "STEELERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10351', "CHARGERS", "", '', '', '');
+        
+        in_line ('7½u20', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10352', "CHARGERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10353', "49ERS", "", '', '', '');
+        
+        in_line ('10½', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10354', "49ERS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10355', "SEAHAWKS", "", '', '', '');
+        
+        in_line ('10½o15', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10356', "SEAHAWKS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10357', "RAMS", "", '', '', '');
+        
+        in_line ('7½o20', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10358', "RAMS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10359', "BUCS", "", '', '', '');
+        
+        in_line ('7½o25', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10360', "BUCS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10361', "TITANS", "", '', '', '');
+        
+        in_line ('6½u25', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10362', "TITANS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+
+        in_game ('20130908', '10:00');
+        
+        in_team ('10363', "REDSKINS", "", '', '', '');
+        
+        in_line ('7½o47', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_team ('10364', "REDSKINS", "", '', '', '');
+        
+        in_line ('', '0');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+        in_line ('', '1');
+    
+				end_game ();
+    
+</script>
+</table>
+</body>
+</html>

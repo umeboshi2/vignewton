@@ -1,0 +1,284 @@
+(lp1
+(dp2
+S'gametime'
+p3
+cdatetime
+datetime
+p4
+(S'\x07\xdd\n\x06\x0c\x00\x00\x00\x00\x00'
+tRp5
+sS'away'
+p6
+VNew Orleans Saints
+p7
+sS'away_line'
+p8
+V-1(-115)
+p9
+sS'home'
+p10
+VChicago Bears
+p11
+sS'total'
+p12
+V50
+p13
+sS'home_line'
+p14
+V+1(-105)
+p15
+sa(dp16
+g3
+g4
+(S'\x07\xdd\n\x06\x0c\x00\x00\x00\x00\x00'
+tRp17
+sg6
+VNew England Patriots
+p18
+sg8
+V-
+sg10
+VCincinnati Bengals
+p19
+sg12
+V
+sg14
+V-
+sa(dp20
+g3
+g4
+(S'\x07\xdd\n\x06\x0c\x00\x00\x00\x00\x00'
+tRp21
+sg6
+VDetroit Lions
+p22
+sg8
+V+7(-105)
+p23
+sg10
+VGreen Bay Packers
+p24
+sg12
+V54
+p25
+sg14
+V-7(-115)
+p26
+sa(dp27
+g3
+g4
+(S'\x07\xdd\n\x06\x0c\x00\x00\x00\x00\x00'
+tRp28
+sg6
+VSeattle Seahawks
+p29
+sg8
+V-3(-105)
+p30
+sg10
+VIndianapolis Colts
+p31
+sg12
+V44
+p32
+sg14
+V+3(-115)
+p33
+sa(dp34
+g3
+g4
+(S'\x07\xdd\n\x06\x0c\x00\x00\x00\x00\x00'
+tRp35
+sg6
+VBaltimore Ravens
+p36
+sg8
+V+3(-125)
+p37
+sg10
+VMiami Dolphins
+p38
+sg12
+V43
+p39
+sg14
+V-3(+105)
+p40
+sa(dp41
+g3
+g4
+(S'\x07\xdd\n\x06\x0c\x00\x00\x00\x00\x00'
+tRp42
+sg6
+VPhiladelphia Eagles
+p43
+sg8
+V+3(-140)
+p44
+sg10
+VNew York Giants
+p45
+sg12
+V53½
+p46
+sg14
+V-3(+120)
+p47
+sa(dp48
+g3
+g4
+(S'\x07\xdd\n\x06\x0c\x00\x00\x00\x00\x00'
+tRp49
+sg6
+VJacksonville Jaguars
+p50
+sg8
+V+12(-110)
+p51
+sg10
+VSt. Louis Rams
+p52
+sg12
+V41
+p53
+sg14
+V-12(-110)
+p54
+sa(dp55
+g3
+g4
+(S'\x07\xdd\n\x06\x0c\x00\x00\x00\x00\x00'
+tRp56
+sg6
+VKansas City Chiefs
+p57
+sg8
+V-3(-115)
+p58
+sg10
+VTennessee Titans
+p59
+sg12
+V39
+p60
+sg14
+V+3(-105)
+p61
+sa(dp62
+g3
+g4
+(S'\x07\xdd\n\x06\x0f\x05\x00\x00\x00\x00'
+tRp63
+sg6
+VCarolina Panthers
+p64
+sg8
+V-2(-110)
+p65
+sg10
+VArizona Cardinals
+p66
+sg12
+V42
+p67
+sg14
+V+2(-110)
+p68
+sa(dp69
+g3
+g4
+(S'\x07\xdd\n\x06\x0f\x19\x00\x00\x00\x00'
+tRp70
+sg6
+VDenver Broncos
+p71
+sg8
+V-9(-110)
+p72
+sg10
+VDallas Cowboys
+p73
+sg12
+V57
+p74
+sg14
+V+9(-110)
+p75
+sa(dp76
+g3
+g4
+(S'\x07\xdd\n\x06\x13\x1e\x00\x00\x00\x00'
+tRp77
+sg6
+VHouston Texans
+p78
+sg8
+V+7(-140)
+p79
+sg10
+VSan Francisco 49ers
+p80
+sg12
+V42
+p81
+sg14
+V-7(+120)
+p82
+sa(dp83
+g3
+g4
+(S'\x07\xdd\n\x06\x16\x1e\x00\x00\x00\x00'
+tRp84
+sg6
+VSan Diego Chargers
+p85
+sg8
+V-5(-110)
+p86
+sg10
+VOakland Raiders
+p87
+sg12
+V45½
+p88
+sg14
+V+5(-110)
+p89
+sa(dp90
+g3
+g4
+(S'\x07\xdd\n\x07\x13(\x00\x00\x00\x00'
+tRp91
+sg6
+VNew York Jets
+p92
+sg8
+V+10(-110)
+p93
+sg10
+VAtlanta Falcons
+p94
+sg12
+V43½
+p95
+sg14
+V-10(-110)
+p96
+sa(dp97
+g3
+g4
+(S'\x07\xdd\n\n\x13\x19\x00\x00\x00\x00'
+tRp98
+sg6
+VNew York Giants
+p99
+sg8
+V-
+sg10
+VChicago Bears
+p100
+sg12
+V
+sg14
+V-
+sa.

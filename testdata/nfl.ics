@@ -1,0 +1,3232 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+X-WR-CALNAME:NFL
+X-WR-CALDESC:Scott Crevier, smc@smcnet.com
+PRODID:-//Scott Crevier//SouthEndZone.com//EN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:US-Central
+BEGIN:STANDARD
+DTSTART:16010101T020000
+TZOFFSETTO:-0600
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;WKST=MO;INTERVAL=1;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETTO:-0500
+TZOFFSETFROM:-0600
+RRULE:FREQ=YEARLY;WKST=MO;INTERVAL=1;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2013p00MIADAL@southendzone.com
+SUMMARY:Miami 20 at Dallas 24
+DESCRIPTION:Hall of Fame Game\nDolphins 20\, Cowboys 24\nTV: NBC (Natl)\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130804T190000
+DTEND;TZID=US-Central:20130804T220000
+LOCATION:Fawcett Stadium\, Canton\, OH
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01BALTBB@southendzone.com
+SUMMARY:Baltimore 44 at Tampa Bay 16
+DESCRIPTION:Ravens 44\, Buccaneers 16\n\nGrass\, built 1998\, capacity 65\,908\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130808T183000
+DTEND;TZID=US-Central:20130808T213000
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01WASTEN@southendzone.com
+SUMMARY:Washington 22 at Tennessee 21
+DESCRIPTION:Redskins 22\, Titans 21\n\nNatural Grass\, built 1999\, capacity 69\,143\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130808T190000
+DTEND;TZID=US-Central:20130808T220000
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01STLCLE@southendzone.com
+SUMMARY:St. Louis 19 at Cleveland 27
+DESCRIPTION:Rams 19\, Browns 27\n\nGrass\, built 1999\, capacity 73\,300\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130808T190000
+DTEND;TZID=US-Central:20130808T220000
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01CINATL@southendzone.com
+SUMMARY:Cincinnati 34 at Atlanta 10
+DESCRIPTION:Bengals 34\, Falcons 10\nTV: ESPN (Natl)\nFieldTurf\, built 1992\, capacity 71\,228\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130808T190000
+DTEND;TZID=US-Central:20130808T220000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01DENSFF@southendzone.com
+SUMMARY:Denver 10 at San Francisco 6
+DESCRIPTION:Broncos 10\, 49ers 6\n\nNatural Grass\, built 1960\, capacity 69\,732\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130808T200000
+DTEND;TZID=US-Central:20130808T230000
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01SEASDC@southendzone.com
+SUMMARY:Seattle 31 at San Diego 10
+DESCRIPTION:Seahawks 31\, Chargers 10\n\nGrass\, built 1967\, capacity 70\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130808T210000
+DTEND;TZID=US-Central:20130809T000000
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01MIAJAX@southendzone.com
+SUMMARY:Miami 27 at Jacksonville 3
+DESCRIPTION:Dolphins 27\, Jaguars 3\n\nGrass\, built 1995\, capacity 67\,246\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130809T183000
+DTEND;TZID=US-Central:20130809T213000
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01NYJDET@southendzone.com
+SUMMARY:NY Jets 17 at Detroit 26
+DESCRIPTION:Jets 17\, Lions 26\n\nFieldTurf\, built 2002\, capacity 64\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130809T183000
+DTEND;TZID=US-Central:20130809T213000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01NEPPHL@southendzone.com
+SUMMARY:New England 31 at Philadelphia 22
+DESCRIPTION:Patriots 31\, Eagles 22\n\nNatural Grass\, built 2003\, capacity 69\,144\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130809T183000
+DTEND;TZID=US-Central:20130809T213000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01ARZGRB@southendzone.com
+SUMMARY:Arizona 17 at Green Bay 0
+DESCRIPTION:Bishop's Charities Game\nCardinals 17\, Packers 0\n\nDD GrassMaster\, built 1957\, capacity 80\,750\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130809T190000
+DTEND;TZID=US-Central:20130809T220000
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01CHICAR@southendzone.com
+SUMMARY:Chicago 17 at Carolina 24
+DESCRIPTION:Bears 17\, Panthers 24\n\nGrass\, built 1996\, capacity 73\,504\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130809T190000
+DTEND;TZID=US-Central:20130809T220000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01KCCNOS@southendzone.com
+SUMMARY:Kansas City 13 at New Orleans 17
+DESCRIPTION:Chiefs 13\, Saints 17\n\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130809T190000
+DTEND;TZID=US-Central:20130809T220000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01HOUMIN@southendzone.com
+SUMMARY:Houston 27 at Minnesota 13
+DESCRIPTION:Texans 27\, Vikings 13\n\nSportexe Momentum\, built 1982\, capacity 63\,731\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130809T190000
+DTEND;TZID=US-Central:20130809T220000
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01DALOAK@southendzone.com
+SUMMARY:Dallas 17 at Oakland 19
+DESCRIPTION:Cowboys 17\, Raiders 19\n\nGrass\, built 1966\, capacity 53\,286\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130809T210000
+DTEND;TZID=US-Central:20130810T000000
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01NYGPGH@southendzone.com
+SUMMARY:NY Giants 18 at Pittsburgh 13
+DESCRIPTION:Giants 18\, Steelers 13\n\nNatural Grass\, built 2001\, capacity 65\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130810T183000
+DTEND;TZID=US-Central:20130810T213000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p01BUFIND@southendzone.com
+SUMMARY:Buffalo 44 at Indianapolis 20
+DESCRIPTION:Bills 44\, Colts 20\n\nFieldTurf\, built 2008\, capacity 63\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130811T123000
+DTEND;TZID=US-Central:20130811T153000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02DETCLE@southendzone.com
+SUMMARY:Detroit 6 at Cleveland 24
+DESCRIPTION:Lions 6\, Browns 24\n\nGrass\, built 1999\, capacity 73\,300\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130815T183000
+DTEND;TZID=US-Central:20130815T213000
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02ATLBAL@southendzone.com
+SUMMARY:Atlanta 23 at Baltimore 27
+DESCRIPTION:Falcons 23\, Ravens 27\n\nSportexe Momentum\, built 1998\, capacity 71\,008\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130815T183000
+DTEND;TZID=US-Central:20130815T213000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02CARPHL@southendzone.com
+SUMMARY:Carolina 9 at Philadelphia 14
+DESCRIPTION:Panthers 9\, Eagles 14\n\nNatural Grass\, built 2003\, capacity 69\,144\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130815T183000
+DTEND;TZID=US-Central:20130815T213000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02SDCCHI@southendzone.com
+SUMMARY:San Diego 28 at Chicago 33
+DESCRIPTION:Chargers 28\, Bears 33\nTV: ESPN (Natl)\nNatural Grass\, built 1924\, capacity 61\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130815T190000
+DTEND;TZID=US-Central:20130815T220000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02MINBUF@southendzone.com
+SUMMARY:Minnesota 16 at Buffalo 20
+DESCRIPTION:Vikings 16\, Bills 20\n\nA-Turf Titan\, built 1973\, capacity 73\,967\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130816T180000
+DTEND;TZID=US-Central:20130816T210000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02TBBNEP@southendzone.com
+SUMMARY:Tampa Bay 21 at New England 25
+DESCRIPTION:Buccaneers 21\, Patriots 25\nTV: FOX (Natl)\nFieldTurf\, built 2002\, capacity 68\,756\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130816T190000
+DTEND;TZID=US-Central:20130816T220000
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02OAKNOS@southendzone.com
+SUMMARY:Oakland 20 at New Orleans 28
+DESCRIPTION:Raiders 20\, Saints 28\n\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130816T190000
+DTEND;TZID=US-Central:20130816T220000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02SFFKCC@southendzone.com
+SUMMARY:San Francisco 15 at Kansas City 13
+DESCRIPTION:49ers 15\, Chiefs 13\n\nGrass\, built 1972\, capacity 76\,416\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130816T190000
+DTEND;TZID=US-Central:20130816T220000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02DALARZ@southendzone.com
+SUMMARY:Dallas 7 at Arizona 12
+DESCRIPTION:Cowboys 7\, Cardinals 12\n\nGrass\, built 2006\, capacity 65\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130817T153000
+DTEND;TZID=US-Central:20130817T183000
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02TENCIN@southendzone.com
+SUMMARY:Tennessee 19 at Cincinnati 27
+DESCRIPTION:Titans 19\, Bengals 27\n\nSynthetic\, built 2000\, capacity 65\,515\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130817T180000
+DTEND;TZID=US-Central:20130817T210000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02JAXNYJ@southendzone.com
+SUMMARY:Jacksonville 13 at NY Jets 37
+DESCRIPTION:Jaguars 13\, Jets 37\n\nFieldTurf\, built 2010\, capacity 82\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130817T183000
+DTEND;TZID=US-Central:20130817T213000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02MIAHOU@southendzone.com
+SUMMARY:Miami 17 at Houston 24
+DESCRIPTION:Dolphins 17\, Texans 24\n\nGrass\, built 2002\, capacity 71\,054\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130817T190000
+DTEND;TZID=US-Central:20130817T220000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02GRBSTL@southendzone.com
+SUMMARY:Green Bay 19 at St. Louis 7
+DESCRIPTION:Packers 19\, Rams 7\n\nFieldTurf\, built 1995\, capacity 66\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130817T190000
+DTEND;TZID=US-Central:20130817T220000
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02DENSEA@southendzone.com
+SUMMARY:Denver 10 at Seattle 40
+DESCRIPTION:Broncos 10\, Seahawks 40\n\nFieldTurf\, built 2002\, capacity 67\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130817T210000
+DTEND;TZID=US-Central:20130818T000000
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02INDNYG@southendzone.com
+SUMMARY:Indianapolis 20 at NY Giants 12
+DESCRIPTION:Colts 20\, Giants 12\nTV: FOX (Natl)\nFieldTurf\, built 2010\, capacity 82\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130818T180000
+DTEND;TZID=US-Central:20130818T210000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p02PGHWAS@southendzone.com
+SUMMARY:Pittsburgh 13 at Washington 24
+DESCRIPTION:Steelers 13\, Redskins 24\nTV: ESPN (Natl)\nNatural Grass\, built 1997\, capacity 85\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130819T190000
+DTEND;TZID=US-Central:20130819T220000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03NEPDET@southendzone.com
+SUMMARY:New England 9 at Detroit 40
+DESCRIPTION:Patriots 9\, Lions 40\n\nFieldTurf\, built 2002\, capacity 64\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130822T183000
+DTEND;TZID=US-Central:20130822T213000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03CARBAL@southendzone.com
+SUMMARY:Carolina 34 at Baltimore 27
+DESCRIPTION:Panthers 34\, Ravens 27\nTV: ESPN (Natl)\nSportexe Momentum\, built 1998\, capacity 71\,008\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130822T190000
+DTEND;TZID=US-Central:20130822T220000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03SEAGRB@southendzone.com
+SUMMARY:Seattle 17 at Green Bay 10
+DESCRIPTION:Midwest Shrine Game\nSeahawks 17\, Packers 10\nTV: CBS (Natl)\nDD GrassMaster\, built 1957\, capacity 80\,750\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130823T190000
+DTEND;TZID=US-Central:20130823T220000
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03CHIOAK@southendzone.com
+SUMMARY:Chicago 34 at Oakland 26
+DESCRIPTION:Bears 34\, Raiders 26\n\nGrass\, built 1966\, capacity 53\,286\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130823T210000
+DTEND;TZID=US-Central:20130824T000000
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03BUFWAS@southendzone.com
+SUMMARY:Buffalo 7 at Washington 30
+DESCRIPTION:Bills 7\, Redskins 30\n\nNatural Grass\, built 1997\, capacity 85\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T153000
+DTEND;TZID=US-Central:20130824T183000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03NYJNYG@southendzone.com
+SUMMARY:NY Jets 24 at NY Giants 21
+DESCRIPTION:Jets 24\, Giants 21\n\nFieldTurf\, built 2010\, capacity 82\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T180000
+DTEND;TZID=US-Central:20130824T210000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03CLEIND@southendzone.com
+SUMMARY:Cleveland 6 at Indianapolis 27
+DESCRIPTION:Browns 6\, Colts 27\n\nFieldTurf\, built 2008\, capacity 63\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T180000
+DTEND;TZID=US-Central:20130824T210000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03TBBMIA@southendzone.com
+SUMMARY:Tampa Bay 17 at Miami 16
+DESCRIPTION:Buccaneers 17\, Dolphins 16\n\nGrass (PAT)\, built 1987\, capacity 75\,192\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T183000
+DTEND;TZID=US-Central:20130824T213000
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03KCCPGH@southendzone.com
+SUMMARY:Kansas City 26 at Pittsburgh 20
+DESCRIPTION:Chiefs 26\, Steelers 20\n\nNatural Grass\, built 2001\, capacity 65\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T183000
+DTEND;TZID=US-Central:20130824T213000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03PHLJAX@southendzone.com
+SUMMARY:Philadelphia 31 at Jacksonville 24
+DESCRIPTION:Eagles 31\, Jaguars 24\n\nGrass\, built 1995\, capacity 67\,246\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T183000
+DTEND;TZID=US-Central:20130824T213000
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03ATLTEN@southendzone.com
+SUMMARY:Atlanta 16 at Tennessee 27
+DESCRIPTION:Falcons 16\, Titans 27\n\nNatural Grass\, built 1999\, capacity 69\,143\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T190000
+DTEND;TZID=US-Central:20130824T220000
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03STLDEN@southendzone.com
+SUMMARY:St. Louis 26 at Denver 27
+DESCRIPTION:Rams 26\, Broncos 27\nTV: CBS (Natl)\nDD GrassMaster\, built 2001\, capacity 76\,125\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T190000
+DTEND;TZID=US-Central:20130824T220000
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03CINDAL@southendzone.com
+SUMMARY:Cincinnati 18 at Dallas 24
+DESCRIPTION:Bengals 18\, Cowboys 24\n\nSportfield Softtop\, built 2009\, capacity 80\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T190000
+DTEND;TZID=US-Central:20130824T220000
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03SDCARZ@southendzone.com
+SUMMARY:San Diego 24 at Arizona 7
+DESCRIPTION:Chargers 24\, Cardinals 7\n\nGrass\, built 2006\, capacity 65\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130824T210000
+DTEND;TZID=US-Central:20130825T000000
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03NOSHOU@southendzone.com
+SUMMARY:New Orleans 31 at Houston 23
+DESCRIPTION:Saints 31\, Texans 23\nTV: FOX (Natl)\nGrass\, built 2002\, capacity 71\,054\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130825T150000
+DTEND;TZID=US-Central:20130825T180000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p03MINSFF@southendzone.com
+SUMMARY:Minnesota 14 at San Francisco 34
+DESCRIPTION:Vikings 14\, 49ers 34\nTV: NBC (Natl)\nNatural Grass\, built 1960\, capacity 69\,732\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130825T190000
+DTEND;TZID=US-Central:20130825T220000
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04PHLNYJ@southendzone.com
+SUMMARY:Philadelphia 20 at NY Jets 27
+DESCRIPTION:Eagles 20\, Jets 27\n\nFieldTurf\, built 2010\, capacity 82\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T180000
+DTEND;TZID=US-Central:20130829T210000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04INDCIN@southendzone.com
+SUMMARY:Indianapolis 10 at Cincinnati 27
+DESCRIPTION:Colts 10\, Bengals 27\n\nSynthetic\, built 2000\, capacity 65\,515\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T180000
+DTEND;TZID=US-Central:20130829T210000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04DETBUF@southendzone.com
+SUMMARY:Detroit 35 at Buffalo 13
+DESCRIPTION:Lions 35\, Bills 13\n\nA-Turf Titan\, built 1973\, capacity 73\,967\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T180000
+DTEND;TZID=US-Central:20130829T210000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04JAXATL@southendzone.com
+SUMMARY:Jacksonville 20 at Atlanta 16
+DESCRIPTION:Jaguars 20\, Falcons 16\n\nFieldTurf\, built 1992\, capacity 71\,228\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T183000
+DTEND;TZID=US-Central:20130829T213000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04PGHCAR@southendzone.com
+SUMMARY:Pittsburgh 10 at Carolina 25
+DESCRIPTION:Steelers 10\, Panthers 25\n\nGrass\, built 1996\, capacity 73\,504\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T183000
+DTEND;TZID=US-Central:20130829T213000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04WASTBB@southendzone.com
+SUMMARY:Washington 30 at Tampa Bay 12
+DESCRIPTION:Redskins 30\, Buccaneers 12\n\nGrass\, built 1998\, capacity 65\,908\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T183000
+DTEND;TZID=US-Central:20130829T213000
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04NOSMIA@southendzone.com
+SUMMARY:New Orleans 21 at Miami 24
+DESCRIPTION:Saints 21\, Dolphins 24\n\nGrass (PAT)\, built 1987\, capacity 75\,192\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T183000
+DTEND;TZID=US-Central:20130829T213000
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04NYGNEP@southendzone.com
+SUMMARY:NY Giants 20 at New England 28
+DESCRIPTION:Giants 20\, Patriots 28\n\nFieldTurf\, built 2002\, capacity 68\,756\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T183000
+DTEND;TZID=US-Central:20130829T213000
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04TENMIN@southendzone.com
+SUMMARY:Tennessee 23 at Minnesota 24
+DESCRIPTION:Titans 23\, Vikings 24\n\nSportexe Momentum\, built 1982\, capacity 63\,731\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T190000
+DTEND;TZID=US-Central:20130829T220000
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04BALSTL@southendzone.com
+SUMMARY:Baltimore 21 at St. Louis 24
+DESCRIPTION:Ravens 21\, Rams 24\n\nFieldTurf\, built 1995\, capacity 66\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T190000
+DTEND;TZID=US-Central:20130829T220000
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04CLECHI@southendzone.com
+SUMMARY:Cleveland 18 at Chicago 16
+DESCRIPTION:Browns 18\, Bears 16\n\nNatural Grass\, built 1924\, capacity 61\,500\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T190000
+DTEND;TZID=US-Central:20130829T220000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04GRBKCC@southendzone.com
+SUMMARY:Green Bay 8 at Kansas City 30
+DESCRIPTION:Packers 8\, Chiefs 30\n\nGrass\, built 1972\, capacity 76\,416\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T190000
+DTEND;TZID=US-Central:20130829T220000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04HOUDAL@southendzone.com
+SUMMARY:Houston 24 at Dallas 6
+DESCRIPTION:Texans 24\, Cowboys 6\n\nSportfield Softtop\, built 2009\, capacity 80\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T190000
+DTEND;TZID=US-Central:20130829T220000
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04ARZDEN@southendzone.com
+SUMMARY:Arizona 32 at Denver 24
+DESCRIPTION:Cardinals 32\, Broncos 24\n\nDD GrassMaster\, built 2001\, capacity 76\,125\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T200000
+DTEND;TZID=US-Central:20130829T230000
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04SFFSDC@southendzone.com
+SUMMARY:San Francisco 41 at San Diego 6
+DESCRIPTION:49ers 41\, Chargers 6\n\nGrass\, built 1967\, capacity 70\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T210000
+DTEND;TZID=US-Central:20130830T000000
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013p04OAKSEA@southendzone.com
+SUMMARY:Oakland 6 at Seattle 22
+DESCRIPTION:Raiders 6\, Seahawks 22\n\nFieldTurf\, built 2002\, capacity 67\,000\nPRE-SEASON\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130829T210000
+DTEND;TZID=US-Central:20130830T000000
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01BALDEN@southendzone.com
+SUMMARY:Baltimore 24 at Denver 42
+DESCRIPTION:Ravens 24\, Broncos 42\nTV: NBC (Natl)\nDD GrassMaster\, built 2001\, capacity 76\,125\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130905T193000
+DTEND;TZID=US-Central:20130905T223000
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01NEPBUF@southendzone.com
+SUMMARY:New England 23 at Buffalo 21
+DESCRIPTION:Patriots 23\, Bills 21\nTV: CBS\nA-Turf Titan\, built 1973\, capacity 73\,967\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01TENPGH@southendzone.com
+SUMMARY:Tennessee 16 at Pittsburgh 9
+DESCRIPTION:Titans 16\, Steelers 9\nTV: CBS\nNatural Grass\, built 2001\, capacity 65\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01ATLNOS@southendzone.com
+SUMMARY:Atlanta 17 at New Orleans 23
+DESCRIPTION:Falcons 17\, Saints 23\nTV: FOX\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01TBBNYJ@southendzone.com
+SUMMARY:Tampa Bay 17 at NY Jets 18
+DESCRIPTION:Buccaneers 17\, Jets 18\nTV: FOX\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01KCCJAX@southendzone.com
+SUMMARY:Kansas City 28 at Jacksonville 2
+DESCRIPTION:Chiefs 28\, Jaguars 2\nTV: CBS\nGrass\, built 1995\, capacity 67\,246\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01SEACAR@southendzone.com
+SUMMARY:Seattle 12 at Carolina 7
+DESCRIPTION:Seahawks 12\, Panthers 7\nTV: FOX\nGrass\, built 1996\, capacity 73\,504\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01CINCHI@southendzone.com
+SUMMARY:Cincinnati 21 at Chicago 24
+DESCRIPTION:Bengals 21\, Bears 24\nTV: CBS\nNatural Grass\, built 1924\, capacity 61\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01MIACLE@southendzone.com
+SUMMARY:Miami 23 at Cleveland 10
+DESCRIPTION:Dolphins 23\, Browns 10\nTV: CBS\nGrass\, built 1999\, capacity 73\,300\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01MINDET@southendzone.com
+SUMMARY:Minnesota 24 at Detroit 34
+DESCRIPTION:Vikings 24\, Lions 34\nTV: FOX\nFieldTurf\, built 2002\, capacity 64\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01OAKIND@southendzone.com
+SUMMARY:Oakland 17 at Indianapolis 21
+DESCRIPTION:Raiders 17\, Colts 21\nTV: CBS\nFieldTurf\, built 2008\, capacity 63\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T120000
+DTEND;TZID=US-Central:20130908T150000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01GRBSFF@southendzone.com
+SUMMARY:Green Bay 28 at San Francisco 34
+DESCRIPTION:Packers 28\, 49ers 34\nTV: FOX\nNatural Grass\, built 1960\, capacity 69\,732\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T152500
+DTEND;TZID=US-Central:20130908T182500
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01ARZSTL@southendzone.com
+SUMMARY:Arizona 24 at St. Louis 27
+DESCRIPTION:Cardinals 24\, Rams 27\nTV: FOX\nFieldTurf\, built 1995\, capacity 66\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T152500
+DTEND;TZID=US-Central:20130908T182500
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01NYGDAL@southendzone.com
+SUMMARY:NY Giants 31 at Dallas 36
+DESCRIPTION:Giants 31\, Cowboys 36\nTV: NBC (Natl)\nSportfield Softtop\, built 2009\, capacity 80\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130908T193000
+DTEND;TZID=US-Central:20130908T223000
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01PHLWAS@southendzone.com
+SUMMARY:Philadelphia 33 at Washington 27
+DESCRIPTION:Eagles 33\, Redskins 27\nTV: ESPN (Natl)\nNatural Grass\, built 1997\, capacity 85\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130909T181000
+DTEND;TZID=US-Central:20130909T211000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w01HOUSDC@southendzone.com
+SUMMARY:Houston 31 at San Diego 28
+DESCRIPTION:Texans 31\, Chargers 28\nTV: ESPN (Natl)\nGrass\, built 1967\, capacity 70\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130909T212000
+DTEND;TZID=US-Central:20130910T002000
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02NYJNEP@southendzone.com
+SUMMARY:NY Jets at New England
+DESCRIPTION:TV: NFLN (Natl)\nFieldTurf\, built 2002\, capacity 68\,756\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130912T192500
+DTEND;TZID=US-Central:20130912T222500
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02STLATL@southendzone.com
+SUMMARY:St. Louis at Atlanta
+DESCRIPTION:TV: FOX\nFieldTurf\, built 1992\, capacity 71\,228\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02SDCPHL@southendzone.com
+SUMMARY:San Diego at Philadelphia
+DESCRIPTION:TV: CBS\nNatural Grass\, built 2003\, capacity 69\,144\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02DALKCC@southendzone.com
+SUMMARY:Dallas at Kansas City
+DESCRIPTION:TV: FOX\nGrass\, built 1972\, capacity 76\,416\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02MIAIND@southendzone.com
+SUMMARY:Miami at Indianapolis
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2008\, capacity 63\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02TENHOU@southendzone.com
+SUMMARY:Tennessee at Houston
+DESCRIPTION:TV: CBS\nGrass\, built 2002\, capacity 71\,054\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02WASGRB@southendzone.com
+SUMMARY:Washington at Green Bay
+DESCRIPTION:TV: FOX\nDD GrassMaster\, built 1957\, capacity 80\,750\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02CLEBAL@southendzone.com
+SUMMARY:Cleveland at Baltimore
+DESCRIPTION:TV: CBS\nSportexe Momentum\, built 1998\, capacity 71\,008\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02CARBUF@southendzone.com
+SUMMARY:Carolina at Buffalo
+DESCRIPTION:TV: FOX\nA-Turf Titan\, built 1973\, capacity 73\,967\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02MINCHI@southendzone.com
+SUMMARY:Minnesota at Chicago
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1924\, capacity 61\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T120000
+DTEND;TZID=US-Central:20130915T150000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02NOSTBB@southendzone.com
+SUMMARY:New Orleans at Tampa Bay
+DESCRIPTION:TV: FOX\nGrass\, built 1998\, capacity 65\,908\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T150500
+DTEND;TZID=US-Central:20130915T180500
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02DETARZ@southendzone.com
+SUMMARY:Detroit at Arizona
+DESCRIPTION:TV: FOX\nGrass\, built 2006\, capacity 65\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T150500
+DTEND;TZID=US-Central:20130915T180500
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02JAXOAK@southendzone.com
+SUMMARY:Jacksonville at Oakland
+DESCRIPTION:TV: CBS\nGrass\, built 1966\, capacity 53\,286\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T152500
+DTEND;TZID=US-Central:20130915T182500
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02DENNYG@southendzone.com
+SUMMARY:Denver at NY Giants
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T152500
+DTEND;TZID=US-Central:20130915T182500
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02SFFSEA@southendzone.com
+SUMMARY:San Francisco at Seattle
+DESCRIPTION:TV: NBC (Natl)\nFieldTurf\, built 2002\, capacity 67\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130915T193000
+DTEND;TZID=US-Central:20130915T223000
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w02PGHCIN@southendzone.com
+SUMMARY:Pittsburgh at Cincinnati
+DESCRIPTION:TV: ESPN (Natl)\nSynthetic\, built 2000\, capacity 65\,515\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130916T194000
+DTEND;TZID=US-Central:20130916T224000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03KCCPHL@southendzone.com
+SUMMARY:Kansas City at Philadelphia
+DESCRIPTION:TV: NFLN (Natl)\nNatural Grass\, built 2003\, capacity 69\,144\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130919T192500
+DTEND;TZID=US-Central:20130919T222500
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03HOUBAL@southendzone.com
+SUMMARY:Houston at Baltimore
+DESCRIPTION:TV: CBS\nSportexe Momentum\, built 1998\, capacity 71\,008\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03NYGCAR@southendzone.com
+SUMMARY:NY Giants at Carolina
+DESCRIPTION:TV: FOX\nGrass\, built 1996\, capacity 73\,504\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03DETWAS@southendzone.com
+SUMMARY:Detroit at Washington
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1997\, capacity 85\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03SDCTEN@southendzone.com
+SUMMARY:San Diego at Tennessee
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1999\, capacity 69\,143\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03ARZNOS@southendzone.com
+SUMMARY:Arizona at New Orleans
+DESCRIPTION:TV: FOX\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03TBBNEP@southendzone.com
+SUMMARY:Tampa Bay at New England
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 68\,756\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03GRBCIN@southendzone.com
+SUMMARY:Green Bay at Cincinnati
+DESCRIPTION:TV: FOX\nSynthetic\, built 2000\, capacity 65\,515\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03STLDAL@southendzone.com
+SUMMARY:St. Louis at Dallas
+DESCRIPTION:TV: FOX\nSportfield Softtop\, built 2009\, capacity 80\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03CLEMIN@southendzone.com
+SUMMARY:Cleveland at Minnesota
+DESCRIPTION:TV: CBS\nSportexe Momentum\, built 1982\, capacity 63\,731\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T120000
+DTEND;TZID=US-Central:20130922T150000
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03ATLMIA@southendzone.com
+SUMMARY:Atlanta at Miami
+DESCRIPTION:TV: FOX\nGrass (PAT)\, built 1987\, capacity 75\,192\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T150500
+DTEND;TZID=US-Central:20130922T180500
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03BUFNYJ@southendzone.com
+SUMMARY:Buffalo at NY Jets
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T152500
+DTEND;TZID=US-Central:20130922T182500
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03INDSFF@southendzone.com
+SUMMARY:Indianapolis at San Francisco
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1960\, capacity 69\,732\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T152500
+DTEND;TZID=US-Central:20130922T182500
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03JAXSEA@southendzone.com
+SUMMARY:Jacksonville at Seattle
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2002\, capacity 67\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T152500
+DTEND;TZID=US-Central:20130922T182500
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03CHIPGH@southendzone.com
+SUMMARY:Chicago at Pittsburgh
+DESCRIPTION:TV: NBC (Natl)\nNatural Grass\, built 2001\, capacity 65\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130922T193000
+DTEND;TZID=US-Central:20130922T223000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w03OAKDEN@southendzone.com
+SUMMARY:Oakland at Denver
+DESCRIPTION:TV: ESPN (Natl)\nDD GrassMaster\, built 2001\, capacity 76\,125\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130923T194000
+DTEND;TZID=US-Central:20130923T224000
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04SFFSTL@southendzone.com
+SUMMARY:San Francisco at St. Louis
+DESCRIPTION:TV: NFLN (Natl)\nFieldTurf\, built 1995\, capacity 66\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130926T192500
+DTEND;TZID=US-Central:20130926T222500
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04BALBUF@southendzone.com
+SUMMARY:Baltimore at Buffalo
+DESCRIPTION:TV: CBS\nA-Turf Titan\, built 1973\, capacity 73\,967\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T120000
+DTEND;TZID=US-Central:20130929T150000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04ARZTBB@southendzone.com
+SUMMARY:Arizona at Tampa Bay
+DESCRIPTION:TV: FOX\nGrass\, built 1998\, capacity 65\,908\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T120000
+DTEND;TZID=US-Central:20130929T150000
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04PGHMIN@southendzone.com
+SUMMARY:Pittsburgh at Minnesota
+DESCRIPTION:TV: CBS\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T120000
+DTEND;TZID=US-Central:20130929T150000
+LOCATION:Wembley Stadium\, London
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04NYGKCC@southendzone.com
+SUMMARY:NY Giants at Kansas City
+DESCRIPTION:TV: FOX\nGrass\, built 1972\, capacity 76\,416\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T120000
+DTEND;TZID=US-Central:20130929T150000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04INDJAX@southendzone.com
+SUMMARY:Indianapolis at Jacksonville
+DESCRIPTION:TV: CBS\nGrass\, built 1995\, capacity 67\,246\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T120000
+DTEND;TZID=US-Central:20130929T150000
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04SEAHOU@southendzone.com
+SUMMARY:Seattle at Houston
+DESCRIPTION:TV: FOX\nGrass\, built 2002\, capacity 71\,054\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T120000
+DTEND;TZID=US-Central:20130929T150000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04CINCLE@southendzone.com
+SUMMARY:Cincinnati at Cleveland
+DESCRIPTION:TV: CBS\nGrass\, built 1999\, capacity 73\,300\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T120000
+DTEND;TZID=US-Central:20130929T150000
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04CHIDET@southendzone.com
+SUMMARY:Chicago at Detroit
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 64\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T120000
+DTEND;TZID=US-Central:20130929T150000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04NYJTEN@southendzone.com
+SUMMARY:NY Jets at Tennessee
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1999\, capacity 69\,143\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T150500
+DTEND;TZID=US-Central:20130929T180500
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04WASOAK@southendzone.com
+SUMMARY:Washington at Oakland
+DESCRIPTION:TV: FOX\nGrass\, built 1966\, capacity 53\,286\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T152500
+DTEND;TZID=US-Central:20130929T182500
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04PHLDEN@southendzone.com
+SUMMARY:Philadelphia at Denver
+DESCRIPTION:TV: FOX\nDD GrassMaster\, built 2001\, capacity 76\,125\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T152500
+DTEND;TZID=US-Central:20130929T182500
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04DALSDC@southendzone.com
+SUMMARY:Dallas at San Diego
+DESCRIPTION:TV: FOX\nGrass\, built 1967\, capacity 70\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T152500
+DTEND;TZID=US-Central:20130929T182500
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04NEPATL@southendzone.com
+SUMMARY:New England at Atlanta
+DESCRIPTION:TV: NBC (Natl)\nFieldTurf\, built 1992\, capacity 71\,228\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130929T193000
+DTEND;TZID=US-Central:20130929T223000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w04MIANOS@southendzone.com
+SUMMARY:Miami at New Orleans
+DESCRIPTION:TV: ESPN (Natl)\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20130930T194000
+DTEND;TZID=US-Central:20130930T224000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05BUFCLE@southendzone.com
+SUMMARY:Buffalo at Cleveland
+DESCRIPTION:TV: NFLN (Natl)\nGrass\, built 1999\, capacity 73\,300\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131003T192500
+DTEND;TZID=US-Central:20131003T222500
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05NEPCIN@southendzone.com
+SUMMARY:New England at Cincinnati
+DESCRIPTION:TV: CBS\nSynthetic\, built 2000\, capacity 65\,515\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T120000
+DTEND;TZID=US-Central:20131006T150000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05DETGRB@southendzone.com
+SUMMARY:Detroit at Green Bay
+DESCRIPTION:TV: FOX\nDD GrassMaster\, built 1957\, capacity 80\,750\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T120000
+DTEND;TZID=US-Central:20131006T150000
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05SEAIND@southendzone.com
+SUMMARY:Seattle at Indianapolis
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2008\, capacity 63\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T120000
+DTEND;TZID=US-Central:20131006T150000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05BALMIA@southendzone.com
+SUMMARY:Baltimore at Miami
+DESCRIPTION:TV: CBS\nGrass (PAT)\, built 1987\, capacity 75\,192\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T120000
+DTEND;TZID=US-Central:20131006T150000
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05NOSCHI@southendzone.com
+SUMMARY:New Orleans at Chicago
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1924\, capacity 61\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T120000
+DTEND;TZID=US-Central:20131006T150000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05PHLNYG@southendzone.com
+SUMMARY:Philadelphia at NY Giants
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T120000
+DTEND;TZID=US-Central:20131006T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05KCCTEN@southendzone.com
+SUMMARY:Kansas City at Tennessee
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1999\, capacity 69\,143\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T120000
+DTEND;TZID=US-Central:20131006T150000
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05JAXSTL@southendzone.com
+SUMMARY:Jacksonville at St. Louis
+DESCRIPTION:TV: CBS\nFieldTurf\, built 1995\, capacity 66\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T120000
+DTEND;TZID=US-Central:20131006T150000
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05CARARZ@southendzone.com
+SUMMARY:Carolina at Arizona
+DESCRIPTION:TV: FOX\nGrass\, built 2006\, capacity 65\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T150500
+DTEND;TZID=US-Central:20131006T180500
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05DENDAL@southendzone.com
+SUMMARY:Denver at Dallas
+DESCRIPTION:TV: CBS\nSportfield Softtop\, built 2009\, capacity 80\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T152500
+DTEND;TZID=US-Central:20131006T182500
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05SDCOAK@southendzone.com
+SUMMARY:San Diego at Oakland
+DESCRIPTION:TV: CBS\nGrass\, built 1966\, capacity 53\,286\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T152500
+DTEND;TZID=US-Central:20131006T182500
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05HOUSFF@southendzone.com
+SUMMARY:Houston at San Francisco
+DESCRIPTION:TV: NBC (Natl)\nNatural Grass\, built 1960\, capacity 69\,732\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131006T193000
+DTEND;TZID=US-Central:20131006T223000
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w05NYJATL@southendzone.com
+SUMMARY:NY Jets at Atlanta
+DESCRIPTION:TV: ESPN (Natl)\nFieldTurf\, built 1992\, capacity 71\,228\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131007T194000
+DTEND;TZID=US-Central:20131007T224000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06NYGCHI@southendzone.com
+SUMMARY:NY Giants at Chicago
+DESCRIPTION:TV: NFLN (Natl)\nNatural Grass\, built 1924\, capacity 61\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131010T192500
+DTEND;TZID=US-Central:20131010T222500
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06GRBBAL@southendzone.com
+SUMMARY:Green Bay at Baltimore
+DESCRIPTION:TV: FOX\nSportexe Momentum\, built 1998\, capacity 71\,008\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T120000
+DTEND;TZID=US-Central:20131013T150000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06PHLTBB@southendzone.com
+SUMMARY:Philadelphia at Tampa Bay
+DESCRIPTION:TV: FOX\nGrass\, built 1998\, capacity 65\,908\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T120000
+DTEND;TZID=US-Central:20131013T150000
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06PGHNYJ@southendzone.com
+SUMMARY:Pittsburgh at NY Jets
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T120000
+DTEND;TZID=US-Central:20131013T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06CARMIN@southendzone.com
+SUMMARY:Carolina at Minnesota
+DESCRIPTION:TV: FOX\nSportexe Momentum\, built 1982\, capacity 63\,731\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T120000
+DTEND;TZID=US-Central:20131013T150000
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06OAKKCC@southendzone.com
+SUMMARY:Oakland at Kansas City
+DESCRIPTION:TV: CBS\nGrass\, built 1972\, capacity 76\,416\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T120000
+DTEND;TZID=US-Central:20131013T150000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06STLHOU@southendzone.com
+SUMMARY:St. Louis at Houston
+DESCRIPTION:TV: FOX\nGrass\, built 2002\, capacity 71\,054\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T120000
+DTEND;TZID=US-Central:20131013T150000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06CINBUF@southendzone.com
+SUMMARY:Cincinnati at Buffalo
+DESCRIPTION:TV: CBS\nA-Turf Titan\, built 1973\, capacity 73\,967\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T120000
+DTEND;TZID=US-Central:20131013T150000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06DETCLE@southendzone.com
+SUMMARY:Detroit at Cleveland
+DESCRIPTION:TV: FOX\nGrass\, built 1999\, capacity 73\,300\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T120000
+DTEND;TZID=US-Central:20131013T150000
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06TENSEA@southendzone.com
+SUMMARY:Tennessee at Seattle
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2002\, capacity 67\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T150500
+DTEND;TZID=US-Central:20131013T180500
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06JAXDEN@southendzone.com
+SUMMARY:Jacksonville at Denver
+DESCRIPTION:TV: CBS\nDD GrassMaster\, built 2001\, capacity 76\,125\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T150500
+DTEND;TZID=US-Central:20131013T180500
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06NOSNEP@southendzone.com
+SUMMARY:New Orleans at New England
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 68\,756\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T152500
+DTEND;TZID=US-Central:20131013T182500
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06ARZSFF@southendzone.com
+SUMMARY:Arizona at San Francisco
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1960\, capacity 69\,732\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T152500
+DTEND;TZID=US-Central:20131013T182500
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06WASDAL@southendzone.com
+SUMMARY:Washington at Dallas
+DESCRIPTION:TV: NBC (Natl)\nSportfield Softtop\, built 2009\, capacity 80\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131013T193000
+DTEND;TZID=US-Central:20131013T223000
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w06INDSDC@southendzone.com
+SUMMARY:Indianapolis at San Diego
+DESCRIPTION:TV: ESPN (Natl)\nGrass\, built 1967\, capacity 70\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131014T194000
+DTEND;TZID=US-Central:20131014T224000
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07SEAARZ@southendzone.com
+SUMMARY:Seattle at Arizona
+DESCRIPTION:TV: NFLN (Natl)\nGrass\, built 2006\, capacity 65\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131017T192500
+DTEND;TZID=US-Central:20131017T222500
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07TBBATL@southendzone.com
+SUMMARY:Tampa Bay at Atlanta
+DESCRIPTION:TV: FOX\nFieldTurf\, built 1992\, capacity 71\,228\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07CHIWAS@southendzone.com
+SUMMARY:Chicago at Washington
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1997\, capacity 85\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07DALPHL@southendzone.com
+SUMMARY:Dallas at Philadelphia
+DESCRIPTION:TV: FOX\nNatural Grass\, built 2003\, capacity 69\,144\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07NEPNYJ@southendzone.com
+SUMMARY:New England at NY Jets
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07BUFMIA@southendzone.com
+SUMMARY:Buffalo at Miami
+DESCRIPTION:TV: CBS\nGrass (PAT)\, built 1987\, capacity 75\,192\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07STLCAR@southendzone.com
+SUMMARY:St. Louis at Carolina
+DESCRIPTION:TV: FOX\nGrass\, built 1996\, capacity 73\,504\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07CINDET@southendzone.com
+SUMMARY:Cincinnati at Detroit
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 64\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07SDCJAX@southendzone.com
+SUMMARY:San Diego at Jacksonville
+DESCRIPTION:TV: CBS\nGrass\, built 1995\, capacity 67\,246\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07HOUKCC@southendzone.com
+SUMMARY:Houston at Kansas City
+DESCRIPTION:TV: CBS\nGrass\, built 1972\, capacity 76\,416\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T120000
+DTEND;TZID=US-Central:20131020T150000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07SFFTEN@southendzone.com
+SUMMARY:San Francisco at Tennessee
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1999\, capacity 69\,143\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T150500
+DTEND;TZID=US-Central:20131020T180500
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07CLEGRB@southendzone.com
+SUMMARY:Cleveland at Green Bay
+DESCRIPTION:TV: CBS\nDD GrassMaster\, built 1957\, capacity 80\,750\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T152500
+DTEND;TZID=US-Central:20131020T182500
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07BALPGH@southendzone.com
+SUMMARY:Baltimore at Pittsburgh
+DESCRIPTION:TV: CBS\nNatural Grass\, built 2001\, capacity 65\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T152500
+DTEND;TZID=US-Central:20131020T182500
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07DENIND@southendzone.com
+SUMMARY:Denver at Indianapolis
+DESCRIPTION:TV: NBC (Natl)\nFieldTurf\, built 2008\, capacity 63\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131020T193000
+DTEND;TZID=US-Central:20131020T223000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w07MINNYG@southendzone.com
+SUMMARY:Minnesota at NY Giants
+DESCRIPTION:TV: ESPN (Natl)\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131021T194000
+DTEND;TZID=US-Central:20131021T224000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08CARTBB@southendzone.com
+SUMMARY:Carolina at Tampa Bay
+DESCRIPTION:TV: NFLN (Natl)\nGrass\, built 1998\, capacity 65\,908\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131024T192500
+DTEND;TZID=US-Central:20131024T222500
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08SFFJAX@southendzone.com
+SUMMARY:San Francisco at Jacksonville
+DESCRIPTION:TV: FOX\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T120000
+DTEND;TZID=US-Central:20131027T150000
+LOCATION:Wembley Stadium\, London
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08CLEKCC@southendzone.com
+SUMMARY:Cleveland at Kansas City
+DESCRIPTION:TV: CBS\nGrass\, built 1972\, capacity 76\,416\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T120000
+DTEND;TZID=US-Central:20131027T150000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08MIANEP@southendzone.com
+SUMMARY:Miami at New England
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2002\, capacity 68\,756\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T120000
+DTEND;TZID=US-Central:20131027T150000
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08BUFNOS@southendzone.com
+SUMMARY:Buffalo at New Orleans
+DESCRIPTION:TV: CBS\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T120000
+DTEND;TZID=US-Central:20131027T150000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08DALDET@southendzone.com
+SUMMARY:Dallas at Detroit
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 64\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T120000
+DTEND;TZID=US-Central:20131027T150000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08NYGPHL@southendzone.com
+SUMMARY:NY Giants at Philadelphia
+DESCRIPTION:TV: FOX\nNatural Grass\, built 2003\, capacity 69\,144\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T120000
+DTEND;TZID=US-Central:20131027T150000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08PGHOAK@southendzone.com
+SUMMARY:Pittsburgh at Oakland
+DESCRIPTION:TV: CBS\nGrass\, built 1966\, capacity 53\,286\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T150500
+DTEND;TZID=US-Central:20131027T180500
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08NYJCIN@southendzone.com
+SUMMARY:NY Jets at Cincinnati
+DESCRIPTION:TV: CBS\nSynthetic\, built 2000\, capacity 65\,515\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T150500
+DTEND;TZID=US-Central:20131027T180500
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08ATLARZ@southendzone.com
+SUMMARY:Atlanta at Arizona
+DESCRIPTION:TV: FOX\nGrass\, built 2006\, capacity 65\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T152500
+DTEND;TZID=US-Central:20131027T182500
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08WASDEN@southendzone.com
+SUMMARY:Washington at Denver
+DESCRIPTION:TV: FOX\nDD GrassMaster\, built 2001\, capacity 76\,125\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T152500
+DTEND;TZID=US-Central:20131027T182500
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08GRBMIN@southendzone.com
+SUMMARY:Green Bay at Minnesota
+DESCRIPTION:TV: NBC (Natl)\nSportexe Momentum\, built 1982\, capacity 63\,731\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131027T193000
+DTEND;TZID=US-Central:20131027T223000
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w08SEASTL@southendzone.com
+SUMMARY:Seattle at St. Louis
+DESCRIPTION:TV: ESPN (Natl)\nFieldTurf\, built 1995\, capacity 66\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131028T193000
+DTEND;TZID=US-Central:20131028T223000
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09CINMIA@southendzone.com
+SUMMARY:Cincinnati at Miami
+DESCRIPTION:TV: NFLN (Natl)\nGrass (PAT)\, built 1987\, capacity 75\,192\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131031T192500
+DTEND;TZID=US-Central:20131031T222500
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09ATLCAR@southendzone.com
+SUMMARY:Atlanta at Carolina
+DESCRIPTION:TV: FOX\nGrass\, built 1996\, capacity 73\,504\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T120000
+DTEND;TZID=US-Central:20131103T150000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09MINDAL@southendzone.com
+SUMMARY:Minnesota at Dallas
+DESCRIPTION:TV: FOX\nSportfield Softtop\, built 2009\, capacity 80\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T120000
+DTEND;TZID=US-Central:20131103T150000
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09NOSNYJ@southendzone.com
+SUMMARY:New Orleans at NY Jets
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T120000
+DTEND;TZID=US-Central:20131103T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09TENSTL@southendzone.com
+SUMMARY:Tennessee at St. Louis
+DESCRIPTION:TV: CBS\nFieldTurf\, built 1995\, capacity 66\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T120000
+DTEND;TZID=US-Central:20131103T150000
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09KCCBUF@southendzone.com
+SUMMARY:Kansas City at Buffalo
+DESCRIPTION:TV: CBS\nA-Turf Titan\, built 1973\, capacity 73\,967\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T120000
+DTEND;TZID=US-Central:20131103T150000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09SDCWAS@southendzone.com
+SUMMARY:San Diego at Washington
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1997\, capacity 85\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T120000
+DTEND;TZID=US-Central:20131103T150000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09PHLOAK@southendzone.com
+SUMMARY:Philadelphia at Oakland
+DESCRIPTION:TV: FOX\nGrass\, built 1966\, capacity 53\,286\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T150500
+DTEND;TZID=US-Central:20131103T180500
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09TBBSEA@southendzone.com
+SUMMARY:Tampa Bay at Seattle
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 67\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T150500
+DTEND;TZID=US-Central:20131103T180500
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09BALCLE@southendzone.com
+SUMMARY:Baltimore at Cleveland
+DESCRIPTION:TV: CBS\nGrass\, built 1999\, capacity 73\,300\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T152500
+DTEND;TZID=US-Central:20131103T182500
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09PGHNEP@southendzone.com
+SUMMARY:Pittsburgh at New England
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2002\, capacity 68\,756\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T152500
+DTEND;TZID=US-Central:20131103T182500
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09INDHOU@southendzone.com
+SUMMARY:Indianapolis at Houston
+DESCRIPTION:TV: NBC (Natl)\nGrass\, built 2002\, capacity 71\,054\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131103T193000
+DTEND;TZID=US-Central:20131103T223000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w09CHIGRB@southendzone.com
+SUMMARY:Chicago at Green Bay
+DESCRIPTION:TV: ESPN (Natl)\nDD GrassMaster\, built 1957\, capacity 80\,750\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131104T194000
+DTEND;TZID=US-Central:20131104T224000
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10WASMIN@southendzone.com
+SUMMARY:Washington at Minnesota
+DESCRIPTION:TV: NFLN (Natl)\nSportexe Momentum\, built 1982\, capacity 63\,731\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131107T192500
+DTEND;TZID=US-Central:20131107T222500
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10PHLGRB@southendzone.com
+SUMMARY:Philadelphia at Green Bay
+DESCRIPTION:TV: FOX\nDD GrassMaster\, built 1957\, capacity 80\,750\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T120000
+DTEND;TZID=US-Central:20131110T150000
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10JAXTEN@southendzone.com
+SUMMARY:Jacksonville at Tennessee
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1999\, capacity 69\,143\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T120000
+DTEND;TZID=US-Central:20131110T150000
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10BUFPGH@southendzone.com
+SUMMARY:Buffalo at Pittsburgh
+DESCRIPTION:TV: CBS\nNatural Grass\, built 2001\, capacity 65\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T120000
+DTEND;TZID=US-Central:20131110T150000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10OAKNYG@southendzone.com
+SUMMARY:Oakland at NY Giants
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T120000
+DTEND;TZID=US-Central:20131110T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10STLIND@southendzone.com
+SUMMARY:St. Louis at Indianapolis
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2008\, capacity 63\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T120000
+DTEND;TZID=US-Central:20131110T150000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10SEAATL@southendzone.com
+SUMMARY:Seattle at Atlanta
+DESCRIPTION:TV: FOX\nFieldTurf\, built 1992\, capacity 71\,228\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T120000
+DTEND;TZID=US-Central:20131110T150000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10CINBAL@southendzone.com
+SUMMARY:Cincinnati at Baltimore
+DESCRIPTION:TV: CBS\nSportexe Momentum\, built 1998\, capacity 71\,008\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T120000
+DTEND;TZID=US-Central:20131110T150000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10DETCHI@southendzone.com
+SUMMARY:Detroit at Chicago
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1924\, capacity 61\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T120000
+DTEND;TZID=US-Central:20131110T150000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10CARSFF@southendzone.com
+SUMMARY:Carolina at San Francisco
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1960\, capacity 69\,732\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T150500
+DTEND;TZID=US-Central:20131110T180500
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10HOUARZ@southendzone.com
+SUMMARY:Houston at Arizona
+DESCRIPTION:TV: CBS\nGrass\, built 2006\, capacity 65\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T152500
+DTEND;TZID=US-Central:20131110T182500
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10DENSDC@southendzone.com
+SUMMARY:Denver at San Diego
+DESCRIPTION:TV: CBS\nGrass\, built 1967\, capacity 70\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T152500
+DTEND;TZID=US-Central:20131110T182500
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10DALNOS@southendzone.com
+SUMMARY:Dallas at New Orleans
+DESCRIPTION:TV: NBC (Natl)\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131110T193000
+DTEND;TZID=US-Central:20131110T223000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w10MIATBB@southendzone.com
+SUMMARY:Miami at Tampa Bay
+DESCRIPTION:TV: ESPN (Natl)\nGrass\, built 1998\, capacity 65\,908\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131111T194000
+DTEND;TZID=US-Central:20131111T224000
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11INDTEN@southendzone.com
+SUMMARY:Indianapolis at Tennessee
+DESCRIPTION:TV: NFLN (Natl)\nNatural Grass\, built 1999\, capacity 69\,143\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131114T192500
+DTEND;TZID=US-Central:20131114T222500
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11NYJBUF@southendzone.com
+SUMMARY:NY Jets at Buffalo
+DESCRIPTION:TV: CBS\nA-Turf Titan\, built 1973\, capacity 73\,967\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11ATLTBB@southendzone.com
+SUMMARY:Atlanta at Tampa Bay
+DESCRIPTION:TV: FOX\nGrass\, built 1998\, capacity 65\,908\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11DETPGH@southendzone.com
+SUMMARY:Detroit at Pittsburgh
+DESCRIPTION:TV: FOX\nNatural Grass\, built 2001\, capacity 65\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11WASPHL@southendzone.com
+SUMMARY:Washington at Philadelphia
+DESCRIPTION:TV: FOX\nNatural Grass\, built 2003\, capacity 69\,144\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11SDCMIA@southendzone.com
+SUMMARY:San Diego at Miami
+DESCRIPTION:TV: CBS\nGrass (PAT)\, built 1987\, capacity 75\,192\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11BALCHI@southendzone.com
+SUMMARY:Baltimore at Chicago
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1924\, capacity 61\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11CLECIN@southendzone.com
+SUMMARY:Cleveland at Cincinnati
+DESCRIPTION:TV: CBS\nSynthetic\, built 2000\, capacity 65\,515\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11OAKHOU@southendzone.com
+SUMMARY:Oakland at Houston
+DESCRIPTION:TV: CBS\nGrass\, built 2002\, capacity 71\,054\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11ARZJAX@southendzone.com
+SUMMARY:Arizona at Jacksonville
+DESCRIPTION:TV: FOX\nGrass\, built 1995\, capacity 67\,246\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T120000
+DTEND;TZID=US-Central:20131117T150000
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11KCCDEN@southendzone.com
+SUMMARY:Kansas City at Denver
+DESCRIPTION:TV: CBS\nDD GrassMaster\, built 2001\, capacity 76\,125\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T150500
+DTEND;TZID=US-Central:20131117T180500
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11MINSEA@southendzone.com
+SUMMARY:Minnesota at Seattle
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 67\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T152500
+DTEND;TZID=US-Central:20131117T182500
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11SFFNOS@southendzone.com
+SUMMARY:San Francisco at New Orleans
+DESCRIPTION:TV: FOX\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T152500
+DTEND;TZID=US-Central:20131117T182500
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11GRBNYG@southendzone.com
+SUMMARY:Green Bay at NY Giants
+DESCRIPTION:TV: NBC (Natl)\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131117T193000
+DTEND;TZID=US-Central:20131117T223000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w11NEPCAR@southendzone.com
+SUMMARY:New England at Carolina
+DESCRIPTION:TV: ESPN (Natl)\nGrass\, built 1996\, capacity 73\,504\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131118T194000
+DTEND;TZID=US-Central:20131118T224000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12NOSATL@southendzone.com
+SUMMARY:New Orleans at Atlanta
+DESCRIPTION:TV: NFLN (Natl)\nFieldTurf\, built 1992\, capacity 71\,228\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131121T192500
+DTEND;TZID=US-Central:20131121T222500
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12TBBDET@southendzone.com
+SUMMARY:Tampa Bay at Detroit
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 64\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T120000
+DTEND;TZID=US-Central:20131124T150000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12MINGRB@southendzone.com
+SUMMARY:Minnesota at Green Bay
+DESCRIPTION:TV: FOX\nDD GrassMaster\, built 1957\, capacity 80\,750\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T120000
+DTEND;TZID=US-Central:20131124T150000
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12JAXHOU@southendzone.com
+SUMMARY:Jacksonville at Houston
+DESCRIPTION:TV: CBS\nGrass\, built 2002\, capacity 71\,054\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T120000
+DTEND;TZID=US-Central:20131124T150000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12SDCKCC@southendzone.com
+SUMMARY:San Diego at Kansas City
+DESCRIPTION:TV: CBS\nGrass\, built 1972\, capacity 76\,416\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T120000
+DTEND;TZID=US-Central:20131124T150000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12CARMIA@southendzone.com
+SUMMARY:Carolina at Miami
+DESCRIPTION:TV: FOX\nGrass (PAT)\, built 1987\, capacity 75\,192\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T120000
+DTEND;TZID=US-Central:20131124T150000
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12PGHCLE@southendzone.com
+SUMMARY:Pittsburgh at Cleveland
+DESCRIPTION:TV: CBS\nGrass\, built 1999\, capacity 73\,300\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T120000
+DTEND;TZID=US-Central:20131124T150000
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12CHISTL@southendzone.com
+SUMMARY:Chicago at St. Louis
+DESCRIPTION:TV: FOX\nFieldTurf\, built 1995\, capacity 66\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T120000
+DTEND;TZID=US-Central:20131124T150000
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12NYJBAL@southendzone.com
+SUMMARY:NY Jets at Baltimore
+DESCRIPTION:TV: CBS\nSportexe Momentum\, built 1998\, capacity 71\,008\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T120000
+DTEND;TZID=US-Central:20131124T150000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12TENOAK@southendzone.com
+SUMMARY:Tennessee at Oakland
+DESCRIPTION:TV: CBS\nGrass\, built 1966\, capacity 53\,286\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T150500
+DTEND;TZID=US-Central:20131124T180500
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12INDARZ@southendzone.com
+SUMMARY:Indianapolis at Arizona
+DESCRIPTION:TV: CBS\nGrass\, built 2006\, capacity 65\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T150500
+DTEND;TZID=US-Central:20131124T180500
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12DALNYG@southendzone.com
+SUMMARY:Dallas at NY Giants
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T152500
+DTEND;TZID=US-Central:20131124T182500
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12DENNEP@southendzone.com
+SUMMARY:Denver at New England
+DESCRIPTION:TV: NBC (Natl)\nFieldTurf\, built 2002\, capacity 68\,756\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131124T193000
+DTEND;TZID=US-Central:20131124T223000
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w12SFFWAS@southendzone.com
+SUMMARY:San Francisco at Washington
+DESCRIPTION:TV: ESPN (Natl)\nNatural Grass\, built 1997\, capacity 85\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131125T194000
+DTEND;TZID=US-Central:20131125T224000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13GRBDET@southendzone.com
+SUMMARY:Green Bay at Detroit
+DESCRIPTION:TV: FOX (Natl)\nFieldTurf\, built 2002\, capacity 64\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131128T113000
+DTEND;TZID=US-Central:20131128T143000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13OAKDAL@southendzone.com
+SUMMARY:Oakland at Dallas
+DESCRIPTION:TV: CBS (Natl)\nSportfield Softtop\, built 2009\, capacity 80\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131128T153000
+DTEND;TZID=US-Central:20131128T183000
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13PGHBAL@southendzone.com
+SUMMARY:Pittsburgh at Baltimore
+DESCRIPTION:TV: NBC (Natl)\nSportexe Momentum\, built 1998\, capacity 71\,008\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131128T193000
+DTEND;TZID=US-Central:20131128T223000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13DENKCC@southendzone.com
+SUMMARY:Denver at Kansas City
+DESCRIPTION:TV: CBS\nGrass\, built 1972\, capacity 76\,416\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T120000
+DTEND;TZID=US-Central:20131201T150000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13TENIND@southendzone.com
+SUMMARY:Tennessee at Indianapolis
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2008\, capacity 63\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T120000
+DTEND;TZID=US-Central:20131201T150000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13JAXCLE@southendzone.com
+SUMMARY:Jacksonville at Cleveland
+DESCRIPTION:TV: CBS\nGrass\, built 1999\, capacity 73\,300\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T120000
+DTEND;TZID=US-Central:20131201T150000
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13TBBCAR@southendzone.com
+SUMMARY:Tampa Bay at Carolina
+DESCRIPTION:TV: FOX\nGrass\, built 1996\, capacity 73\,504\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T120000
+DTEND;TZID=US-Central:20131201T150000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13CHIMIN@southendzone.com
+SUMMARY:Chicago at Minnesota
+DESCRIPTION:TV: FOX\nSportexe Momentum\, built 1982\, capacity 63\,731\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T120000
+DTEND;TZID=US-Central:20131201T150000
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13ARZPHL@southendzone.com
+SUMMARY:Arizona at Philadelphia
+DESCRIPTION:TV: FOX\nNatural Grass\, built 2003\, capacity 69\,144\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T120000
+DTEND;TZID=US-Central:20131201T150000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13MIANYJ@southendzone.com
+SUMMARY:Miami at NY Jets
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T120000
+DTEND;TZID=US-Central:20131201T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13ATLBUF@southendzone.com
+SUMMARY:Atlanta at Buffalo
+DESCRIPTION:TV: FOX\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T150500
+DTEND;TZID=US-Central:20131201T180500
+LOCATION:Rogers Centre\, Toronto
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13STLSFF@southendzone.com
+SUMMARY:St. Louis at San Francisco
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1960\, capacity 69\,732\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T150500
+DTEND;TZID=US-Central:20131201T180500
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13NEPHOU@southendzone.com
+SUMMARY:New England at Houston
+DESCRIPTION:TV: CBS\nGrass\, built 2002\, capacity 71\,054\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T152500
+DTEND;TZID=US-Central:20131201T182500
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13CINSDC@southendzone.com
+SUMMARY:Cincinnati at San Diego
+DESCRIPTION:TV: CBS\nGrass\, built 1967\, capacity 70\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T152500
+DTEND;TZID=US-Central:20131201T182500
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13NYGWAS@southendzone.com
+SUMMARY:NY Giants at Washington
+DESCRIPTION:TV: NBC (Natl)\nNatural Grass\, built 1997\, capacity 85\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131201T193000
+DTEND;TZID=US-Central:20131201T223000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w13NOSSEA@southendzone.com
+SUMMARY:New Orleans at Seattle
+DESCRIPTION:TV: ESPN (Natl)\nFieldTurf\, built 2002\, capacity 67\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131202T194000
+DTEND;TZID=US-Central:20131202T224000
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14HOUJAX@southendzone.com
+SUMMARY:Houston at Jacksonville
+DESCRIPTION:TV: NFLN (Natl)\nGrass\, built 1995\, capacity 67\,246\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131205T192500
+DTEND;TZID=US-Central:20131205T222500
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14INDCIN@southendzone.com
+SUMMARY:Indianapolis at Cincinnati
+DESCRIPTION:TV: CBS\nSynthetic\, built 2000\, capacity 65\,515\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14CLENEP@southendzone.com
+SUMMARY:Cleveland at New England
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2002\, capacity 68\,756\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14OAKNYJ@southendzone.com
+SUMMARY:Oakland at NY Jets
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14CARNOS@southendzone.com
+SUMMARY:Carolina at New Orleans
+DESCRIPTION:TV: FOX\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14DETPHL@southendzone.com
+SUMMARY:Detroit at Philadelphia
+DESCRIPTION:TV: FOX\nNatural Grass\, built 2003\, capacity 69\,144\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14MIAPGH@southendzone.com
+SUMMARY:Miami at Pittsburgh
+DESCRIPTION:TV: CBS\nNatural Grass\, built 2001\, capacity 65\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14BUFTBB@southendzone.com
+SUMMARY:Buffalo at Tampa Bay
+DESCRIPTION:TV: CBS\nGrass\, built 1998\, capacity 65\,908\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14KCCWAS@southendzone.com
+SUMMARY:Kansas City at Washington
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1997\, capacity 85\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14MINBAL@southendzone.com
+SUMMARY:Minnesota at Baltimore
+DESCRIPTION:TV: FOX\nSportexe Momentum\, built 1998\, capacity 71\,008\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T120000
+DTEND;TZID=US-Central:20131208T150000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14TENDEN@southendzone.com
+SUMMARY:Tennessee at Denver
+DESCRIPTION:TV: CBS\nDD GrassMaster\, built 2001\, capacity 76\,125\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T150500
+DTEND;TZID=US-Central:20131208T180500
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14STLARZ@southendzone.com
+SUMMARY:St. Louis at Arizona
+DESCRIPTION:TV: FOX\nGrass\, built 2006\, capacity 65\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T152500
+DTEND;TZID=US-Central:20131208T182500
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14NYGSDC@southendzone.com
+SUMMARY:NY Giants at San Diego
+DESCRIPTION:TV: FOX\nGrass\, built 1967\, capacity 70\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T152500
+DTEND;TZID=US-Central:20131208T182500
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14SEASFF@southendzone.com
+SUMMARY:Seattle at San Francisco
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1960\, capacity 69\,732\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T152500
+DTEND;TZID=US-Central:20131208T182500
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14ATLGRB@southendzone.com
+SUMMARY:Atlanta at Green Bay
+DESCRIPTION:TV: NBC (Natl)\nDD GrassMaster\, built 1957\, capacity 80\,750\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131208T193000
+DTEND;TZID=US-Central:20131208T223000
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w14DALCHI@southendzone.com
+SUMMARY:Dallas at Chicago
+DESCRIPTION:TV: ESPN (Natl)\nNatural Grass\, built 1924\, capacity 61\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131209T194000
+DTEND;TZID=US-Central:20131209T224000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15SDCDEN@southendzone.com
+SUMMARY:San Diego at Denver
+DESCRIPTION:TV: NFLN (Natl)\nDD GrassMaster\, built 2001\, capacity 76\,125\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131212T192500
+DTEND;TZID=US-Central:20131212T222500
+LOCATION:Sports Authority Field at Mile High\, 1701 Bryant St\, Denver\, CO 80204
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15WASATL@southendzone.com
+SUMMARY:Washington at Atlanta
+DESCRIPTION:TV: FOX\nFieldTurf\, built 1992\, capacity 71\,228\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15ARZTEN@southendzone.com
+SUMMARY:Arizona at Tennessee
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1999\, capacity 69\,143\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15SFFTBB@southendzone.com
+SUMMARY:San Francisco at Tampa Bay
+DESCRIPTION:TV: FOX\nGrass\, built 1998\, capacity 65\,908\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:Raymond James Stadium\, 4201 N Dale Mabry Hwy\, Tampa\, FL 33607
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15NOSSTL@southendzone.com
+SUMMARY:New Orleans at St. Louis
+DESCRIPTION:TV: FOX\nFieldTurf\, built 1995\, capacity 66\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15SEANYG@southendzone.com
+SUMMARY:Seattle at NY Giants
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15CHICLE@southendzone.com
+SUMMARY:Chicago at Cleveland
+DESCRIPTION:TV: FOX\nGrass\, built 1999\, capacity 73\,300\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:FirstEnergy Stadium\, 100 Alfred Lerner Way\, Cleveland\, OH 44114
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15HOUIND@southendzone.com
+SUMMARY:Houston at Indianapolis
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2008\, capacity 63\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15BUFJAX@southendzone.com
+SUMMARY:Buffalo at Jacksonville
+DESCRIPTION:TV: CBS\nGrass\, built 1995\, capacity 67\,246\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15NEPMIA@southendzone.com
+SUMMARY:New England at Miami
+DESCRIPTION:TV: CBS\nGrass (PAT)\, built 1987\, capacity 75\,192\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15PHLMIN@southendzone.com
+SUMMARY:Philadelphia at Minnesota
+DESCRIPTION:TV: FOX\nSportexe Momentum\, built 1982\, capacity 63\,731\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T120000
+DTEND;TZID=US-Central:20131215T150000
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15KCCOAK@southendzone.com
+SUMMARY:Kansas City at Oakland
+DESCRIPTION:TV: CBS\nGrass\, built 1966\, capacity 53\,286\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T150500
+DTEND;TZID=US-Central:20131215T180500
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15NYJCAR@southendzone.com
+SUMMARY:NY Jets at Carolina
+DESCRIPTION:TV: CBS\nGrass\, built 1996\, capacity 73\,504\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T150500
+DTEND;TZID=US-Central:20131215T180500
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15GRBDAL@southendzone.com
+SUMMARY:Green Bay at Dallas
+DESCRIPTION:TV: FOX\nSportfield Softtop\, built 2009\, capacity 80\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T152500
+DTEND;TZID=US-Central:20131215T182500
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15CINPGH@southendzone.com
+SUMMARY:Cincinnati at Pittsburgh
+DESCRIPTION:TV: NBC (Natl)\nNatural Grass\, built 2001\, capacity 65\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131215T193000
+DTEND;TZID=US-Central:20131215T223000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w15BALDET@southendzone.com
+SUMMARY:Baltimore at Detroit
+DESCRIPTION:TV: ESPN (Natl)\nFieldTurf\, built 2002\, capacity 64\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131216T194000
+DTEND;TZID=US-Central:20131216T224000
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16MIABUF@southendzone.com
+SUMMARY:Miami at Buffalo
+DESCRIPTION:TV: CBS\nA-Turf Titan\, built 1973\, capacity 73\,967\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:Ralph Wilson Stadium\, One Bills Dr\, Orchard Park\, NY 14127
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16NOSCAR@southendzone.com
+SUMMARY:New Orleans at Carolina
+DESCRIPTION:TV: FOX\nGrass\, built 1996\, capacity 73\,504\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:Bank of America Stadium\, 800 S Mint St\, Charlotte\, NC 28202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16DALWAS@southendzone.com
+SUMMARY:Dallas at Washington
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1997\, capacity 85\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:FedEx Field\, 1600 FedEx Way\, Landover\, MD 20785
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16TBBSTL@southendzone.com
+SUMMARY:Tampa Bay at St. Louis
+DESCRIPTION:TV: FOX\nFieldTurf\, built 1995\, capacity 66\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:Edward Jones Dome\, 901 N Broadway\, St. Louis\, MO 63101
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16CHIPHL@southendzone.com
+SUMMARY:Chicago at Philadelphia
+DESCRIPTION:TV: FOX\nNatural Grass\, built 2003\, capacity 69\,144\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:Lincoln Financial Field\, 1020 Pattison Ave\, Philadelphia\, PA 19148
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16CLENYJ@southendzone.com
+SUMMARY:Cleveland at NY Jets
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16INDKCC@southendzone.com
+SUMMARY:Indianapolis at Kansas City
+DESCRIPTION:TV: CBS\nGrass\, built 1972\, capacity 76\,416\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:Arrowhead Stadium\, One Arrowhead Dr\, Kansas City\, MO 64129
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16MINCIN@southendzone.com
+SUMMARY:Minnesota at Cincinnati
+DESCRIPTION:TV: FOX\nSynthetic\, built 2000\, capacity 65\,515\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16DENHOU@southendzone.com
+SUMMARY:Denver at Houston
+DESCRIPTION:TV: CBS\nGrass\, built 2002\, capacity 71\,054\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:Reliant Stadium\, 2 Reliant Pkwy\, Houston\, TX 77054
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16TENJAX@southendzone.com
+SUMMARY:Tennessee at Jacksonville
+DESCRIPTION:TV: CBS\nGrass\, built 1995\, capacity 67\,246\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T120000
+DTEND;TZID=US-Central:20131222T150000
+LOCATION:EverBank Field\, One Everbank Field Dr\, Jacksonville\, FL 32202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16ARZSEA@southendzone.com
+SUMMARY:Arizona at Seattle
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 67\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T150500
+DTEND;TZID=US-Central:20131222T180500
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16NYGDET@southendzone.com
+SUMMARY:NY Giants at Detroit
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 64\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T150500
+DTEND;TZID=US-Central:20131222T180500
+LOCATION:Ford Field\, 2000 Brush St\, Detroit\, MI 48226
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16OAKSDC@southendzone.com
+SUMMARY:Oakland at San Diego
+DESCRIPTION:TV: CBS\nGrass\, built 1967\, capacity 70\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T152500
+DTEND;TZID=US-Central:20131222T182500
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16PGHGRB@southendzone.com
+SUMMARY:Pittsburgh at Green Bay
+DESCRIPTION:TV: CBS\nDD GrassMaster\, built 1957\, capacity 80\,750\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T152500
+DTEND;TZID=US-Central:20131222T182500
+LOCATION:Lambeau Field\, 1265 Lombardi Ave\, Green Bay\, WI 54304
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16NEPBAL@southendzone.com
+SUMMARY:New England at Baltimore
+DESCRIPTION:TV: NBC (Natl)\nSportexe Momentum\, built 1998\, capacity 71\,008\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131222T193000
+DTEND;TZID=US-Central:20131222T223000
+LOCATION:M&T Bank Stadium\, 1101 Russell St\, Baltimore\, MD 21230
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w16ATLSFF@southendzone.com
+SUMMARY:Atlanta at San Francisco
+DESCRIPTION:TV: ESPN (Natl)\nNatural Grass\, built 1960\, capacity 69\,732\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131223T194000
+DTEND;TZID=US-Central:20131223T224000
+LOCATION:Candlestick Park\, 490 Jamestown Ave\, San Francisco\, CA 94124
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17CARATL@southendzone.com
+SUMMARY:Carolina at Atlanta
+DESCRIPTION:TV: FOX\nFieldTurf\, built 1992\, capacity 71\,228\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Georgia Dome\, One Georgia Dome Dr\, Atlanta\, GA 30313
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17GRBCHI@southendzone.com
+SUMMARY:Green Bay at Chicago
+DESCRIPTION:TV: FOX\nNatural Grass\, built 1924\, capacity 61\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Soldier Field\, 1410 S Museum Campus Dr\, Chicago\, IL 60605
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17HOUTEN@southendzone.com
+SUMMARY:Houston at Tennessee
+DESCRIPTION:TV: CBS\nNatural Grass\, built 1999\, capacity 69\,143\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:LP Field\, One Titans Way\, Nashville\, TN 37213
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17CLEPGH@southendzone.com
+SUMMARY:Cleveland at Pittsburgh
+DESCRIPTION:TV: CBS\nNatural Grass\, built 2001\, capacity 65\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Heinz Field\, 100 Art Rooney Ave\, Pittsburgh\, PA 15212
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17WASNYG@southendzone.com
+SUMMARY:Washington at NY Giants
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2010\, capacity 82\,500\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:MetLife Stadium\, 50 State Highway 120\, East Rutherford\, NJ 07073
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17BALCIN@southendzone.com
+SUMMARY:Baltimore at Cincinnati
+DESCRIPTION:TV: CBS\nSynthetic\, built 2000\, capacity 65\,515\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Paul Brown Stadium\, One Paul Brown Stadium\, Cincinnati\, OH 45202
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17PHLDAL@southendzone.com
+SUMMARY:Philadelphia at Dallas
+DESCRIPTION:TV: FOX\nSportfield Softtop\, built 2009\, capacity 80\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:AT&T Stadium\, One Legends Way\, Arlington\, TX 76011
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17JAXIND@southendzone.com
+SUMMARY:Jacksonville at Indianapolis
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2008\, capacity 63\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Lucas Oil Stadium\, 500 S Capitol Ave\, Indianapolis\, IN 46225
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17NYJMIA@southendzone.com
+SUMMARY:NY Jets at Miami
+DESCRIPTION:TV: CBS\nGrass (PAT)\, built 1987\, capacity 75\,192\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Sun Life Stadium\, 2269 NW 199th St\, Miami Gardens\, FL 33056
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17DETMIN@southendzone.com
+SUMMARY:Detroit at Minnesota
+DESCRIPTION:TV: FOX\nSportexe Momentum\, built 1982\, capacity 63\,731\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Hubert H. Humphrey Metrodome\, 425 Chicago Ave\, Minneapolis\, MN 55415
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17BUFNEP@southendzone.com
+SUMMARY:Buffalo at New England
+DESCRIPTION:TV: CBS\nFieldTurf\, built 2002\, capacity 68\,756\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Gillette Stadium\, One Patriot Place\, Foxboro\, MA 02035
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17TBBNOS@southendzone.com
+SUMMARY:Tampa Bay at New Orleans
+DESCRIPTION:TV: FOX\nUBU Speed Series-S5-M\, built 1975\, capacity 73\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T120000
+DTEND;TZID=US-Central:20131229T150000
+LOCATION:Mercedes-Benz Superdome\, 1500 Poydras St\, New Orleans\, LA 70112
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17DENOAK@southendzone.com
+SUMMARY:Denver at Oakland
+DESCRIPTION:TV: CBS\nGrass\, built 1966\, capacity 53\,286\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T152500
+DTEND;TZID=US-Central:20131229T182500
+LOCATION:O.co Coliseum\, 7000 Coliseum Way\, Oakland\, CA 94621
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17SFFARZ@southendzone.com
+SUMMARY:San Francisco at Arizona
+DESCRIPTION:TV: FOX\nGrass\, built 2006\, capacity 65\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T152500
+DTEND;TZID=US-Central:20131229T182500
+LOCATION:Univ of Phoenix Stadium\, 1 Cardinals Dr\, Glendale\, AZ 85305
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17KCCSDC@southendzone.com
+SUMMARY:Kansas City at San Diego
+DESCRIPTION:TV: CBS\nGrass\, built 1967\, capacity 70\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T152500
+DTEND;TZID=US-Central:20131229T182500
+LOCATION:Qualcomm Stadium\, 9449 Friars Rd\, San Diego\, CA 92108
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+BEGIN:VEVENT
+UID:2013w17STLSEA@southendzone.com
+SUMMARY:St. Louis at Seattle
+DESCRIPTION:TV: FOX\nFieldTurf\, built 2002\, capacity 67\,000\n\nhttp://www.southendzone.com/\nhttp://m.sez.net/\nhttp://www.facebook.com/southendzone\n\n10Sep2013 12:55pm CT data updated\n10Sep2013 6:41pm CT calendar loaded\n
+DTSTART;TZID=US-Central:20131229T152500
+DTEND;TZID=US-Central:20131229T182500
+LOCATION:CenturyLink Field\, 800 Occidental Ave S\, Seattle\, WA 98134
+STATUS:CONFIRMED
+CLASS:PUBLIC
+END:VEVENT
+END:VCALENDAR
