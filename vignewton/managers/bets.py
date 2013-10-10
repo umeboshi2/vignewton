@@ -86,7 +86,7 @@ def determine_bet(bet, fscore, uscore):
         raise RuntimeError, "Bad bet type %s" % bet.bet_type
     
         
-def make_closed_bet(bet, status):
+def make_closed_bet(bet, status, txn):
     now = datetime.now()
     cb = ClosedBet()
     for field in ['id', 'user_id', 'game_id', 'created', 'amount',
@@ -94,6 +94,8 @@ def make_closed_bet(bet, status):
                   'spread', 'favored_id', 'underdog_id']:
         value = getattr(bet, field)
         setattr(cb, field, value)
+    cb.bet_txn_id = bet.txn_id
+    cb.close_txn_id = txn.id
     cb.closed = now
     cb.status = status
     return cb
@@ -199,11 +201,14 @@ class BetsManager(object):
         bettype = current.bet_type
         underover = current.underover
         team_id = current.team_id
+        account = self.accounts.get(user_id)
+        txn = self.accounts.place_bet(account.id, amount)
         with transaction.manager:
             now = datetime.now()
             bet = UserBet()
             bet.user_id = user_id
             bet.game_id = current.game_id
+            bet.txn_id = txn.id
             bet.created = current.created
             bet.amount = current.amount
             bet.bet_type = current.bet_type
@@ -214,8 +219,6 @@ class BetsManager(object):
             self.session.add(bet)
             dq = self.session.query(CurrentBet).filter_by(user_id=user_id)
             dq.delete()
-        account = self.accounts.get(user_id)
-        self.accounts.place_bet(account.id, amount)
         return self.session.merge(bet)
     
 
@@ -264,15 +267,15 @@ class BetsManager(object):
         result = determine_bet(bet, fscore, uscore)
         acct = self.accounts.get(bet.user_id)
         if result == 'push':
-            self.accounts.push_bet(acct.id, bet.amount)
+            txn = self.accounts.push_bet(acct.id, bet.amount)
         elif result == 'win':
-            self.accounts.win_bet(acct.id, bet.amount)
+            txn = self.accounts.win_bet(acct.id, bet.amount)
         elif result == 'lose':
-            self.accounts.lose_bet(bet.amount)
+            txn = self.accounts.lose_bet(bet.amount)
         else:
             raise RuntimeError, "bad result %s" % result
         with transaction.manager:
-            cb = make_closed_bet(bet, result)
+            cb = make_closed_bet(bet, result, txn)
             self.session.add(cb)
             self.session.delete(bet)
         return self.session.merge(cb)
@@ -289,6 +292,10 @@ class BetsManager(object):
     
     def get_all_bets(self):
         return self.query().all()
+
+    def get_all_closed_bets(self):
+        return self.session.query(ClosedBet).all()
+    
     
     
     

@@ -104,5 +104,9 @@ def setup(env):
     from vignewton.managers.bets import BetsManager
     bm = BetsManager(db)
     env['bm'] = bm
+    from vignewton.managers.util import chop_ical_nflgame_desc
+    env['cind'] = chop_ical_nflgame_desc
+    env['g'] = gm.get(131)
+    
     
     

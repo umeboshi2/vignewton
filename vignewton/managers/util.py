@@ -128,15 +128,25 @@ def parse_nfl_schedule_ical_summary(summary):
     return scores, int(away_score), int(home_score)
 
 
+def chop_ical_nflgame_desc(desc):
+    lines = desc.split('\n')[:2]
+    lines = [l.strip() for l in lines if l.strip()]
+    #return lines
+    return ''.join([l + '\n' for l in lines])
+
+
+
 def parse_ical_nflgame(event):
     uid = unicode(event['uid'])
     away, home = parse_nfl_schedule_ical_uid(uid)
     data = dict(away=away, home=home, uid=uid)
-    for f in ['summary', 'description', 'location']:
+    for f in ['summary', 'location']:
         data[f] = unicode(event[f])
     for f in ['start', 'end']:
         key = 'dt%s' % f
         data[f] = event[key].dt
+    d = unicode(chop_ical_nflgame_desc(event['description']))
+    data['description'] = d
     data['class'] = event['class']
     data['scores'] = parse_nfl_schedule_ical_summary(data['summary'])
     return data

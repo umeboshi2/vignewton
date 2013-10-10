@@ -21,13 +21,16 @@ from vignewton.models.usergroup import User
 import vignewton.models.usergroup
 import vignewton.models.sitecontent
 
-NFL_CONFERENCE = Enum('AFC', 'NFC', name='vig_nfl_conference')
-NFL_REGION = Enum('North', 'South', 'East', 'West', name='vig_nfl_region')
+NFL_CONFERENCE = Enum('AFC', 'NFC',
+                      name='vig_nfl_conference_enum')
+NFL_REGION = Enum('North', 'South', 'East', 'West',
+                  name='vig_nfl_region_enum')
 
 UNDER_OVER = Enum('under', 'over', name='vig_under_over_enum')
 
-BET_TYPE = Enum('underover', 'line')
-CLOSED_BET_STATUS = Enum('win', 'lose', 'push', name='vig_closed_bet_status')
+BET_TYPE = Enum('underover', 'line', name='vig_bet_type_enum')
+CLOSED_BET_STATUS = Enum('win', 'lose', 'push',
+                         name='vig_closed_bet_status_enum')
 
 
 class NFLScheduleData(Base):
@@ -147,92 +150,6 @@ class UserAccount(Base):
 UserAccount.user = relationship(User)
 UserAccount.account = relationship(Account)
 
-class CurrentBet(Base):
-    __tablename__ = 'vig_user_current_bet'
-    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
-    game_id = Column(Integer,
-                     ForeignKey('vig_nfl_games.id'))
-    created = Column(DateTime)
-    amount = Column(Numeric(16,2))
-    bet_type = Column('bet_type', BET_TYPE)
-    underover = Column('underover', UNDER_OVER, default='under')
-    team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    
-class UserBet(Base):
-    __tablename__ = 'vig_user_bets'
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    game_id = Column(Integer,
-                     ForeignKey('vig_nfl_games.id'))
-    created = Column(DateTime)
-    amount = Column(Numeric(16,2))
-    bet_type = Column('bet_type', BET_TYPE)
-    underover = Column('underover', UNDER_OVER, default='under')
-    team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    total = Column(Numeric(16,2))
-    spread = Column(Numeric(16,2))
-    favored_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    underdog_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    
-UserBet.game = relationship(NFLGame)
-UserBet.favored = relationship(NFLTeam,
-                                   foreign_keys=[UserBet.favored_id])
-UserBet.underdog = relationship(NFLTeam,
-                                   foreign_keys=[UserBet.underdog_id])
-UserBet.team = relationship(NFLTeam,
-                            foreign_keys=[UserBet.team_id])
-
-
-class ClosedBet(Base):
-    __tablename__ = 'vig_closed_bets'
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    game_id = Column(Integer,
-                     ForeignKey('vig_nfl_games.id'))
-    created = Column(DateTime)
-    amount = Column(Numeric(16,2))
-    bet_type = Column('bet_type', BET_TYPE)
-    underover = Column('underover', UNDER_OVER, default='under')
-    team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    total = Column(Numeric(16,2))
-    spread = Column(Numeric(16,2))
-    favored_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    underdog_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
-    closed = Column(DateTime)
-    status = Column('status', CLOSED_BET_STATUS)
-    
-    
-ClosedBet.game = relationship(NFLGame)
-ClosedBet.favored = relationship(NFLTeam,
-                                   foreign_keys=[ClosedBet.favored_id])
-ClosedBet.underdog = relationship(NFLTeam,
-                                   foreign_keys=[ClosedBet.underdog_id])
-ClosedBet.team = relationship(NFLTeam,
-                            foreign_keys=[ClosedBet.team_id])
-
-
-class BetHistory(Base):
-    __tablename__ = 'vig_bets_history'
-    id = Column(Integer, primary_key=True)
-    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'))
-
-    
-class BetStatus(Base):
-    __tablename__ = 'vig_bets_board'
-    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'), primary_key=True)
-    created = Column(DateTime)
-    win = Column(Boolean)
-    payable = Column(Boolean)
-    
-
-class BetFinal(Base):
-    __tablename__ = 'vig_bet_finals'
-    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'), primary_key=True)
-    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
-    amount = Column(Numeric(16,2))
-    juice = Column(Numeric(16,2))
-    created = Column(DateTime)
-
 
 
 class TransactionType(Base):
@@ -268,6 +185,113 @@ class Transfer(Base):
     __tablename__ = 'vig_accounting_transfers'
     id = Column(Integer, primary_key=True)
     name = Column(Unicode(100), unique=True)
+
+class CurrentBet(Base):
+    __tablename__ = 'vig_user_current_bet'
+    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
+    game_id = Column(Integer,
+                     ForeignKey('vig_nfl_games.id'))
+    created = Column(DateTime)
+    amount = Column(Numeric(16,2))
+    bet_type = Column('bet_type', BET_TYPE)
+    underover = Column('underover', UNDER_OVER, default='under')
+    team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    
+class UserBet(Base):
+    __tablename__ = 'vig_user_bets'
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'),
+                     nullable=False)
+    game_id = Column(Integer,
+                     ForeignKey('vig_nfl_games.id'),
+                     nullable=False)
+    txn_id = Column(Integer,
+                    ForeignKey('vig_account_transactions.id'),
+                    nullable=False)
+    created = Column(DateTime)
+    amount = Column(Numeric(16,2))
+    bet_type = Column('bet_type', BET_TYPE)
+    underover = Column('underover', UNDER_OVER, default='under')
+    team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    total = Column(Numeric(16,2))
+    spread = Column(Numeric(16,2))
+    favored_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    underdog_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    
+UserBet.game = relationship(NFLGame)
+UserBet.favored = relationship(NFLTeam,
+                                   foreign_keys=[UserBet.favored_id])
+UserBet.underdog = relationship(NFLTeam,
+                                   foreign_keys=[UserBet.underdog_id])
+UserBet.team = relationship(NFLTeam,
+                            foreign_keys=[UserBet.team_id])
+UserBet.txn = relationship(Transaction)
+
+
+
+class ClosedBet(Base):
+    __tablename__ = 'vig_closed_bets'
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'),
+                     nullable=False)
+    game_id = Column(Integer,
+                     ForeignKey('vig_nfl_games.id'),
+                     nullable=False)
+    bet_txn_id = Column(Integer,
+                        ForeignKey('vig_account_transactions.id'),
+                        nullable=False)
+    close_txn_id = Column(Integer,
+                          ForeignKey('vig_account_transactions.id'),
+                          nullable=False)
+    created = Column(DateTime)
+    amount = Column(Numeric(16,2))
+    bet_type = Column('bet_type', BET_TYPE)
+    underover = Column('underover', UNDER_OVER, default='under')
+    team_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    total = Column(Numeric(16,2))
+    spread = Column(Numeric(16,2))
+    favored_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    underdog_id = Column(Integer, ForeignKey('vig_nfl_teams.id'))
+    closed = Column(DateTime)
+    status = Column('status', CLOSED_BET_STATUS)
+    
+    
+ClosedBet.game = relationship(NFLGame)
+ClosedBet.favored = relationship(NFLTeam,
+                                   foreign_keys=[ClosedBet.favored_id])
+ClosedBet.underdog = relationship(NFLTeam,
+                                   foreign_keys=[ClosedBet.underdog_id])
+ClosedBet.team = relationship(NFLTeam,
+                            foreign_keys=[ClosedBet.team_id])
+ClosedBet.bet_txn = relationship(Transaction,
+                                 foreign_keys=[ClosedBet.bet_txn_id])
+ClosedBet.close_txn = relationship(Transaction,
+                                 foreign_keys=[ClosedBet.close_txn_id])
+
+
+class BetHistory(Base):
+    __tablename__ = 'vig_bets_history'
+    id = Column(Integer, primary_key=True)
+    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'))
+
+    
+class BetStatus(Base):
+    __tablename__ = 'vig_bets_board'
+    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'), primary_key=True)
+    created = Column(DateTime)
+    win = Column(Boolean)
+    payable = Column(Boolean)
+    
+
+class BetFinal(Base):
+    __tablename__ = 'vig_bet_finals'
+    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'), primary_key=True)
+    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
+    amount = Column(Numeric(16,2))
+    juice = Column(Numeric(16,2))
+    created = Column(DateTime)
+
+
 
 
 class LedgerEntry(Base):

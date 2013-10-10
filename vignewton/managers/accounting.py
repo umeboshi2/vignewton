@@ -195,7 +195,7 @@ class AccountingManager(object):
             cash = self.session.merge(cash)
             wild = self.session.merge(wild)
         self._refresh_standard_accounts()
-        return cash, wild
+        return self.session.merge(txn)
 
     def take_from_cash(self, amount):
         cash_balance = self.get_balance(self.cash.id).balance
@@ -227,7 +227,7 @@ class AccountingManager(object):
             cash = self.session.merge(cash)
             wild = self.session.merge(wild)
         self._refresh_standard_accounts()
-        return cash, wild
+        return self.session.merge(txn)
 
        
         
@@ -261,7 +261,7 @@ class AccountingManager(object):
             acct = self.session.merge(acct)
             wild = self.session.merge(wild)
         self._refresh_standard_accounts()
-        return acct, wild
+        return self.session.merge(txn)
 
     def pay_account(self, account_id, amount):
         "from user account to wild"
@@ -296,7 +296,7 @@ class AccountingManager(object):
             acct = self.session.merge(acct)
             wild = self.session.merge(wild)
         self._refresh_standard_accounts()
-        return acct, wild
+        return self.session.merge(txn)
 
 
     # This just moves money from the
@@ -367,7 +367,7 @@ class AccountingManager(object):
             for dbobj in [wagers, acct, cash, juice]:
                 self.session.merge(dbobj)
         self._refresh_standard_accounts()
-        return wagers, juice, cash, acct
+        return self.session.merge(txn)
     
     
 
@@ -427,7 +427,7 @@ class AccountingManager(object):
             for dbobj in [acct, wagers, juice]:
                 self.session.merge(dbobj)
         self._refresh_standard_accounts()
-        return acct, wagers, juice
+        return self.session.merge(txn)
     
     
             
@@ -472,7 +472,7 @@ class AccountingManager(object):
             for dbobj in [cash, wagers, juice]:
                 self.session.merge(dbobj)
         self._refresh_standard_accounts()
-        return cash, wagers, juice
+        return self.session.merge(txn)
 
     # This moves money from the
     # wagers account back to the
@@ -528,7 +528,7 @@ class AccountingManager(object):
             for dbobj in [acct, cash, wagers, juice]:
                 self.session.merge(dbobj)
         self._refresh_standard_accounts()
-        return acct, cash, wagers, juice
+        return self.session.merge(txn)
 
     def get_txn_types(self):
         q = self.session.query(TransactionType)

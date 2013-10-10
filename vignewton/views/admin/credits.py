@@ -105,13 +105,13 @@ class CreditsViewer(AdminViewer):
             return
         amount = int(data['amount'])
         if transfer == 'deposit':
-            cash, wild = self.accounts.add_to_cash(amount)
+            txn = self.accounts.add_to_cash(amount)
         elif transfer == 'withdraw':
-            cash, wild = self.accounts.take_from_cash(amount)
+            txn = self.accounts.take_from_cash(amount)
         else:
             raise RuntimeError, "bad problem"
         template = 'vignewton:templates/admin-cash-report.mako'
-        env = dict(cash=cash, wild=wild, accounts=self.accounts)
+        env = dict(txn=txn, accounts=self.accounts)
         content = self.render(template, env)
         #self.layout.content = "Deposit %d into cash box" % amount
         self.layout.content = content
@@ -149,9 +149,9 @@ class CreditsViewer(AdminViewer):
         user_id = data['user']
         account = self.accounts.get(user_id)
         if transfer == 'deposit':
-            ignore = self.accounts.deposit_to_account(account.id, amount)
+            txn = self.accounts.deposit_to_account(account.id, amount)
         elif transfer == 'withdraw':
-            ignore = self.accounts.pay_account(account.id, amount)
+            txn = self.accounts.pay_account(account.id, amount)
         else:
             raise RuntimeError, "bad problem"
         template = 'vignewton:templates/admin-cash-report.mako'
