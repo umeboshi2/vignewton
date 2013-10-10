@@ -233,42 +233,33 @@ class BetFinal(Base):
     juice = Column(Numeric(16,2))
     created = Column(DateTime)
 
-class CashTransfer(Base):
-    __tablename__ = 'vig_cash_account_ledger'
-    id = Column(Integer, primary_key=True)
-    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
-    amount = Column(Numeric(16,2))
-    # cash_balance is pretransfer
-    cash_balance = Column(Numeric(16,2))
-    created = Column(DateTime)
-    
-class TransferType(Base):
-    __tablename__ = 'vig_account_transfer_types'
+
+
+class TransactionType(Base):
+    __tablename__ = 'vig_account_transaction_types'
     id = Column(Integer, primary_key=True)
     name = Column(Unicode(100), unique=True)
-    
-class BaseTransfer(Base):
-    __tablename__ = 'vig_base_account_ledger'
+
+class Transaction(Base):
+    __tablename__ = 'vig_account_transactions'
     id = Column(Integer, primary_key=True)
-    type_id = Column(Integer, ForeignKey('vig_account_transfer_types.id'))
+    type_id = Column(Integer, ForeignKey('vig_account_transaction_types.id'))
+    created = Column(DateTime)
+
+class BaseTransfer(Base):
+    __tablename__ = 'vig_account_transfers'
+    id = Column(Integer, primary_key=True)
+    txn_id = Column(Integer, ForeignKey('vig_account_transactions.id'))
     created = Column(DateTime)
     account_id = Column(Integer, ForeignKey('vig_accounts.id'))
     amount = Column(Numeric(16,2))
 
-BaseTransfer.type = relationship(TransferType)
+BaseTransfer.transaction = relationship(Transaction)
 BaseTransfer.account = relationship(Account)
 
-class DeclarativeTransfer(Base):
-    __tablename__ = 'vig_declarative_ledger'
-    id = Column(Integer, primary_key=True)
-    created = Column(DateTime)
-    my_account_id = Column(Integer, ForeignKey('vig_accounts.id'))
-    my_amount = Column(Numeric(16,2))
-    my_balance = Column(Numeric(16,2))
-    their_account_id = Column(Integer, ForeignKey('vig_accounts.id'))
-    their_amount = Column(Numeric(16,2))
-    their_balance = Column(Numeric(16,2))
-    
+
+Transaction.transfers = relationship(BaseTransfer)
+Transaction.type = relationship(TransactionType)
 
 
 
@@ -295,7 +286,7 @@ class LoginHistory(Base):
 
 populate = vignewton.models.usergroup.populate
 
-XFERTYPES = ['deposit_cash', 'withdraw_cash',
+TRANSACTION_TYPES = ['deposit_cash', 'withdraw_cash',
              'deposit_acct', 'withdraw_acct',
              'place_bet', 'win_bet', 'lose_bet',
              'push_bet']
@@ -305,9 +296,9 @@ def populate_accounting_tables(session):
     db = session
     try:
         with transaction.manager:
-            for xftertype in XFERTYPES:
-                x = TransferType()
-                x.name = xftertype
+            for ttype in TRANSACTION_TYPES:
+                x = TransactionType()
+                x.name = ttype
                 db.add(x)
     except IntegrityError:
         transaction.abort()

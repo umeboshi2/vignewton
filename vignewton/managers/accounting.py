@@ -15,9 +15,10 @@ from vignewton.models.main import Account, AccountBalance
 from vignewton.models.main import Transfer, LedgerEntry
 from vignewton.models.main import UserAccount
 
-from vignewton.models.main import BetFinal, CashTransfer
-from vignewton.models.main import BaseTransfer, TransferType
-from vignewton.models.main import DeclarativeTransfer
+from vignewton.models.main import BetFinal
+from vignewton.models.main import BaseTransfer, Transaction
+from vignewton.models.main import TransactionType
+
 
 from vignewton.managers.base import InsufficientFundsError
 from vignewton.managers.base import AmountTooHighError
@@ -50,36 +51,24 @@ from vignewton.managers.base import NoBetsManagerError
 #
 #
 
-def make_double_entries(ttype, creditor, debtor, amount, now):
+def mkdbl_entries(txn, creditor, debtor, amount, now):
     c = BaseTransfer()
-    c.type_id = ttype.id
+    c.txn_id = txn.id
     c.created = now
     c.account_id = creditor
     c.amount = amount
     d = BaseTransfer()
-    d.type_id = ttype.id
+    d.txn_id = txn.id
     d.created = now
     d.account_id = debtor
     d.amount = -amount
     return c, d
 
-def declare_xfer(me, them, me_bal, them_bal, now):
-    dt = DeclarativeTransfer()
-    dt.created = now
-    dt.my_account = me.account_id
-    dt.my_amount = me.amount
-    dt.my_balance = me_bal.balance
-    dt.their_account_id = them.account_id
-    dt.their_amount = them.amount
-    dt.their_balance = them_bal.balance
-    return dt
-
-
 class AccountingManager(object):
     def __init__(self, session):
         self.session = session
         self.db_account = Account
-        self.db_transfer = CashTransfer
+        self.db_transfer = BaseTransfer
         self.db_final = BetFinal
         self.db_account_bal = AccountBalance
         self.db_bal = self.db_account_bal
@@ -129,8 +118,8 @@ class AccountingManager(object):
         q = q.filter_by(name='InTheWild_Account')
         return q.one()
     
-    def _get_xfer_type(self, name):
-        q = self.session.query(TransferType)
+    def _get_txn_type(self, name):
+        q = self.session.query(TransactionType)
         q = q.filter_by(name=name)
         return q.one()
     
@@ -145,8 +134,6 @@ class AccountingManager(object):
             bal.balance = 0
             self.session.add(bal)
         return self.session.merge(acct)
-
-    
 
     def add_user_account(self, user, name=None):
         if name is None:
@@ -187,13 +174,18 @@ class AccountingManager(object):
             cash = self.get_balance(self.cash.id)
             wild = self.get_balance(self.inthewild.id)
             now = datetime.now()
-            ttype = self._get_xfer_type('deposit_cash')
+            ttype = self._get_txn_type('deposit_cash')
+            txn = Transaction()
+            txn.type_id = ttype.id
+            txn.created = now
+            self.session.add(txn)
+            txn = self.session.merge(txn)
             # transfer to cash and from wild
-            to_cash, from_wild = make_double_entries(ttype,
-                                                     self.cash.id,
-                                                     self.inthewild.id,
-                                                     amount,
-                                                     now)
+            to_cash, from_wild = mkdbl_entries(txn,
+                                               self.cash.id,
+                                               self.inthewild.id,
+                                               amount,
+                                               now)
             #adjust balances
             cash.balance += amount
             wild.balance -= amount
@@ -212,15 +204,20 @@ class AccountingManager(object):
             raise InsufficientFundsError, msg
         with transaction.manager:
             now = datetime.now()
+            ttype = self._get_txn_type('withdraw_cash')
+            txn = Transaction()
+            txn.type_id = ttype.id
+            txn.created = now
+            self.session.add(txn)
+            txn = self.session.merge(txn)
             cash = self.get_balance(self.cash.id)
             wild = self.get_balance(self.inthewild.id)
-            ttype = self._get_xfer_type('withdraw_cash')
             # transfer to wild and from cash
-            to_wild, from_cash = make_double_entries(ttype,
-                                                     self.inthewild.id,
-                                                     self.cash.id,
-                                                     amount,
-                                                     now)
+            to_wild, from_cash = mkdbl_entries(txn,
+                                               self.inthewild.id,
+                                               self.cash.id,
+                                               amount,
+                                               now)
             #adjust balances
             wild.balance += amount
             cash.balance -= amount
@@ -243,15 +240,18 @@ class AccountingManager(object):
             acct = self.get_balance(account_id)
             wild = self.get_balance(self.inthewild.id)
             now = datetime.now()
-            ttype = self._get_xfer_type('deposit_acct')
+            ttype = self._get_txn_type('deposit_acct')
+            txn = Transaction()
+            txn.type_id = ttype.id
+            txn.created = now
+            self.session.add(txn)
+            txn = self.session.merge(txn)
             # make double entries
-            to_acct, from_wild = make_double_entries(ttype,
-                                                     account_id,
-                                                     self.inthewild.id,
-                                                     amount,
-                                                     now)
-            # make declarative transfer
-            dt = declare_xfer(to_acct, from_wild, acct, wild, now)
+            to_acct, from_wild = mkdbl_entries(txn,
+                                               account_id,
+                                               self.inthewild.id,
+                                               amount,
+                                               now)
             #adjust balances
             acct.balance += amount
             wild.balance -= amount
@@ -273,14 +273,19 @@ class AccountingManager(object):
             acct = self.get_balance(account_id)
             wild = self.get_balance(self.inthewild.id)
             now = datetime.now()
-            ttype = self._get_xfer_type('withdraw_acct')
+            ttype = self._get_txn_type('withdraw_acct')
+            txn = Transaction()
+            txn.type_id = ttype.id
+            txn.created = now
+            self.session.add(txn)
+            txn = self.session.merge(txn)
             # transfer to wild
             # transfer from account
-            to_wild, from_acct = make_double_entries(ttype,
-                                                     self.inthewild.id,
-                                                     account_id,
-                                                     amount,
-                                                     now)
+            to_wild, from_acct = mkdbl_entries(txn,
+                                               self.inthewild.id,
+                                               account_id,
+                                               amount,
+                                               now)
             
             #adjust balances
             wild.balance += amount
@@ -320,31 +325,36 @@ class AccountingManager(object):
             juice = self.get_balance(self.juice.id)
             cash = self.get_balance(self.cash.id)
             now = datetime.now()
-            ttype = self._get_xfer_type('place_bet')
+            ttype = self._get_txn_type('place_bet')
+            txn = Transaction()
+            txn.type_id = ttype.id
+            txn.created = now
+            self.session.add(txn)
+            txn = self.session.merge(txn)
             # transfer to wager
             # transfer from account
-            to_wagers, from_acct = make_double_entries(ttype,
-                                                       self.wagers.id,
-                                                       account_id,
-                                                       amount,
-                                                       now)
+            to_wagers, from_acct = mkdbl_entries(txn,
+                                                 self.wagers.id,
+                                                 account_id,
+                                                 amount,
+                                                 now)
             
             # transfer to juice
             # account covers juice
-            to_juice, juiced_from = make_double_entries(ttype,
-                                                        self.juice.id,
-                                                        account_id,
-                                                        juice_insurance,
-                                                        now)
+            to_juice, juiced_from = mkdbl_entries(txn,
+                                                  self.juice.id,
+                                                  account_id,
+                                                  juice_insurance,
+                                                  now)
             # transfer to wager
             # transfer from cash
-            cash_to_wagers, from_cash = make_double_entries(ttype,
-                                                            self.wagers.id,
-                                                            self.cash.id,
-                                                            amount,
-                                                            now)
+            cash_to_wagers, from_cash = mkdbl_entries(txn,
+                                                      self.wagers.id,
+                                                      self.cash.id,
+                                                      amount,
+                                                      now)
             dbobjects = [to_wagers, from_acct, to_juice, juiced_from,
-                         cash_to_wagers, from_cash]
+                         cash_to_wagers, from_cash, txn]
             #adjust balances
             wagers.balance += amount + amount
             acct.balance -= amount
@@ -382,25 +392,30 @@ class AccountingManager(object):
             raise InsufficientFundsError, msg
         with transaction.manager:
             now = datetime.now()
-            ttype = self._get_xfer_type('win_bet')
+            ttype = self._get_txn_type('win_bet')
+            txn = Transaction()
+            txn.type_id = ttype.id
+            txn.created = now
+            self.session.add(txn)
+            txn = self.session.merge(txn)
             # transfer to user
             # transfer from wagers
             payout = amount + amount
-            to_acct, from_wagers = make_double_entries(ttype,
-                                                       account_id,
-                                                       self.wagers.id,
-                                                       payout, now)
+            to_acct, from_wagers = mkdbl_entries(txn,
+                                                 account_id,
+                                                 self.wagers.id,
+                                                 payout, now)
             
 
             # juice to user
             # juice from juice
-            juiced_to, from_juice = make_double_entries(ttype,
-                                                        account_id,
-                                                        self.juice.id,
-                                                        juice_insurance,
-                                                        now)
+            juiced_to, from_juice = mkdbl_entries(txn,
+                                                  account_id,
+                                                  self.juice.id,
+                                                  juice_insurance,
+                                                  now)
             # make object list
-            dbobjects = [to_acct, from_wagers, from_juice, juiced_to]
+            dbobjects = [to_acct, from_wagers, from_juice, juiced_to, txn]
             # adjust balances
             acct.balance += payout
             wagers.balance -= payout
@@ -429,19 +444,24 @@ class AccountingManager(object):
         total = amount + juice_insurance
         with transaction.manager:
             now = datetime.now()
-            ttype = self._get_xfer_type('lose_bet')
+            ttype = self._get_txn_type('lose_bet')
+            txn = Transaction()
+            txn.type_id = ttype.id
+            txn.created = now
+            self.session.add(txn)
+            txn = self.session.merge(txn)
             payback = amount + amount
-            to_cash, from_wagers = make_double_entries(ttype,
-                                                       self.cash.id,
-                                                       self.wagers.id,
-                                                       payback,
-                                                       now)
-            get_juice, juiced_from = make_double_entries(ttype,
-                                                         self.cash.id,
-                                                         self.juice.id,
-                                                         juice_insurance,
-                                                         now)
-            dbobjects = [to_cash, from_wagers, get_juice, juiced_from]
+            to_cash, from_wagers = mkdbl_entries(txn,
+                                                 self.cash.id,
+                                                 self.wagers.id,
+                                                 payback,
+                                                 now)
+            get_juice, juiced_from = mkdbl_entries(txn,
+                                                   self.cash.id,
+                                                   self.juice.id,
+                                                   juice_insurance,
+                                                   now)
+            dbobjects = [to_cash, from_wagers, get_juice, juiced_from, txn]
             # adjust balances
             cash.balance += payback
             wagers.balance -= payback
@@ -470,28 +490,33 @@ class AccountingManager(object):
         total = amount + juice_insurance
         with transaction.manager:
             now = datetime.now()
-            ttype = self._get_xfer_type('push_bet')
+            ttype = self._get_txn_type('push_bet')
+            txn = Transaction()
+            txn.type_id = ttype.id
+            txn.created = now
+            self.session.add(txn)
+            txn = self.session.merge(txn)
             wagers_loss = amount + amount
             # transfer from wagers to account
-            to_acct, from_wagers = make_double_entries(ttype,
-                                                       account_id,
-                                                       self.wagers.id,
-                                                       amount,
-                                                       now)
+            to_acct, from_wagers = mkdbl_entries(txn,
+                                                 account_id,
+                                                 self.wagers.id,
+                                                 amount,
+                                                 now)
             # transfer from wagers to cash
-            to_cash, cfrom_wagers = make_double_entries(ttype,
-                                                        self.cash.id,
-                                                        self.wagers.id,
-                                                        amount,
-                                                        now)
+            to_cash, cfrom_wagers = mkdbl_entries(txn,
+                                                  self.cash.id,
+                                                  self.wagers.id,
+                                                  amount,
+                                                  now)
             # transfer from juice to account
-            jto_acct, from_juice = make_double_entries(ttype,
-                                                       account_id,
-                                                       self.juice.id,
-                                                       juice_insurance,
-                                                       now)
+            jto_acct, from_juice = mkdbl_entries(txn,
+                                                 account_id,
+                                                 self.juice.id,
+                                                 juice_insurance,
+                                                 now)
             dbobjects = [to_acct, from_wagers, to_cash, cfrom_wagers,
-                         jto_acct, from_juice]
+                         jto_acct, from_juice, txn]
             # adjust balances
             acct.balance += amount
             cash.balance += amount
@@ -504,10 +529,32 @@ class AccountingManager(object):
                 self.session.merge(dbobj)
         self._refresh_standard_accounts()
         return acct, cash, wagers, juice
+
+    def get_txn_types(self):
+        q = self.session.query(TransactionType)
+        ttypes = q.all()
+        items = ((tt.id, tt.name) for tt in ttypes)
+        return dict(items)
+    
     
     def get_all_transfers(self):
         q = self.session.query(BaseTransfer)
         q = q.order_by(BaseTransfer.created)
         return q.all()
     
+
+    def get_transfers(self, txn_id):
+        q = self.session.query(BaseTransfer)
+        q = q.filter_by(txn_id=txn_id)
+        q = q.order_by(BaseTransfer.created)
+        return q.all()
+
+    def get_all_transactions(self):
+        q = self.session.query(Transaction)
+        q = q.order_by(Transaction.created)
+        return q.all()
+
+    def get_txns_by_ttype_id(self):
+        pass
+
     

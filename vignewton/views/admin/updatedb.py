@@ -12,6 +12,7 @@ from trumpet.views.base import BaseMenu
 
 from vignewton.managers.nflgames import NFLGameManager
 from vignewton.managers.odds import NFLOddsManager
+from vignewton.managers.bets import BetsManager
 
 from vignewton.views.base import make_main_menu, make_ctx_menu
 from vignewton.views.base import AdminViewer
@@ -32,6 +33,9 @@ def make_context_menu(request):
     menu.append_new_entry('Update Game Schedule', url)
     url = request.route_url(route, context='odds', id='cash')
     menu.append_new_entry('Update Game Odds', url)
+    url = request.route_url(route, context='bets', id='bets')
+    menu.append_new_entry('Determine Bets', url)
+    
     
     
 class UpdateDBViewer(AdminViewer):
@@ -43,7 +47,8 @@ class UpdateDBViewer(AdminViewer):
         
         self.games = NFLGameManager(self.request.db)
         self.odds = NFLOddsManager(self.request.db)
-
+        self.bets = BetsManager(self.request.db)
+        
         settings = self.get_app_settings()
         url = settings['vignewton.nfl.odds.url']
         self.odds.oddscache.set_url(url)
@@ -56,6 +61,7 @@ class UpdateDBViewer(AdminViewer):
             main=self.main_view,
             games=self.update_games,
             odds=self.update_odds,
+            bets=self.determine_bets,
             )
 
         if self.context in self._cntxt_meth:
@@ -84,3 +90,11 @@ class UpdateDBViewer(AdminViewer):
         else:
             self.layout.content = 'No need to update yet.'
             
+
+    def determine_bets(self):
+        template = 'vignewton:templates/admin-determine-bets.mako'
+        clist = self.bets.determine_bets()
+        env = dict(bm=self.bets, clist=clist)
+        content = self.render(template, env)
+        self.layout.content = content
+        

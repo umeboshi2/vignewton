@@ -1002,3 +1002,71 @@ html {
   padding: 0 !important;
   margin: -1px !important;
 }
+
+/* line 2, ../../../sass/vignewton/_list-styles.scss */
+.listview-simple-header {
+  background: #576b6b;
+  color: #c1cdcd;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* line 9, ../../../sass/vignewton/_list-styles.scss */
+.listview-header {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #576b6b;
+  color: #c1cdcd;
+  text-align: center;
+  font-size: 1.25em;
+  border-style: solid;
+  border-width: 0.3em;
+  border-color: #899f9f;
+}
+
+/* line 20, ../../../sass/vignewton/_list-styles.scss */
+.listview-history {
+  border-style: solid;
+  border-width: 0.3em;
+  border-color: #899f9f;
+}
+
+/* line 28, ../../../sass/vignewton/_list-styles.scss */
+.listview-list {
+  background: #576b6b;
+  padding: 0.3em;
+}
+
+/* line 33, ../../../sass/vignewton/_list-styles.scss */
+.listview-list-entry-header {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  font-size: 1.2em;
+  text-align: center;
+  background: #6d8888;
+  border-style: solid;
+  border-width: 0.2em;
+  border-color: #899f9f;
+  padding: 0.3em;
+}
+
+/* line 43, ../../../sass/vignewton/_list-styles.scss */
+.listview-list-entry {
+  background: #576b6b;
+  margin: 0.5em;
+  border-style: solid;
+  border-width: 0.1em;
+  border-color: #899f9f;
+  padding: 0.3em;
+}
+
+/* line 52, ../../../sass/vignewton/_list-styles.scss */
+.listview-list-entry-status {
+  float: right;
+}

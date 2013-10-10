@@ -182,7 +182,7 @@ class CreditsViewer(AdminViewer):
     def list_transfers(self):
         template = 'vignewton:templates/admin-list-transfers.mako'
         transfers = self.accounts.get_all_transfers()
-        env = dict(transfers=transfers)
+        env = dict(am=self.accounts)
         content = self.render(template, env)
         self.layout.content = content
         
