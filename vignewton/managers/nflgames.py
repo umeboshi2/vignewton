@@ -1,5 +1,6 @@
 import os
 from datetime import datetime, timedelta
+import cPickle as Pickle
 
 import transaction
 from sqlalchemy.orm.exc import NoResultFound
@@ -195,7 +196,10 @@ class NFLGameManager(object):
         
     def update_games(self):
         schedule, sched_updated = self.schedules.latest_schedule()
-        events = parse_ical_nflschedule(schedule.content)
+        return self._update_games(schedule.content)
+    
+    def _update_games(self, stream):
+        events = parse_ical_nflschedule(stream)
         updated = False
         for event in events:
             new_game = False
@@ -270,4 +274,9 @@ class NFLGameManager(object):
         if game.score is None:
             return None
         return game.score.away_score, game.score.home_score
+    
+    def update_from_pickle(self, filename):
+        stream = Pickle.load(file(filename))
+        return self._update_games(stream)
+    
     

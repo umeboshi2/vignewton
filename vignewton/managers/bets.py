@@ -258,6 +258,8 @@ class BetsManager(object):
         bet = self.query().get(bet_id)
         if bet is None:
             raise RuntimeError, "Bad bet id %d" % bet_id
+        if bet.game.score is None:
+            return
         fscore, uscore = self._get_score(bet)
         result = determine_bet(bet, fscore, uscore)
         acct = self.accounts.get(bet.user_id)
@@ -275,7 +277,16 @@ class BetsManager(object):
             self.session.delete(bet)
         return self.session.merge(cb)
     
+    def determine_bet(self, bet_id):
+        return self._determine_bet(bet_id)
 
+    def determine_bets(self):
+        closed = list()
+        for bet in self.get_all_bets():
+            cb = self.determine_bet(bet.id)
+            closed.append(cb)
+        return closed
+    
     def get_all_bets(self):
         return self.query().all()
     

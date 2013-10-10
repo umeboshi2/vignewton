@@ -57,6 +57,7 @@ def make_double_entries(ttype, creditor, debtor, amount, now):
     c.account_id = creditor
     c.amount = amount
     d = BaseTransfer()
+    d.type_id = ttype.id
     d.created = now
     d.account_id = debtor
     d.amount = -amount
@@ -504,5 +505,9 @@ class AccountingManager(object):
         self._refresh_standard_accounts()
         return acct, cash, wagers, juice
     
-            
+    def get_all_transfers(self):
+        q = self.session.query(BaseTransfer)
+        q = q.order_by(BaseTransfer.created)
+        return q.all()
+    
     

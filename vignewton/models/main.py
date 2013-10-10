@@ -27,7 +27,7 @@ NFL_REGION = Enum('North', 'South', 'East', 'West', name='vig_nfl_region')
 UNDER_OVER = Enum('under', 'over', name='vig_under_over_enum')
 
 BET_TYPE = Enum('underover', 'line')
-CLOSED_BET_STATUS = Enum('wind', 'lose', 'push', name='vig_closed_bet_status')
+CLOSED_BET_STATUS = Enum('win', 'lose', 'push', name='vig_closed_bet_status')
 
 
 class NFLScheduleData(Base):
@@ -256,6 +256,7 @@ class BaseTransfer(Base):
     amount = Column(Numeric(16,2))
 
 BaseTransfer.type = relationship(TransferType)
+BaseTransfer.account = relationship(Account)
 
 class DeclarativeTransfer(Base):
     __tablename__ = 'vig_declarative_ledger'

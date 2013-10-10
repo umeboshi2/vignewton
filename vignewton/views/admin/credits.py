@@ -41,7 +41,8 @@ def make_context_menu(request):
     menu.append_new_entry('Credit Account', url)
     url = request.route_url(route, context='acctwithdraw', id='somebody')
     menu.append_new_entry('Pay Account', url)
-    
+    url = request.route_url(route, context='lsxfers', id='xfer')
+    menu.append_new_entry('List Transfers', url)
     
 class CreditsViewer(AdminViewer):
     def __init__(self, request):
@@ -69,6 +70,7 @@ class CreditsViewer(AdminViewer):
             cashwithdraw=self.withdraw_cash,
             acctdeposit=self.deposit_account_main,
             acctwithdraw=self.withdraw_account_main,
+            lsxfers=self.list_transfers,
             )
 
         if self.context in self._cntxt_meth:
@@ -176,4 +178,11 @@ class CreditsViewer(AdminViewer):
 
     def withdraw_account_main(self):
         return self._main_handle_account_form('withdraw')
+        
+    def list_transfers(self):
+        template = 'vignewton:templates/admin-list-transfers.mako'
+        transfers = self.accounts.get_all_transfers()
+        env = dict(transfers=transfers)
+        content = self.render(template, env)
+        self.layout.content = content
         

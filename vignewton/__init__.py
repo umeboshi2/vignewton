@@ -33,7 +33,6 @@ def main(global_config, **settings):
     if settings.get('db.populate', 'False') == 'True':
         from sqlalchemy.exc import IntegrityError
         from vignewton.models.main import make_test_data
-        from vignewton.models.nflteamdata import NFLShortTeam
         Base.metadata.create_all(engine)
         #initialize_sql(engine)
         #make_test_data(DBSession)
@@ -45,12 +44,6 @@ def main(global_config, **settings):
         populate_sitetext()
         import transaction
         
-        from vignewton.models.nflteamdata import populate_team_map
-        try:
-            populate_team_map(DBSession)
-        except IntegrityError:
-            pass
-
         filename = 'testdata/nfl-teams.csv'
         if os.path.isfile(filename):
             from sqlalchemy.exc import IntegrityError

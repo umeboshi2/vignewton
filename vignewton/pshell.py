@@ -57,7 +57,10 @@ def backup_cache(gm, om):
         o.write(om.archive_cache_table())
     with file(sfilename, 'wb') as o:
         o.write(gm.archive_cache_table())
-        
+def update_games(gm):
+    filename = 'testdata/s2.pickle'
+    gm.update_from_pickle(filename)
+
 def setup(env):
     request = env['request']
     db = request.db
@@ -66,21 +69,7 @@ def setup(env):
     
     url = settings['vignewton.nfl.schedule.url']
     env['url'] = url
-    env['csv'] = csv
-    env['urllib2'] = urllib2
-    env['vobject'] = vobject
-    #more_setup(env)
     odds_url = settings['vignewton.nfl.odds.url']
-    filename = 'odds.html'
-    if not os.path.exists(filename):
-        with file(filename, 'w') as output:
-            r = urllib2.urlopen(odds_url)
-            output.writelines(r)
-    text = file(filename).read()
-    from vignewton.managers.oddsparser import NewOddsParser
-    op = NewOddsParser()
-    env['op'] = op
-    op.set_html(text)
     from vignewton.managers.nflgames import NFLTeamManager
     tm = NFLTeamManager(db)
     env['tm'] = tm
@@ -94,17 +83,20 @@ def setup(env):
             om.update_current_odds()
         else:
             om.populate_from_pickle(filename)
-            
+    from vignewton.managers.nflgames import NFLGameManager
+    gm = NFLGameManager(db)
+    env['gm'] = gm
+    gm.set_schedule_url(url)
+    update_game_schedule = False
+    if update_game_schedule:
+        update_games(gm)
+    env['ug'] = update_games
     from vignewton.managers.accounting import AccountingManager
     am = AccountingManager(db)
     am.initialize_bets_manager()
     env['am'] = am
     #env['games'] = om.oddscache.get_latest()[0].content
     #env['bg'] = env['games'][-3]
-    from vignewton.managers.nflgames import NFLGameManager
-    gm = NFLGameManager(db)
-    env['gm'] = gm
-    gm.set_schedule_url(url)
     from vignewton.managers.util import determine_max_bet
     env['dmb'] = determine_max_bet
     env['game'] = gm.query().get(125)
