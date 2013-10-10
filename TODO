@@ -1,0 +1,20 @@
+TASKS
+--------
+
+make transaction table and transaction_transfer table to contain transactions
+show balance and max bet to user
+show bet history to user
+show all pending bets and all closed bets to admin
+make show pending bets better
+remake layout on main bettable games view
+update code to only bet on future games
+fail confirm bet if odds in db updated
+make code to handle event when odds are no longer available
+
+
+WISHLIST
+----------
+
+make admin page to manually enter odds for game
+make admin page to manually enter game not on schedule
+make admin page to delete games not wanted to be displayed (and mark them from future entry by upstream schedule)
