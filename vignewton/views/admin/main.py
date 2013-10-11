@@ -28,12 +28,14 @@ def prepare_main_data(request):
     menu.append_new_entry('Manage Users', url)
     url = request.route_url('admin_credits', context='main', id=None)
     menu.append_new_entry('Manage Credits', url)
+    url = request.route_url('admin_bets', context='main', id='all')
+    menu.append_new_entry('View Betting', url)
+    url = request.route_url('admin_updatedb', context='main', id='db')
+    menu.append_new_entry('Update Database', url)
     url = request.route_url('admin_sitetext', context='list', id=None)
     menu.append_new_entry('Manage Text', url)
     url = request.route_url('admin_images', context='list', id=None)
     menu.append_new_entry('Manage Images', url)
-    url = request.route_url('admin_updatedb', context='main', id='db')
-    menu.append_new_entry('Update Database', url)
     main_menu = make_main_menu(request)
     layout.title = 'Admin Page'
     layout.header = 'Admin Page'

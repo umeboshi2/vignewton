@@ -22,6 +22,10 @@ def configure_admin(config, rootpath='/admin', permission='admin'):
     add_view(config, 'vignewton.views.admin.credits.CreditsViewer',
              'admin_credits', permission=permission)
     
+    config.add_route('admin_bets', '%s/bets/{context}/{id}' % rootpath)
+    add_view(config, 'vignewton.views.admin.bets.BetsViewer',
+             'admin_bets', permission=permission)
+
     config.add_route('admin_updatedb', '%s/updatedb/{context}/{id}' % rootpath)
     add_view(config, 'vignewton.views.admin.updatedb.UpdateDBViewer',
              'admin_updatedb', permission=permission)

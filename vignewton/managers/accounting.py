@@ -155,16 +155,25 @@ class AccountingManager(object):
         q = self.session.query(AccountBalance)
         return q.get(account_id)
 
-    def get_account_balance_total(self):
+    def _std_acct_ids(self):
         cash_id = self.cash.id
         wild_id = self.inthewild.id
         wagers_id = self.wagers.id
         juice_id = self.juice.id
-        standard_accounts = [cash_id, wild_id, wagers_id, juice_id]
+        return [cash_id, wild_id, wagers_id, juice_id]
+        
+    def get_account_balance_total(self):
+        standard_accounts = self._std_acct_ids()
         q = self.session.query(func.sum(AccountBalance.balance))
         # where account_id not in standard_accounts
         q = q.filter(~AccountBalance.account_id.in_(standard_accounts))
         return q.one()
+
+    def get_user_accounts(self):
+        standard_accounts = self._std_acct_ids()
+        q = self.session.query(Account)
+        q = q.filter(~Account.id.in_(standard_accounts))
+        return q.all()
     
     # This comes from the wild
     def add_to_cash(self, amount):

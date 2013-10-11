@@ -226,6 +226,7 @@ UserBet.underdog = relationship(NFLTeam,
 UserBet.team = relationship(NFLTeam,
                             foreign_keys=[UserBet.team_id])
 UserBet.txn = relationship(Transaction)
+UserBet.user = relationship(User)
 
 
 

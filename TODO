@@ -1,7 +1,6 @@
 TASKS
 --------
 
-make transaction table and transaction_transfer table to contain transactions
 show balance and max bet to user
 show bet history to user
 show all pending bets and all closed bets to admin
@@ -10,6 +9,11 @@ remake layout on main bettable games view
 update code to only bet on future games
 fail confirm bet if odds in db updated
 make code to handle event when odds are no longer available
+
+done
+-------
+make transaction table and transaction_transfer table to contain transactions
+
 
 
 WISHLIST

@@ -1,6 +1,8 @@
 <div class="main-betgames-view">
   <div class="listview-header">
     <p>NFL Bettable Games</p>
+    <p>Account Balance</p>
+    <p>Maximum Bet</p>
   </div>
   %for date in dates:
   <div class="listview-list">
