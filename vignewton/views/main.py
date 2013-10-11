@@ -131,7 +131,7 @@ class MainViewer(BaseViewer):
                    game_date_format=game_date_format)
         content = self.render(template, env)
         self.layout.content = content
-        self.layout.resources.lightbox.need()
+        #self.layout.resources.lightbox.need()
         self.layout.resources.main_betgames_view.need()
         
     def main_admin_view(self):
@@ -149,24 +149,4 @@ class MainViewer(BaseViewer):
         env = {}
         content = self.render(template, env)
         self.layout.content = content
-
-    def view_event(self):
-        pass
-    
-        
-    def export_event(self):
-        pass
-    
-        
-    
-    def view_venue(self):
-        pass
-
-    def view_events_for_day(self):
-        pass
-    
-
-
-        
-
 

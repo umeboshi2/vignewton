@@ -20,6 +20,7 @@ from vignewton.managers.bets import BetsManager
 from vignewton.managers.util import BettableGamesCollector
 from vignewton.managers.base import InsufficientFundsError
 from vignewton.managers.bets import MaximumBetError
+from vignewton.managers.bets import MinimumBetError
 
 from vignewton.views.base import BaseViewer
 from vignewton.views.base import make_main_menu, make_ctx_menu
@@ -215,6 +216,9 @@ class NFLGameBetsViewer(BaseViewer):
             self.layout.content = str(e)
             return
         except MaximumBetError, e:
+            self.layout.content = str(e)
+            return
+        except MinimumBetError, e:
             self.layout.content = str(e)
             return
         self.show_current_bet()

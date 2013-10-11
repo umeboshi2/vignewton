@@ -1070,3 +1070,8 @@ html {
 .listview-list-entry-status {
   float: right;
 }
+
+/* line 18, ../../../sass/adminscreen.scss */
+.base-widgetbox {
+  font-size: 0.8em;
+}

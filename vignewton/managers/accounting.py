@@ -23,6 +23,7 @@ from vignewton.models.main import TransactionType
 from vignewton.managers.base import InsufficientFundsError
 from vignewton.managers.base import AmountTooHighError
 from vignewton.managers.base import NoBetsManagerError
+from vignewton.managers.util import determine_max_bet
 
 # win and loss are referenced from viewpoint of user
 #
@@ -74,6 +75,9 @@ class AccountingManager(object):
         self.db_bal = self.db_account_bal
             
         self.bets = None
+        self._refresh_standard_accounts()
+
+    def refresh(self):
         self._refresh_standard_accounts()
         
     def _refresh_standard_accounts(self):
@@ -150,6 +154,10 @@ class AccountingManager(object):
         q = self.session.query(UserAccount)
         q = q.filter_by(user_id=user_id)
         return q.one().account
+
+    def user_account_query(self):
+        return self.session.query(UserAccount)
+        
     
     def get_balance(self, account_id):
         q = self.session.query(AccountBalance)
@@ -566,4 +574,7 @@ class AccountingManager(object):
     def get_txns_by_ttype_id(self):
         pass
 
+    
+    def get_max_bet(self, account_id):
+        return determine_max_bet(self.get_balance(account_id).balance)
     

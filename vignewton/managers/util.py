@@ -156,6 +156,7 @@ def parse_ical_nflschedule(content):
     return (e for e in cal.walk() if e.name == 'VEVENT')
 
 def determine_max_bet(balance):
+    balance = int(balance)
     juice_money = balance / 10
     workable = balance - juice_money
     workable_tens = workable / 10

@@ -19,3 +19,22 @@
 
 @import "partials/tickets";
 @import "vignewton/list-styles";
+
+.base-widgetbox {
+    font-size: 0.8em;
+}
+
+.line-table {
+    display: inline-block;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: $basecolor2;
+}
+
+.underover-table {
+    display: inline-block;
+    float: right;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: $basecolor2;
+}

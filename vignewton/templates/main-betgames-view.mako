@@ -1,21 +1,30 @@
 <div class="main-betgames-view">
   <div class="listview-header">
     <p>NFL Bettable Games</p>
-    <p>Account Balance</p>
-    <p>Maximum Bet</p>
   </div>
+  <% from datetime import datetime %>
+  <% now = datetime.now() %>
   %for date in dates:
+  %if date < now.date():
+  <% continue %>
+  %endif
   <div class="listview-list">
     <div class="listview-list-entry-header">
       ${date.strftime(game_date_format)}
     </div>
     %for odds in collector.dates[date]:
+    %if odds.game.start < now:
+      <% continue %>
+    %endif
     <div class="listview-list-entry">
       <% mkurl = request.route_url %>
       <% game_id = odds.game.id %>
+      <% game = odds.game %>
       <% game_url = mkurl('vig_nflgames', context='viewgame', id=game_id) %>
       <% favored_txt = '%s %s' % (odds.favored.city, odds.favored.name) %>
       <% underdog_txt = '%s %s' % (odds.underdog.city, odds.underdog.name) %>
+      <% away_txt = '%s %s' % (game.away.city, game.away.name) %>
+      <% home_txt = '%s %s' % (game.home.city, game.home.name) %>
       <% summary = odds.game.summary %>
       <% broute = 'vig_betgames' %>
       <% favored_id = 'line-{}-favored'.format(game_id) %>
@@ -28,13 +37,58 @@
       <% over_url = mkurl(broute, context='betover', id=game_id) %>
       <% form_url = mkurl('vig_betfrag', context='betover', id='foo') %>
       <a href="${game_url}">${summary}</a><br>
-      <div class="action-button" id="${favored_id}" href="${favored_url}">${favored_txt}</div>
-      over 
-      <div class="action-button" id="${underdog_id}" href="${underdog_url}">${underdog_txt}</div>
-      by ${odds.spread} totalling
-      <div class="action-button" id="${under_id}" href="${under_url}">under</div>
-      ${odds.total}
-      <div class="action-button" id="${over_id}" href="${over_url}">over</div><br>
+	  <div class="line-table">
+	    <table>
+	      <tr class="away-row">
+		<td>
+		  <a href="${game_url}">${away_txt}</a>
+		</td>
+		%if odds.favored_id == game.away_id:
+		<td>
+		  -${odds.spread}
+		  <input type="button" class="action-button" id="${favored_id}" href="${favored_url}" value="bet">
+		</td>
+		%else:
+		<td>
+		  ${odds.spread}
+		  <input type="button" class="action-button" id="${underdog_id}" href="${underdog_url}" value="bet">
+		</td>
+		%endif
+	      </tr>
+	      <tr class="home-row">
+		<td>
+		  <a href="${game_url}">${home_txt}</a>
+		</td>
+		%if odds.favored_id == game.home_id:
+		<td>
+		  -${odds.spread}
+		  <input type="button" class="action-button" id="${favored_id}" href="${favored_url}" value="bet">
+		</td>
+		%else:
+		<td>
+		  ${odds.spread}
+		  <input type="button" class="action-button" id="${underdog_id}" href="${underdog_url}" value="bet">
+		</td>
+		%endif
+	      </tr>
+	    </table>
+	  </div>
+	  <div class="underover-table">
+	    <table>
+	      <tr class="over-row">
+		<td>
+		  over ${odds.total}
+		  <input type="button" class="action-button" id="${over_id}" href="${over_url}" value="bet">
+		</td>
+	      </tr>
+	      <tr class="under-row">
+		<td>
+		  under ${odds.total}
+		  <input type="button" class="action-button" id="${under_id}" href="${under_url}" value="bet">
+		</td>
+	      </tr>
+	    </table>
+	  </div>
     </div>
     <div class="betgame-window" id="betgame-window-${game_id}" href="${form_url}"><div></div></div>
     %endfor

@@ -4,6 +4,7 @@ from trumpet.views.menus import BaseMenu, TopBar
 
 from vignewton.resources import StaticResources
 from vignewton.models.usergroup import User
+from vignewton.managers.accounting import AccountingManager
 
 def prepare_layout(layout):
     layout.title = 'Vig Newton'
@@ -73,8 +74,10 @@ class BaseViewer(TrumpetViewer):
         prepare_layout(self.layout)
         self.layout.main_menu = make_main_menu(request).render()
         self.css = self.layout.resources.main_screen
+        self.accounts = AccountingManager(self.request.db)
         
     def __call__(self):
+        self._update_widgetbox()
         if hasattr(self, 'css'):
             self.css.need()
         return super(BaseViewer, self).__call__()
@@ -96,7 +99,34 @@ class BaseViewer(TrumpetViewer):
         skey = 'vignewton.admin.admin_username'
         admin_username = self.request.registry.settings.get(skey, 'admin')
         return admin_username
-    
+
+    def _get_account(self):
+        try:
+            user_id = self.get_current_user_id()
+        except KeyError:
+            return None
+        q = self.accounts.user_account_query()
+        q = q.filter_by(user_id=user_id)
+        ulist = q.all()
+        if not ulist:
+            return None
+        else:
+            return ulist[0].account
+
+    def _update_widgetbox(self):
+        account = self._get_account()
+        if account is None:
+            if 'user' not in self.request.session:
+                return
+            else:
+                template = 'vignewton:templates/admin-widgetbox.mako'
+                env = dict(accounts=self.accounts)
+        else:
+            template = 'vignewton:templates/base-widgetbox.mako'
+            env = dict(am=self.accounts, account=account)
+        content = self.render(template, env)
+        self.layout.widgetbox = content
+        
 class AdminViewer(BaseViewer):
     def __init__(self, request):
         super(AdminViewer, self).__init__(request)

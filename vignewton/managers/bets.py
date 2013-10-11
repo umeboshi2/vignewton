@@ -89,7 +89,7 @@ def determine_bet(bet, fscore, uscore):
 def make_closed_bet(bet, status, txn):
     now = datetime.now()
     cb = ClosedBet()
-    for field in ['id', 'user_id', 'game_id', 'created', 'amount',
+    for field in ['user_id', 'game_id', 'created', 'amount',
                   'bet_type', 'underover', 'team_id', 'total',
                   'spread', 'favored_id', 'underdog_id']:
         value = getattr(bet, field)
