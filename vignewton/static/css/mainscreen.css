@@ -703,12 +703,51 @@ html {
   float: right;
 }
 
-/* line 23, ../../../sass/mainscreen.scss */
+/* line 1, ../../../sass/vignewton/_common.scss */
+.place-bet-transaction, .determine-bet-transaction {
+  background: #8f8f8f;
+  margin: 0.5em;
+  border-style: solid;
+  border-width: 0.1em;
+  border-color: #c2c2c2;
+  padding: 0.3em;
+  display: inline-block;
+}
+
+/* line 12, ../../../sass/vignewton/_common.scss */
+.bet-transfer {
+  font-size: 0.7em;
+}
+
+/* line 16, ../../../sass/vignewton/_common.scss */
+.bet-info {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #c2c2c2;
+  text-align: center;
+}
+
+/* line 22, ../../../sass/vignewton/_common.scss */
+.place-bet-header, .determine-bet-header {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+  background: #c2c2c2;
+  text-align: center;
+  font-size: 0.75em;
+}
+
+/* line 24, ../../../sass/mainscreen.scss */
 .base-widgetbox {
   font-size: 0.8em;
 }
 
-/* line 27, ../../../sass/mainscreen.scss */
+/* line 28, ../../../sass/mainscreen.scss */
 .line-table {
   display: inline-block;
   border-style: solid;
@@ -716,7 +755,7 @@ html {
   border-color: #c2c2c2;
 }
 
-/* line 34, ../../../sass/mainscreen.scss */
+/* line 35, ../../../sass/mainscreen.scss */
 .underover-table {
   display: inline-block;
   float: right;

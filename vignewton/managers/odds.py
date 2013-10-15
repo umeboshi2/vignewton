@@ -199,7 +199,7 @@ class NFLOddsManager(object):
         q = self.query()
         q = q.filter(NFLGame.start >= now)
         q = q.order_by(NFLGame.start)
-        q = self._filter_zero_odds(q)
+        #q = self._filter_zero_odds(q)
         return q.all()
     
     

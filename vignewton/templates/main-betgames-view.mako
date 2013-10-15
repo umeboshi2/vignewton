@@ -16,6 +16,9 @@
     %if odds.game.start < now:
       <% continue %>
     %endif
+    %if odds.spread == 0 and odds.total == 0:
+      <% continue %>
+    %endif
     <div class="listview-list-entry">
       <% mkurl = request.route_url %>
       <% game_id = odds.game.id %>
@@ -38,6 +41,7 @@
       <% form_url = mkurl('vig_betfrag', context='betover', id='foo') %>
       <a href="${game_url}">${summary}</a><br>
 	  <div class="line-table">
+            %if odds.spread > 0:
 	    <table>
 	      <tr class="away-row">
 		<td>
@@ -46,12 +50,16 @@
 		%if odds.favored_id == game.away_id:
 		<td>
 		  -${odds.spread}
-		  <input type="button" class="action-button" id="${favored_id}" href="${favored_url}" value="bet">
+		  %if odds.spread > 0:
+                    <input type="button" class="action-button" id="${favored_id}" href="${favored_url}" value="bet">
+		  %endif
 		</td>
 		%else:
 		<td>
 		  ${odds.spread}
-		  <input type="button" class="action-button" id="${underdog_id}" href="${underdog_url}" value="bet">
+		  %if odds.spread > 0:
+		    <input type="button" class="action-button" id="${underdog_id}" href="${underdog_url}" value="bet">
+		  %endif
 		</td>
 		%endif
 	      </tr>
@@ -62,32 +70,43 @@
 		%if odds.favored_id == game.home_id:
 		<td>
 		  -${odds.spread}
-		  <input type="button" class="action-button" id="${favored_id}" href="${favored_url}" value="bet">
+		  %if odds.spread > 0:
+		    <input type="button" class="action-button" id="${favored_id}" href="${favored_url}" value="bet">
+		  %endif
 		</td>
 		%else:
 		<td>
 		  ${odds.spread}
-		  <input type="button" class="action-button" id="${underdog_id}" href="${underdog_url}" value="bet">
+		  %if odds.spread > 0:
+		    <input type="button" class="action-button" id="${underdog_id}" href="${underdog_url}" value="bet">
+		  %endif
 		</td>
 		%endif
 	      </tr>
 	    </table>
+            %endif
 	  </div>
 	  <div class="underover-table">
+	    %if odds.total > 0:
 	    <table>
 	      <tr class="over-row">
 		<td>
 		  over ${odds.total}
-		  <input type="button" class="action-button" id="${over_id}" href="${over_url}" value="bet">
+		  %if odds.total > 0:
+		    <input type="button" class="action-button" id="${over_id}" href="${over_url}" value="bet">
+		  %endif
 		</td>
 	      </tr>
 	      <tr class="under-row">
 		<td>
 		  under ${odds.total}
-		  <input type="button" class="action-button" id="${under_id}" href="${under_url}" value="bet">
+		  %if odds.total > 0:
+		    <input type="button" class="action-button" id="${under_id}" href="${under_url}" value="bet">
+		  %endif
 		</td>
 	      </tr>
 	    </table>
+	    %endif
 	  </div>
     </div>
     <div class="betgame-window" id="betgame-window-${game_id}" href="${form_url}"><div></div></div>
