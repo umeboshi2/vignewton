@@ -1,11 +1,8 @@
 <div class="base-widgetbox admin-cash-report-view">
   <% accounts.refresh() %>
-  <div class="listview-header">
-    <p>Cash Report</p>
-  </div>
   <div class="listview-list">
     <div class="listview-list-entry-header">
-      Main Accounts
+      Cash Report
     </div>
     <div class="listview-list-entry">
       Cash Balance: ${accounts.cash.balance.balance}<br>
