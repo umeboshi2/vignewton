@@ -182,6 +182,10 @@ def main(global_config, **settings):
                     renderer=basetemplate,
                     layout='base')
     ##################################
+    config.add_route('blob', '/blob/{filetype}/{id}')
+    config.add_view('vignewton.views.blob.BlobViewer', route_name='blob',
+                    renderer='string',
+                    layout='base')
 
     ##################################
     # Views for Users

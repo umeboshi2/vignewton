@@ -238,6 +238,13 @@ class BetsManager(object):
             q = q.filter_by(game_id=game_id)
         return q.all()
 
+    def get_user_closed_bets(self, user_id, game_id=None):
+        q = self.session.query(ClosedBet)
+        q = q.filter_by(user_id=user_id)
+        if game_id is not None:
+            q = q.filter_by(game_id=game_id)
+        return q.all()
+        
     def _get_score(self, bet):
         "returns score as favored, underdog"
         game = bet.game

@@ -110,7 +110,7 @@ class MainViewer(BaseViewer):
                 return self.main_authenticated_view()
         
     def main_authenticated_view(self):
-        self.layout.header = 'NFL Bettable Games'
+        self.layout.subheader = 'NFL Bettable Games'
         user_id = self.get_current_user_id()
         try:
             current, odata = self.bets.show_requested_bet(user_id)

@@ -268,7 +268,13 @@ class NFLGameBetsViewer(BaseViewer):
         
 
     def show_closed_bets(self):
-        self.layout.content = "show closed bets(todo)"
+        user_id = self.get_current_user_id()
+        bets = self.bets.get_user_closed_bets(user_id)
+        template = 'vignewton:templates/main-user-closed-bets.mako'
+        env = dict(bets=bets)
+        content = self.render(template, env)
+        self.layout.content = content
+
 
     
         

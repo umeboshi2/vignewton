@@ -6,8 +6,13 @@ from vignewton.resources import StaticResources
 from vignewton.models.usergroup import User
 from vignewton.managers.accounting import AccountingManager
 
+def get_admin_username(request):
+    skey = 'vignewton.admin.admin_username'
+    admin_username = request.registry.settings.get(skey, 'admin')
+    return admin_username
+
 def prepare_layout(layout):
-    layout.title = 'Vig Newton'
+    layout.title = 'Hattiesburg Hustler'
     layout.header = layout.title
     layout.subheader = ''
     layout.content = ''
@@ -34,6 +39,7 @@ def make_main_menu(request):
 def make_ctx_menu(request):
     menu = BaseMenu(header='Main Menu', class_='submenu')
     user = request.session.get('user', None)
+    admin_username = get_admin_username(request)
     logged_in = user is not None
     if logged_in:
         #url = request.route_url('user', context='preferences')
@@ -44,19 +50,29 @@ def make_ctx_menu(request):
         menu.append_new_entry('Sign In', login_url)
     if 'user' in request.session:
         user = request.session['user']
-        url = request.route_url('home')
-        menu.append_new_entry('Main View', url)
-        url = request.route_url('main', context='schedcal', id='today')
-        menu.append_new_entry('Schedule', url)
-        url = request.route_url('vig_betgames', context='pending', id='bets')
-        menu.append_new_entry('My Pending Bets', url)
-        url = request.route_url('vig_betgames', context='closed', id='bets')
-        menu.append_new_entry('My Closed Bets', url)
-        url = request.route_url('view_wiki')
-        menu.append_new_entry('Wiki', url)
-        url = request.route_url('vig_nflteams', context='main', id='all')
-        menu.append_new_entry('NFL Teams', url)
-
+    else:
+        user = None
+    if user is not None:
+        if user.username != admin_username:
+            url = request.route_url('home')
+            menu.append_new_entry('Main View', url)
+            url = request.route_url('main',
+                                    context='schedcal', id='today')
+            menu.append_new_entry('Schedule', url)
+            url = request.route_url('vig_betgames',
+                                    context='pending', id='bets')
+            menu.append_new_entry('My Pending Bets', url)
+            url = request.route_url('vig_betgames',
+                                    context='closed', id='bets')
+            menu.append_new_entry('My Closed Bets', url)
+            url = request.route_url('view_wiki')
+            menu.append_new_entry('Wiki', url)
+            url = request.route_url('vig_nflteams',
+                                    context='main', id='all')
+            menu.append_new_entry('NFL Teams', url)
+        else:
+            url = request.route_url('admin', context='main')
+            menu.append_new_entry('Admin', url)
     return menu
     
 def get_regular_users(request):
@@ -96,9 +112,7 @@ class BaseViewer(TrumpetViewer):
         return self.request.registry.settings
 
     def get_admin_username(self):
-        skey = 'vignewton.admin.admin_username'
-        admin_username = self.request.registry.settings.get(skey, 'admin')
-        return admin_username
+        return get_admin_username(self.request)
 
     def _get_account(self):
         try:

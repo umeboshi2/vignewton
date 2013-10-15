@@ -1,0 +1,27 @@
+.place-bet-transaction, .determine-bet-transaction {
+    background: $basecolor4;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: $basecolor2;
+    padding: 0.3em;
+    display: inline-block;
+}
+
+
+.bet-transfer {
+    font-size: 0.7em;    
+}
+
+.bet-info {
+    @include border-radius(0.5em);
+    background: $basecolor2;
+    text-align: center;
+}
+
+.place-bet-header, .determine-bet-header {
+    @include border-radius(0.3em);
+    background: $basecolor2;
+    text-align: center;
+    font-size: 0.75em;
+}
