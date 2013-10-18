@@ -60,14 +60,26 @@ authn_policy = SessionAuthenticationPolicy(callback=authenticate)
 authz_policy = ACLAuthorizationPolicy()
 
 
-def make_authn_authz_policies(secret, cookie, callback=authenticate,
-                              timeout=None):
-    authn_policy = AuthTktAuthenticationPolicy(
+def make_authn_policy(secret, cookie, callback=authenticate,
+                      timeout=None):
+    ap = AuthTktAuthenticationPolicy(
         secret=secret,
         callback=callback,
         cookie_name=cookie,
         timeout=timeout)
-    authn_policy = SessionAuthenticationPolicy(callback=authenticate)
+    return ap
+
+def make_session_authn_policy(callback=authenticate):
+    sp = SessionAuthenticationPolicy(callback=callback)
+    return sp
+
+
+def make_authn_authz_policies(secret, cookie, callback=authenticate,
+                              timeout=None, tkt=True):
+    if tkt:
+        authn_policy = make_authn_policy(secret, cookie, callback, timeout)
+    else:
+        authn_policy = make_session_authn_policy(callback=callback)
     authz_policy = ACLAuthorizationPolicy()
     return authn_policy, authz_policy
 
