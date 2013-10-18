@@ -104,7 +104,8 @@ class BaseViewer(TrumpetViewer):
             self.accounts = None
             
     def __call__(self):
-        self._update_widgetbox()
+        if self.accounts is not None:
+            self._update_widgetbox()
         if hasattr(self, 'css'):
             self.css.need()
         return super(BaseViewer, self).__call__()
