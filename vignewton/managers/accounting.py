@@ -12,10 +12,8 @@ from sqlalchemy import func
 from sqlalchemy import or_
 
 from vignewton.models.main import Account, AccountBalance
-from vignewton.models.main import Transfer, LedgerEntry
 from vignewton.models.main import UserAccount
 
-from vignewton.models.main import BetFinal
 from vignewton.models.main import BaseTransfer, Transaction
 from vignewton.models.main import TransactionType
 
@@ -70,7 +68,6 @@ class AccountingManager(object):
         self.session = session
         self.db_account = Account
         self.db_transfer = BaseTransfer
-        self.db_final = BetFinal
         self.db_account_bal = AccountBalance
         self.db_bal = self.db_account_bal
             

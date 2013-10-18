@@ -125,6 +125,15 @@ class BaseViewer(TrumpetViewer):
     def get_admin_username(self):
         return get_admin_username(self.request)
 
+    def is_admin_authn(self, authn):
+        username = self.get_admin_username()
+        user_id = get_user_id(self.request, username)
+        return authn == user_id
+    
+        
+        
+
+        
     def _get_account(self):
         try:
             user_id = self.get_current_user_id()

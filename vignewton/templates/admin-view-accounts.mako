@@ -4,10 +4,6 @@
   <div class="listview-header">
     ${acct.name} - $${acct.balance.balance}
   </div>
-  <div class="listview-list">
-    <div class="listview-list-entry">
-    </div>
-  </div>
   %endfor
 </div>
 

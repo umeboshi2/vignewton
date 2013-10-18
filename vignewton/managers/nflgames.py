@@ -197,21 +197,35 @@ class NFLGameManager(object):
     def update_games(self):
         schedule, sched_updated = self.schedules.latest_schedule()
         return self._update_games(schedule.content)
+
+    def _get_latest_scored_game(self):
+        q = self.session.query(NFLGame)
+        q = q.filter(NFLGame.id == NFLGameScore.game_id)
+        q = q.order_by(NFLGame.start.desc())
+        return q.first()
+
+    def get_latest_scored_game(self):
+        return self._get_latest_scored_game()
     
     def _update_games(self, stream):
         events = parse_ical_nflschedule(stream)
+        latest_game = self._get_latest_scored_game()
         updated = False
         for event in events:
-            new_game = False
-            try:
-                game = self.get_game_from_ical_event(event)
-            except NoResultFound:
-                new_game = True
-                game = self.insert_new_game(event)
-            if not new_game:
-                game, game_updated = self.update_game(game, event)
-                if game_updated:
-                    updated = True
+            edata = parse_ical_nflgame(event)
+            if edata['start'] > latest_game.start:
+                new_game = False
+                try:
+                    game = self.get_game_from_ical_event(event)
+                except NoResultFound:
+                    new_game = True
+                    game = self.insert_new_game(event)
+                if not new_game:
+                    # check score
+                    if game.score is None:
+                        game, game_updated = self.update_game(game, event)
+                        if game_updated:
+                            updated = True
         return updated
     
     def _range_filter(self, query, start, end):

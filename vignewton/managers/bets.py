@@ -15,7 +15,6 @@ from vignewton.models.main import NFLOddsData, NFLGameOdds
 from vignewton.models.main import NFLGame
 from vignewton.models.main import UserAccount, UserBet
 from vignewton.models.main import CurrentBet, ClosedBet
-from vignewton.models.main import BetHistory
 
 from vignewton.managers.base import InsufficientFundsError
 from vignewton.managers.nflgames import NFLGameManager, NFLTeamManager

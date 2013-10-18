@@ -104,12 +104,13 @@ class MainViewer(BaseViewer):
         authn_policy = self.request.context.authn_policy
         authn = authn_policy.authenticated_userid(self.request)
         if authn is None:
-            #self.layout.subheader = "Auth is None"
+            self.layout.subheader = "Auth is None"
             self._unauthenticated_view()
         else:
             self._authenticated_view(authn)
 
     def _unauthenticated_view(self):
+        #self.layout.subheader = self.accounts
         if self.accounts is None:
             mkurl = self.request.route_url
             url = mkurl('initdb', context='initialize', id='database')
@@ -119,14 +120,15 @@ class MainViewer(BaseViewer):
         else:
             url = self.request.route_url('login')
             content = '<a href="%s">Login</a>' % url
-            self.layout.content = content
+        self.layout.content = content
         
     def _authenticated_view(self, authn):
-            admin_username = self.get_admin_username()
-            if authn == admin_username:
-                return self.main_admin_view()
-            else:
-                return self.main_authenticated_view()
+        if self.is_admin_authn(authn):
+            url = self.request.route_url('admin')
+            self.response = HTTPFound(url)
+            return
+        else:
+            return self.main_authenticated_view()
         
     def main_authenticated_view(self):
         self.layout.subheader = 'NFL Bettable Games'

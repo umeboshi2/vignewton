@@ -179,13 +179,6 @@ Transaction.transfers = relationship(BaseTransfer)
 Transaction.type = relationship(TransactionType)
 
 
-
-
-class Transfer(Base):
-    __tablename__ = 'vig_accounting_transfers'
-    id = Column(Integer, primary_key=True)
-    name = Column(Unicode(100), unique=True)
-
 class CurrentBet(Base):
     __tablename__ = 'vig_user_current_bet'
     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
@@ -270,39 +263,7 @@ ClosedBet.close_txn = relationship(Transaction,
                                  foreign_keys=[ClosedBet.close_txn_id])
 
 
-class BetHistory(Base):
-    __tablename__ = 'vig_bets_history'
-    id = Column(Integer, primary_key=True)
-    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'))
 
-    
-class BetStatus(Base):
-    __tablename__ = 'vig_bets_board'
-    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'), primary_key=True)
-    created = Column(DateTime)
-    win = Column(Boolean)
-    payable = Column(Boolean)
-    
-
-class BetFinal(Base):
-    __tablename__ = 'vig_bet_finals'
-    bet_id = Column(Integer, ForeignKey('vig_user_bets.id'), primary_key=True)
-    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
-    amount = Column(Numeric(16,2))
-    juice = Column(Numeric(16,2))
-    created = Column(DateTime)
-
-
-
-
-class LedgerEntry(Base):
-    __tablename__ = 'vig_accounting_ledger'
-    id = Column(Integer, primary_key=True)
-    account_id = Column(Integer, ForeignKey('vig_accounts.id'))
-    transfer_id = Column(Integer, ForeignKey('vig_accounting_transfers.id'))
-    amount = Column(Numeric(16,2))
-    
-    
 class LoginHistory(Base):
     __tablename__ = 'login_history'
     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
