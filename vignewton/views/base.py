@@ -106,7 +106,8 @@ class BaseViewer(TrumpetViewer):
             self.accounts = None
         except ProgrammingError, e:
             self.layout.header = e
-
+            self.accounts = None
+            
             
     def __call__(self):
         if self.accounts is not None:
