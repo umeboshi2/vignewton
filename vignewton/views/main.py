@@ -65,8 +65,8 @@ class MainViewer(BaseViewer):
         self.layout.ctx_menu = make_ctx_menu(self.request).output()
 
         if self.accounts is not None:
-        self.odds = NFLOddsManager(self.request.db)
-        self.bets = BetsManager(self.request.db)
+            self.odds = NFLOddsManager(self.request.db)
+            self.bets = BetsManager(self.request.db)
         
         # make form resources available
         schema = CreditAmountSchema()

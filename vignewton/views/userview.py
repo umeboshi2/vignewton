@@ -99,15 +99,14 @@ class MainViewer(BaseViewer):
         entries.append(('Change Password', url))
         url = request.route_url('user', context='status')
         entries.append(('Status', url))
-        url = request.route_url('user', context='mainprefs')
-        entries.append(('Main Prefs', url))
         menu = self.layout.ctx_menu
         menu.set_new_entries(entries, header='Preferences')
         # make dispatch table
         self._cntxt_meth = dict(
+            status=self.status_view,
             chpasswd=self.change_password,
-            mainprefs=self.main_preferences,
-            preferences=self.preferences_view,
+            #mainprefs=self.main_preferences,
+            #preferences=self.preferences_view,
             )
 
         # dispatch context request
@@ -116,6 +115,9 @@ class MainViewer(BaseViewer):
         else:
             msg = 'Undefined Context: %s' % self.context
             self.layout.content = '<b>%s</b>' % msg
+
+    def status_view(self):
+        self.layout.content = 'Status View'
         
 
     def preferences_view(self):
