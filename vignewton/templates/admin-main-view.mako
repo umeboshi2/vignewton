@@ -10,6 +10,7 @@
   <div class="listview-header">
     Main Admin View
   </div>
+  <% no_games = False %>
   <div class="listview-list">
     %if not games.query().all():
     <div class="listview-list-entry">

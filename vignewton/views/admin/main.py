@@ -21,6 +21,7 @@ import deform
 
 from vignewton.managers.nflgames import NFLGameManager
 from vignewton.managers.odds import NFLOddsManager
+from vignewton.managers.bets import BetsManager
 
 from vignewton.views.base import AdminViewer, make_main_menu
 
@@ -54,9 +55,10 @@ class MainViewer(AdminViewer):
         
         self.games = NFLGameManager(self.request.db)
         self.odds = NFLOddsManager(self.request.db)
-
+        self.bets = BetsManager(self.request.db)
+        
         template = 'vignewton:templates/admin-main-view.mako'
-        env = dict(odds=self.odds, games=self.games)
+        env = dict(odds=self.odds, games=self.games, bets=self.bets)
         content = self.render(template, env)
         self.layout.content = content
         
