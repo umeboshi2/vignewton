@@ -105,7 +105,6 @@ class BaseViewer(TrumpetViewer):
         except OperationalError:
             self.accounts = None
         except ProgrammingError, e:
-            self.layout.header = e
             self.accounts = None
             
             

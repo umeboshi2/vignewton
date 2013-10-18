@@ -104,13 +104,11 @@ class MainViewer(BaseViewer):
         authn_policy = self.request.context.authn_policy
         authn = authn_policy.authenticated_userid(self.request)
         if authn is None:
-            self.layout.subheader = "Auth is None"
             self._unauthenticated_view()
         else:
             self._authenticated_view(authn)
 
     def _unauthenticated_view(self):
-        #self.layout.subheader = self.accounts
         if self.accounts is None:
             mkurl = self.request.route_url
             url = mkurl('initdb', context='initialize', id='database')
