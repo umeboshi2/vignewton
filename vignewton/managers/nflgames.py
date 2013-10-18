@@ -137,8 +137,9 @@ class NFLGameManager(object):
     def get(self, id):
         return self.query().get(id)
 
-    def update_game(self, game, event):
-        data = parse_ical_nflgame(event)
+    def update_game(self, game, event, data=None):
+        if data is None:
+            data = parse_ical_nflgame(event)
         away_id = self.teams.getbynick(data['away']).id
         home_id = self.teams.getbynick(data['home']).id
         updated = False
@@ -171,8 +172,9 @@ class NFLGameManager(object):
             game = self.session.merge(game)
         return game, updated
     
-    def insert_new_game(self, event):
-        data = parse_ical_nflgame(event)
+    def insert_new_game(self, event, data=None):
+        if data is None:
+            data = parse_ical_nflgame(event)
         with transaction.manager:
             g = NFLGame()
             away, home = data['away'], data['home']
@@ -213,19 +215,24 @@ class NFLGameManager(object):
         updated = False
         for event in events:
             edata = parse_ical_nflgame(event)
-            if edata['start'] > latest_game.start:
+            if latest_game is None:
+                self.insert_new_game(event, data=edata)
+                updated = True
+            else:
                 new_game = False
-                try:
-                    game = self.get_game_from_ical_event(event)
-                except NoResultFound:
-                    new_game = True
-                    game = self.insert_new_game(event)
-                if not new_game:
-                    # check score
-                    if game.score is None:
-                        game, game_updated = self.update_game(game, event)
-                        if game_updated:
-                            updated = True
+                if edata['start'] > latest_game.start:
+                    try:
+                        game = self.get_game_from_ical_event(event)
+                    except NoResultFound:
+                        new_game = True
+                        game = self.insert_new_game(event)
+                        updated = True
+                    if not new_game:
+                        # check score
+                        if game.score is None:
+                            game, game_updated = self.update_game(game, event)
+                            if game_updated:
+                                updated = True
         return updated
     
     def _range_filter(self, query, start, end):

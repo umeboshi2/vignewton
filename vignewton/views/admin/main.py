@@ -41,6 +41,8 @@ def prepare_main_data(request):
     menu.append_new_entry('Manage Text', url)
     url = request.route_url('admin_images', context='list', id=None)
     menu.append_new_entry('Manage Images', url)
+    url = request.route_url('user', context='status')
+    menu.append_new_entry('Preferences', url)
     main_menu = make_main_menu(request)
     layout.title = 'Admin Page'
     layout.header = 'Admin Page'

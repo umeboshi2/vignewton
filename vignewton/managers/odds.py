@@ -202,7 +202,7 @@ class NFLOddsManager(object):
         #q = self._filter_zero_odds(q)
         return q.all()
     
-    
+
                 
 
     

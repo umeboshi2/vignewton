@@ -15,6 +15,7 @@
     %if not games.query().all():
     <div class="listview-list-entry">
       <% url = mkurl(route, context='games', id='cash') %>
+      <% no_games = True %>
       <p>
 	There is no Game Schedule. 
 	<a class="action-button" href="${url}">
@@ -26,7 +27,7 @@
     <div class="listview-list-entry">
       <% latest = games.get_latest_scored_game() %>
       <% url = mkurl(route, context='games', id='cash') %>
-      <h4>Latest Scored Game</h4>
+      <strong>Latest Scored Game</strong>
       ${latest.start.strftime(dtformat)}<br>
       ${latest.summary}
       %if now - latest.start > two_days:
@@ -36,6 +37,7 @@
       %endif
     </div>
     %endif
+    %if not no_games:
     %if not odds.query().all(): 
     <div class="listview-list-entry">
       <% url = mkurl(route, context='odds', id='cash') %>
@@ -48,16 +50,39 @@
     </div>
     %else:
     <div class="listview-list-entry">
-      <% latest = games.get_latest_scored_game() %>
+      <% latest = odds.oddscache.get_latest_content() %>
       <% url = mkurl(route, context='games', id='cash') %>
-      <h4>Latest Scored Game</h4>
-      ${latest.start.strftime(dtformat)}<br>
-      ${latest.summary}
-      %if now - latest.start > two_days:
+      <strong>Latest Odds Retrieval</strong>
+      ${latest.retrieved.strftime(dtformat)}<br>
+      %if now - latest.retrieved > one_day:
       <a class="action-button" href="${url}">
 	Update
       </a>
       %endif
+    </div>
+    %endif
+    %else:
+    <div class="listview-list-entry">
+      There can be no odds without games.
+    </div>
+    %endif
+    %if bets.get_all_bets():
+    <div class="listview-list-entry">
+      There are pending bets.
+    </div>
+    %else:
+    <div class="listview-list-entry">
+      There are no pending bets.
+    </div>
+    %endif
+    <% balance = bets.accounts.get_balance(bets.accounts.inthewild.id) %>
+    %if balance.balance == 0:
+    <div class="listview-list-entry">
+      There is no money in the system!
+    </div>
+    %else:
+    <div class="listview-list-entry">
+      There is $${-balance.balance} in the system.
     </div>
     %endif
  </div>
