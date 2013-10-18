@@ -1,4 +1,6 @@
 from sqlalchemy.exc import OperationalError
+from sqlalchemy.exc import ProgrammingError
+
 from sqlalchemy.orm.exc import NoResultFound
 
 from trumpet.views.base import BaseViewer as TrumpetViewer
@@ -102,6 +104,9 @@ class BaseViewer(TrumpetViewer):
             self.accounts = AccountingManager(self.request.db)
         except OperationalError:
             self.accounts = None
+        except ProgrammingError, e:
+            self.layout.header = e
+
             
     def __call__(self):
         if self.accounts is not None:
