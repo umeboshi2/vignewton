@@ -1,7 +1,7 @@
 import csv
 import re
 from datetime import datetime, timedelta
-
+from cStringIO import StringIO
 import requests
 import icalendar
 import bs4
@@ -74,13 +74,21 @@ def make_nfl_team_data(csv_line):
     conference, region = division.split()
     return dict(name=name, city=city, conference=conference, region=region)
 
-def get_nfl_teams(filename):
-    teams = csv.reader(file(filename))
+def _get_nfl_teams(fileobj):
+    teams = csv.reader(fileobj)
     ignore = teams.next()
     teamdata = list()
     for line in teams:
         teamdata.append(make_nfl_team_data(line))
     return teamdata
+
+def get_nfl_teams(filename):
+    return _get_nfl_teams(file(filename))
+
+
+def get_nfl_teams_from_string(stream):
+    return _get_nfl_teams(StringIO(stream))
+
 
 
 

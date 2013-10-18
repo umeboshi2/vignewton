@@ -75,7 +75,7 @@ def main(global_config, **settings):
     timeout = int(settings['%s.authn.timeout' % appname])
     authn_policy, authz_policy = make_authn_authz_policies(
         secret, cookie, callback=authenticate,
-        timeout=timeout)
+        timeout=timeout, tkt=False)
     # create config object
     config = Configurator(settings=settings,
                           root_factory=root_factory,
@@ -106,6 +106,11 @@ def main(global_config, **settings):
                     layout='base',
                     renderer=basetemplate,
                     route_name='main',)
+    config.add_route('initdb', '/initdb/{context}/{id}')
+    config.add_view('vignewton.views.main.MainViewer',
+                    layout='base',
+                    renderer=basetemplate,
+                    route_name='initdb')
     route_name = 'maincal_json'
     config.add_route(route_name, '/%s/{context}/{id}' % route_name)
     config.add_view('vignewton.views.main.MainCalJSONViewer',

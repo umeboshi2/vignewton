@@ -12,6 +12,7 @@ from trumpet.security import check_password
 from vignewton.models.base import DBSession
 from vignewton.models.usergroup import User, Password
 from vignewton.views.base import BaseViewer
+from vignewton.views.base import get_user_id
 
 class UserContainer(object):
     pass
@@ -88,7 +89,8 @@ class LoginViewer(BaseViewer):
         if check_login_form(self.request):
             username = data['username']
             came_from = data['came_from']
-            headers = remember(self.request, username)
+            user_id = get_user_id(self.request, username)
+            headers = remember(self.request, user_id)
             self.response = HTTPFound(location=came_from, headers=headers)
         else:
             self._base_form_view(formdata=data)

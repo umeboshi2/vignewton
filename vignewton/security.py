@@ -36,16 +36,15 @@ def check_password(encrypted, password):
 def authenticate(userid, request):
     #print "called authenticate", request.params
     dbsession = request.db
-    user = None
-    try:
-        user = dbsession.query(User).filter_by(username=userid).one()
-    except NoResultFound:
-        pass
+    user = dbsession.query(User).get(userid)
     if user is None:
-        pass
+        return None
     else:
         #print "GROUPS--->", user.get_groups()
-        return user.get_groups()
+        groups = user.get_groups()
+        if groups is None:
+            groups = []
+        return groups
 
 
 def check_user_password(user, password):
@@ -70,7 +69,8 @@ def make_authn_policy(secret, cookie, callback=authenticate,
     return ap
 
 def make_session_authn_policy(callback=authenticate):
-    sp = SessionAuthenticationPolicy(callback=callback)
+    sp = SessionAuthenticationPolicy(callback=callback,
+                                     )
     return sp
 
 

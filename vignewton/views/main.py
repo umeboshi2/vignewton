@@ -64,6 +64,7 @@ class MainViewer(BaseViewer):
         self.layout.main_menu = make_main_menu(self.request).render()
         self.layout.ctx_menu = make_ctx_menu(self.request).output()
 
+        if self.accounts is not None:
         self.odds = NFLOddsManager(self.request.db)
         self.bets = BetsManager(self.request.db)
         
@@ -77,6 +78,9 @@ class MainViewer(BaseViewer):
         if self.route == 'home':
             self.main_view()
             return
+        elif self.route == 'initdb':
+            self.initialize_database()
+            return
         if self.route == 'main':
             self.context = self.request.matchdict['context']
         
@@ -85,6 +89,7 @@ class MainViewer(BaseViewer):
         self._cntxt_meth = dict(
             main=self.main_view,
             schedcal=self.schedule_view,
+            initialize=self.initialize_database,
             )
 
         if self.context in self._cntxt_meth:
@@ -99,10 +104,24 @@ class MainViewer(BaseViewer):
         authn_policy = self.request.context.authn_policy
         authn = authn_policy.authenticated_userid(self.request)
         if authn is None:
+            #self.layout.subheader = "Auth is None"
+            self._unauthenticated_view()
+        else:
+            self._authenticated_view(authn)
+
+    def _unauthenticated_view(self):
+        if self.accounts is None:
+            mkurl = self.request.route_url
+            url = mkurl('initdb', context='initialize', id='database')
+            msg = "Create Database"
+            anchor = '<a class="action-button" href="%s">%s</a>' % (url, msg)
+            content = anchor
+        else:
             url = self.request.route_url('login')
             content = '<a href="%s">Login</a>' % url
             self.layout.content = content
-        else:
+        
+    def _authenticated_view(self, authn):
             admin_username = self.get_admin_username()
             if authn == admin_username:
                 return self.main_admin_view()
@@ -150,3 +169,20 @@ class MainViewer(BaseViewer):
         content = self.render(template, env)
         self.layout.content = content
 
+    def initialize_database(self):
+        context = self.request.matchdict['context']
+        if context != 'initialize':
+            self.layout.content = "Bad Call"
+            return
+        id = self.request.matchdict['id']
+        if id != 'database':
+            self.layout.content = "Bad Call"
+            return
+        if self.accounts is None:
+            from vignewton.models.initialize import initialize_database
+            settings = self.get_app_settings()
+            initialize_database(settings)
+            self.layout.content = "Database Initialized"
+        else:
+            self.layout.content = "Unnecessary"
+    

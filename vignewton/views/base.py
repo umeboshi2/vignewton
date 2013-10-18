@@ -1,3 +1,6 @@
+from sqlalchemy.exc import OperationalError
+from sqlalchemy.orm.exc import NoResultFound
+
 from trumpet.views.base import BaseViewer as TrumpetViewer
 from trumpet.views.base import BaseMenu
 from trumpet.views.menus import BaseMenu, TopBar
@@ -10,6 +13,11 @@ def get_admin_username(request):
     skey = 'vignewton.admin.admin_username'
     admin_username = request.registry.settings.get(skey, 'admin')
     return admin_username
+
+def get_user_id(request, username):
+    db = request.db
+    q = db.query(User).filter_by(username=username)
+    return q.one().id
 
 def prepare_layout(layout):
     layout.title = 'Hattiesburg Hustler'
@@ -90,8 +98,11 @@ class BaseViewer(TrumpetViewer):
         prepare_layout(self.layout)
         self.layout.main_menu = make_main_menu(request).render()
         self.css = self.layout.resources.main_screen
-        self.accounts = AccountingManager(self.request.db)
-        
+        try:
+            self.accounts = AccountingManager(self.request.db)
+        except OperationalError:
+            self.accounts = None
+            
     def __call__(self):
         self._update_widgetbox()
         if hasattr(self, 'css'):
