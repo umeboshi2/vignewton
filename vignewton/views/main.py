@@ -115,6 +115,10 @@ class MainViewer(BaseViewer):
             msg = "Create Database"
             anchor = '<a class="action-button" href="%s">%s</a>' % (url, msg)
             content = anchor
+            # clear context menu
+            self.layout.ctx_menu = ''
+            # clear main menu
+            self.layout.main_menu = ''
         else:
             url = self.request.route_url('login')
             content = '<a href="%s">Login</a>' % url
