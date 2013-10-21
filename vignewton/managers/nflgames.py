@@ -229,7 +229,9 @@ class NFLGameManager(object):
                         updated = True
                     if not new_game:
                         # check score
-                        if game.score is None:
+                        q = self.session.query(NFLGameScore)
+                        score = q.get(game.id)
+                        if score is None:
                             game, game_updated = self.update_game(game, event)
                             if game_updated:
                                 updated = True
