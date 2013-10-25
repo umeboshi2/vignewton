@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os, sys
-from datetime import datetime
+from datetime import datetime, timedelta
+
 
 from pyramid.paster import bootstrap
 
@@ -26,11 +27,19 @@ if __name__ == '__main__':
     db = request.db
 
     schedule_url = settings['vignewton.nfl.schedule.url']
+    schedule_ttl = settings['vignewton.nfl.schedule.ttl']
+    
     odds_url = settings['vignewton.nfl.odds.url']
-
+    odds_ttl = settings['vignewton.nfl.odds.ttl']
+    
     mgr = UpdateDBManager(db)
+
     mgr.set_schedule_url(schedule_url)
+    mgr.set_schedule_ttl(minutes=int(schedule_ttl))
+    
     mgr.set_odds_url(odds_url)
+    mgr.set_odds_ttl(minutes=int(odds_ttl))
+    
     r = mgr.update()
     
     

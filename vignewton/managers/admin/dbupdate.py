@@ -69,8 +69,14 @@ class UpdateDBManager(object):
     def set_schedule_url(self, url):
         self.games.schedules.set_url(url)
 
+    def set_schedule_ttl(self, **kw):
+        self.games.schedules.set_ttl(**kw)
+        
     def set_odds_url(self, url):
         self.odds.oddscache.set_url(url)
+
+    def set_odds_ttl(self, **kw):
+        self.odds.oddscache.set_ttl(**kw)
         
     def query(self):
         return self.session.query(UpdateReport)

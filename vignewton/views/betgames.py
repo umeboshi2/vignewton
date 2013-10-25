@@ -126,23 +126,9 @@ class NFLGameBetsViewer(BaseViewer):
             self.layout.content = '<b>%s</b>' % msg
 
 
-    def _update_odds(self):
-        pass
-    
-    
     def main_view(self):
-        self.layout.header = 'NFL Bettable Games' 
-        olist = self.odds.get_current_odds()
-        collector = BettableGamesCollector(olist)
-        dates = collector.dates.keys()
-        dates.sort()
-        game_date_format = '%A - %B %d'
-        template = 'vignewton:templates/main-betgames-view.mako'
-        env = dict(collector=collector, dates=dates,
-                   game_date_format=game_date_format)
-        content = self.render(template, env)
-        self.layout.content = content
-
+        self.response = HTTPFound('/')
+        return
 
     def view_game(self):
         id = self.request.matchdict['id']
