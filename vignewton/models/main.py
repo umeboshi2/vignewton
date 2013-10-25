@@ -263,7 +263,12 @@ ClosedBet.close_txn = relationship(Transaction,
                                  foreign_keys=[ClosedBet.close_txn_id])
 
 
-
+class UpdateReport(Base):
+    __tablename__ = 'vig_data_update_reports'
+    id = Column(Integer, primary_key=True)
+    created = Column(DateTime)
+    content = Column(PickleType)
+    
 class LoginHistory(Base):
     __tablename__ = 'login_history'
     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)

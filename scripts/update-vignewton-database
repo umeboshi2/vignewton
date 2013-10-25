@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+import os, sys
+from datetime import datetime
+
+from pyramid.paster import bootstrap
+
+import transaction
+
+
+
+
+from vignewton.managers.admin.dbupdate import UpdateDBManager
+
+
+
+if __name__ == '__main__':
+    try:
+        inifile = sys.argv[1]
+    except IndexError:
+        hostname = os.uname()[1]
+        inifile = '%s.ini' % hostname
+    env = bootstrap(inifile)
+    request = env['request']
+    settings = request.registry.settings
+
+    db = request.db
+
+    schedule_url = settings['vignewton.nfl.schedule.url']
+    odds_url = settings['vignewton.nfl.odds.url']
+
+    mgr = UpdateDBManager(db)
+    mgr.set_schedule_url(schedule_url)
+    mgr.set_odds_url(odds_url)
+    r = mgr.update()
+    
+    

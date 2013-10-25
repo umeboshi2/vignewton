@@ -39,9 +39,12 @@ setup(name='vignewton',
       main = vignewton:main
       [console_scripts]
       initialize_vignewton_db = vignewton.scripts.initializedb:main
+      #update-vignewton-database = update_vignewton_database:update_all
       [fanstatic.libraries]
       vignewton_lib = vignewton.resources:library
       vignewton_css = vignewton.resources:css
       vignewton_js = vignewton.resources:js
       """,
+      scripts=['scripts/update-vignewton-database',]
+
       )
